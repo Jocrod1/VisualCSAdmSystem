@@ -373,6 +373,11 @@ namespace CapaPresentacion
             this.tabControl1.SelectedIndex = 1;
         }
 
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }
