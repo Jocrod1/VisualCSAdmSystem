@@ -12,15 +12,15 @@ namespace CapaDatos
     public class DIngreso
     {
         private int _Id_Ingreso;
-        private int _Id_Trabajador;
+        private string _Id_Trabajador;
         private int _Id_Proveedor;
         private DateTime _Fecha;
         private decimal _Precio_Total;
         private string _Estado;
 
         public int Id_Ingreso { get => _Id_Ingreso; set => _Id_Ingreso = value; }
-        public int Id_Trabajador { get => _Id_Trabajador; set => _Id_Trabajador = value; }
-        public int Id_Proveedor { get => _Id_Proveedor; set => _Id_Proveedor = value; }
+        public string Id_Trabajador { get => _Id_Trabajador; set => _Id_Trabajador = value; }
+        public string Id_Proveedor { get => _Id_Proveedor; set => _Id_Proveedor = value; }
         public DateTime Fecha { get => _Fecha; set => _Fecha = value; }
         public decimal Precio_Total { get => _Precio_Total; set => _Precio_Total = value; }
         public string Estado { get => _Estado; set => _Estado = value; }
@@ -32,7 +32,7 @@ namespace CapaDatos
 
         }
 
-        public DIngreso(int IdIngreso, int IdTrabajador, int IdProveedor, DateTime Fecha, decimal PrecioTotal, string Estado)
+        public DIngreso(int IdIngreso, string IdTrabajador, string IdProveedor, DateTime Fecha, decimal PrecioTotal, string Estado)
         {
             this.Id_Ingreso = IdIngreso;
             this.Id_Trabajador = IdTrabajador;
@@ -78,14 +78,16 @@ namespace CapaDatos
                 //parametro id trabajador
                 SqlParameter Parametro_Id_Trabajador = new SqlParameter();
                 Parametro_Id_Trabajador.ParameterName = "@IdTrabajador";
-                Parametro_Id_Trabajador.SqlDbType = SqlDbType.Int;
+                Parametro_Id_Trabajador.SqlDbType = SqlDbType.VarChar;
+                Parametro_Id_Trabajador.Size = 20;
                 Parametro_Id_Trabajador.Value = Ingreso.Id_Trabajador;
                 SqlComando.Parameters.Add(Parametro_Id_Trabajador);
 
                 //parametro id proveedor
                 SqlParameter Parametro_Id_Proveedor = new SqlParameter();
                 Parametro_Id_Proveedor.ParameterName = "@IdProveedor";
-                Parametro_Id_Proveedor.SqlDbType = SqlDbType.Int;
+                Parametro_Id_Proveedor.SqlDbType = SqlDbType.VarChar;
+                Parametro_Id_Proveedor.Size = 20;
                 Parametro_Id_Proveedor.Value = Ingreso.Id_Proveedor;
                 SqlComando.Parameters.Add(Parametro_Id_Proveedor);
 

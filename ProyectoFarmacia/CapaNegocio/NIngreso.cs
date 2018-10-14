@@ -12,7 +12,7 @@ namespace CapaNegocio
     public class NIngreso
     {
         //metodo insertar
-        public static string Insertar(int IdTrabajador, int IdProveedor, DateTime Fecha, decimal PrecioTotal, string Estado, DataTable DtDetalles)
+        public static string Insertar(string IdTrabajador, string IdProveedor, DateTime Fecha, decimal PrecioTotal, string Estado, DataTable DtDetalles)
         {
             DIngreso Objeto = new DIngreso();
             Objeto.Id_Trabajador = IdTrabajador;

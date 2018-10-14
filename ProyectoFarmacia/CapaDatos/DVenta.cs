@@ -9,19 +9,19 @@ using System.Data.SqlClient;
 
 namespace CapaDatos
 {
-    class DVenta
+    public class DVenta
     {
         private int _Id_Venta;
-        private int _Id_Cliente;
-        private int _Id_Trabajador;
+        private string _Id_Cliente;
+        private string _Id_Trabajador;
         private DateTime _Fecha;
         private decimal _SubTotal;
         private decimal _Impuesto;
         private decimal _Total;
 
         public int Id_Venta { get => _Id_Venta; set => _Id_Venta = value; }
-        public int Id_Cliente { get => _Id_Cliente; set => _Id_Cliente = value; }
-        public int Id_Trabajador { get => _Id_Trabajador; set => _Id_Trabajador = value; }
+        public string Id_Cliente { get => _Id_Cliente; set => _Id_Cliente = value; }
+        public string Id_Trabajador { get => _Id_Trabajador; set => _Id_Trabajador = value; }
         public DateTime Fecha { get => _Fecha; set => _Fecha = value; }
         public decimal SubTotal { get => _SubTotal; set => _SubTotal = value; }
         public decimal Impuesto { get => _Impuesto; set => _Impuesto = value; }
@@ -34,7 +34,7 @@ namespace CapaDatos
 
         }
 
-        public DVenta(int IdVenta, int IdCliente, int IdTrabajador, DateTime Fecha, decimal SubTotal, decimal Impuesto, decimal Total)
+        public DVenta(int IdVenta, string IdCliente, string IdTrabajador, DateTime Fecha, decimal SubTotal, decimal Impuesto, decimal Total)
         {
             this.Id_Venta = IdVenta;
             this.Id_Cliente = IdCliente;
@@ -80,14 +80,16 @@ namespace CapaDatos
                 //parametro id cliente
                 SqlParameter Parametro_Id_Cliente = new SqlParameter();
                 Parametro_Id_Cliente.ParameterName = "@IdCliente";
-                Parametro_Id_Cliente.SqlDbType = SqlDbType.Int;
+                Parametro_Id_Cliente.SqlDbType = SqlDbType.VarChar;
+                Parametro_Id_Cliente.Size = 20;
                 Parametro_Id_Cliente.Value = Venta.Id_Cliente;
                 SqlComando.Parameters.Add(Parametro_Id_Cliente);
 
                 //parametro id trabajador 
                 SqlParameter Parametro_Id_Trabajador = new SqlParameter();
                 Parametro_Id_Trabajador.ParameterName = "@IdTrabajador";
-                Parametro_Id_Trabajador.SqlDbType = SqlDbType.Int;
+                Parametro_Id_Trabajador.SqlDbType = SqlDbType.VarChar;
+                Parametro_Id_Trabajador.Size = 20;
                 Parametro_Id_Trabajador.Value = Venta.Id_Trabajador;
                 SqlComando.Parameters.Add(Parametro_Id_Trabajador);
 
