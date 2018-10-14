@@ -125,7 +125,7 @@ namespace CapaDatos
                         //llamar a insertar
                         respuesta = det.Insertar(det, ref SqlConectar, ref SqlTransaccion);
 
-                        if (respuesta.Equals("OK"))
+                        if (!respuesta.Equals("OK"))
                         {
                             break;
                         }
@@ -139,6 +139,7 @@ namespace CapaDatos
                 }
                 else
                 {
+                    //si se recibe una espuesta contraria a ok negamos la transaccion
                     SqlTransaccion.Rollback();
                 }
 
