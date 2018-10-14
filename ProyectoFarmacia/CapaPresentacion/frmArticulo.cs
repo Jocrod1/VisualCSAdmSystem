@@ -31,7 +31,7 @@ namespace CapaPresentacion
         
 
         //Mostrar Mensaje de Confirmación
-        private void MensajeOk(string mensaje)
+        public void MensajeOk(string mensaje)
         {
             MessageBox.Show(mensaje, "Sistema de Ventas", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -150,7 +150,7 @@ namespace CapaPresentacion
 
                             if (Rpta.Equals("OK"))
                             {
-                                this.MensajeOK("Se Eliminó Correctamente el registro");
+                                this.MensajeOk("Se Eliminó Correctamente el registro");
                             }
                             else
                             {
