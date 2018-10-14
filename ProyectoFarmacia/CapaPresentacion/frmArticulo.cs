@@ -19,7 +19,18 @@ namespace CapaPresentacion
 
         private bool IsEditar = false;
 
+        private static frmArticulo _Instancia;
 
+
+
+        public static frmArticulo GetInstancia()
+        {
+            if (_Instancia == null)
+            {
+                _Instancia = new frmArticulo();
+            }
+            return _Instancia;
+        }
 
         public frmArticulo()
         {
@@ -28,7 +39,6 @@ namespace CapaPresentacion
         }
 
 
-        
 
         //Mostrar Mensaje de Confirmación
         public void MensajeOk(string mensaje)
@@ -49,7 +59,7 @@ namespace CapaPresentacion
         {
             this.txtNombreArticulo.Text = string.Empty;
             this.txtDescripcion.Text = string.Empty;
-            this.txtCodigo.Text = string.Empty;
+            this.txtIdarticulo.Text = string.Empty;
             
             this.pxImagen.Image = global::CapaPresentacion.Properties.Resources.file;
 
@@ -59,10 +69,10 @@ namespace CapaPresentacion
         //Habilitar los controles del formulario
         private void Habilitar(bool valor)
         {
-            this.txtCodigo.ReadOnly = !valor;
+            this.txtIdarticulo.ReadOnly = !valor;
             this.txtNombreArticulo.ReadOnly = !valor;
             this.txtDescripcion.ReadOnly = !valor;
-            this.txtCodigo.ReadOnly = !valor;
+            this.txtIdarticulo.ReadOnly = !valor;
             this.btnCargar.Enabled = valor;
             this.btnLimpiarCampos.Enabled = valor;
         }
@@ -125,7 +135,11 @@ namespace CapaPresentacion
 
         private void frmArticulo_Load(object sender, EventArgs e)
         {
-
+            this.Top = 0;
+            this.Left = 0;
+            this.Mostrar();
+            this.Habilitar(false);
+            this.Botones();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -194,28 +208,34 @@ namespace CapaPresentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
             try
             {
                 string rpta = "";
-                if (this.txtNombreArticulo.Text == string.Empty)
+                if (this.txtNombreArticulo.Text == string.Empty  || this.txtCodigo.Text == string.Empty)
                 {
-                    MensajeError("Falta ingresar algunos datos, serán remarcados");
-                    errorIcono2.SetError(txtNombreArticulo, "Ingrese un Nombre");
+                    MensajeError("Hay campos vacios, porfavor verifique");
+                    errorIcono.SetError(txtNombreArticulo, "Ingrese un Valor");
+                    errorIcono.SetError(txtCodigo, "Ingrese un Valor");
                 }
                 else
                 {
+                    System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                    this.pxImagen.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+
+                    byte[] imagen = ms.GetBuffer();
+
+
                     if (this.IsNuevo)
                     {
-                        rpta = Npresentacion.Insertar(this.txtNombre.Text.Trim().ToUpper(),
-                            this.txtDescripcion.Text.Trim());
+                        rpta = NArticulos.Insertar(this.txtCodigo.Text, this.txtNombreArticulo.Text.Trim().ToUpper(),
+                            this.txtDescripcion.Text.Trim(), imagen); //En caso de error donde pidan Idcategoria o Idpresentacion, aqui y....
 
                     }
                     else
                     {
-                        rpta = Npresentacion.Editar(Convert.ToInt32(this.txtIdpresentacion.Text),
-                            this.txtNombre.Text.Trim().ToUpper(),
-                            this.txtDescripcion.Text.Trim());
+                        rpta = NArticulos.Editar(Convert.ToInt32(this.txtIdarticulo.Text),
+                            this.txtCodigo.Text, this.txtNombreArticulo.Text.Trim().ToUpper(),
+                            this.txtDescripcion.Text.Trim(), imagen); //aqui iban Convert.ToInt32(this.txtIdcategoria.Text),Convert.ToInt32(this.cbIdpresentacion.SelectedValue)
                     }
 
                     if (rpta.Equals("OK"))
@@ -246,7 +266,113 @@ namespace CapaPresentacion
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
-            }  
+            }
+
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            this.BuscarNombre();
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            //quitar comentarios cuando ya exista el frmReporteArticulos
+            //FrmReporteArticulos frm = new FrmReporteArticulos();
+            //frm.Texto = txtBuscar.Text;
+            //frm.ShowDialog();
+        }
+
+        private void frmArticulo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _Instancia = null;
+        }
+
+        private void txtNombreBuscar_TextChanged(object sender, EventArgs e)
+        {
+            this.BuscarNombre();
+        }
+
+        private void dataListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataListado.Columns["Eliminar"].Index)
+            {
+                DataGridViewCheckBoxCell ChkEliminar = (DataGridViewCheckBoxCell)dataListado.Rows[e.RowIndex].Cells["Eliminar"];
+                ChkEliminar.Value = !Convert.ToBoolean(ChkEliminar.Value);
+            }
+        }
+
+
+
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+
+            OpenFileDialog dialog = new OpenFileDialog();
+
+            DialogResult result = dialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                this.pxImagen.SizeMode = PictureBoxSizeMode.StretchImage;
+                this.pxImagen.Image = Image.FromFile(dialog.FileName);
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            this.pxImagen.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.pxImagen.Image = global::CapaPresentacion.Properties.Resources.file;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (!this.txtIdarticulo.Text.Equals(""))
+            {
+                this.IsEditar = true;
+                this.Botones();
+                this.Habilitar(true);
+            }
+            else
+            {
+                this.MensajeError("Debe de seleccionar primero el registro a editar");
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.IsNuevo = false;
+            this.IsEditar = false;
+            this.Botones();
+            this.Limpiar();
+            this.Habilitar(false);
+        }
+
+        private void dataListado_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataListado.Columns["Eliminar"].Index)
+            {
+                DataGridViewCheckBoxCell ChkEliminar = (DataGridViewCheckBoxCell)dataListado.Rows[e.RowIndex].Cells["Eliminar"];
+                ChkEliminar.Value = !Convert.ToBoolean(ChkEliminar.Value);
+            }
+        }
+
+
+        private void dataListado_DoubleClick(object sender, EventArgs e)
+        {
+            this.txtIdarticulo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["idarticulo"].Value);
+            this.txtCodigo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["codigo"].Value);
+            this.txtNombreArticulo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["nombre"].Value);
+            this.txtDescripcion.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["descripcion"].Value);
+
+            byte[] imagenBuffer = (byte[])this.dataListado.CurrentRow.Cells["imagen"].Value;
+            System.IO.MemoryStream ms = new System.IO.MemoryStream(imagenBuffer);
+
+            this.pxImagen.Image = Image.FromStream(ms);
+            this.pxImagen.SizeMode = PictureBoxSizeMode.StretchImage;
+
+
+            this.tabControl1.SelectedIndex = 1;
         }
 
 
