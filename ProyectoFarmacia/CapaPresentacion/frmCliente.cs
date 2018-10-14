@@ -303,6 +303,11 @@ namespace CapaPresentacion
             //frm.ShowDialog();
         }
 
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
 
 

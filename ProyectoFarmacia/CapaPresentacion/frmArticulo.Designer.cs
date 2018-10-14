@@ -284,7 +284,7 @@
             // 
             // pxImagen
             // 
-            this.pxImagen.Image = ((System.Drawing.Image)(resources.GetObject("pxImagen.Image")));
+            this.pxImagen.Image = global::CapaPresentacion.Properties.Resources.file;
             this.pxImagen.Location = new System.Drawing.Point(436, 83);
             this.pxImagen.Name = "pxImagen";
             this.pxImagen.Size = new System.Drawing.Size(232, 203);

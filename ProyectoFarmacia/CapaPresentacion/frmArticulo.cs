@@ -74,7 +74,6 @@ namespace CapaPresentacion
             this.txtDescripcion.ReadOnly = !valor;
             this.txtIdarticulo.ReadOnly = !valor;
             this.btnCargar.Enabled = valor;
-            this.btnLimpiarCampos.Enabled = valor;
         }
 
         //Habilitar los botones
@@ -211,11 +210,11 @@ namespace CapaPresentacion
             try
             {
                 string rpta = "";
-                if (this.txtNombreArticulo.Text == string.Empty  || this.txtCodigo.Text == string.Empty)
+                if (this.txtNombreArticulo.Text == string.Empty  || this.txtIdarticulo.Text == string.Empty)
                 {
                     MensajeError("Hay campos vacios, porfavor verifique");
                     errorIcono.SetError(txtNombreArticulo, "Ingrese un Valor");
-                    errorIcono.SetError(txtCodigo, "Ingrese un Valor");
+                    errorIcono.SetError(txtIdarticulo, "Ingrese un Valor");
                 }
                 else
                 {
@@ -227,14 +226,14 @@ namespace CapaPresentacion
 
                     if (this.IsNuevo)
                     {
-                        rpta = NArticulos.Insertar(this.txtCodigo.Text, this.txtNombreArticulo.Text.Trim().ToUpper(),
+                        rpta = NArticulos.Insertar(this.txtNombreArticulo.Text.Trim().ToUpper(),
                             this.txtDescripcion.Text.Trim(), imagen); //En caso de error donde pidan Idcategoria o Idpresentacion, aqui y....
 
                     }
                     else
                     {
-                        rpta = NArticulos.Editar(Convert.ToInt32(this.txtIdarticulo.Text),
-                            this.txtCodigo.Text, this.txtNombreArticulo.Text.Trim().ToUpper(),
+                        rpta = NArticulos.Editar(Convert.ToInt32(this.txtIdarticulo.Text)
+                            , this.txtNombreArticulo.Text.Trim().ToUpper(),
                             this.txtDescripcion.Text.Trim(), imagen); //aqui iban Convert.ToInt32(this.txtIdcategoria.Text),Convert.ToInt32(this.cbIdpresentacion.SelectedValue)
                     }
 
@@ -361,7 +360,6 @@ namespace CapaPresentacion
         private void dataListado_DoubleClick(object sender, EventArgs e)
         {
             this.txtIdarticulo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["idarticulo"].Value);
-            this.txtCodigo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["codigo"].Value);
             this.txtNombreArticulo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["nombre"].Value);
             this.txtDescripcion.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["descripcion"].Value);
 
