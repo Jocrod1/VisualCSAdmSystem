@@ -11,13 +11,13 @@ namespace CapaDatos
 {
     public class DCliente
     {
-        private int _Id_Cliente;
+        private string _Id_Cliente;
         private string _Nombre_Cliente;
         private string _Direccion_Cliente;
         private string _Telefono_Cliente;
         private string _TextoBuscar;
 
-        public int Id_Cliente { get => _Id_Cliente; set => _Id_Cliente = value; }
+        public string Id_Cliente { get => _Id_Cliente; set => _Id_Cliente = value; }
         public string Nombre_Cliente { get => _Nombre_Cliente; set => _Nombre_Cliente = value; }
         public string Direccion_Cliente { get => _Direccion_Cliente; set => _Direccion_Cliente = value; }
         public string Telefono_Cliente { get => _Telefono_Cliente; set => _Telefono_Cliente = value; }
@@ -29,7 +29,7 @@ namespace CapaDatos
 
         }
 
-        public DCliente(int IdCliente, string NombreCliente, string DireccionCliente, string TelefonoCliente, string TextoBuscar)
+        public DCliente(string IdCliente, string NombreCliente, string DireccionCliente, string TelefonoCliente, string TextoBuscar)
         {
             this.Id_Cliente = IdCliente;
             this.Nombre_Cliente = NombreCliente;
@@ -63,8 +63,8 @@ namespace CapaDatos
                 //parametro id
                 SqlParameter Parametro_Id_Cliente = new SqlParameter();
                 Parametro_Id_Cliente.ParameterName = "@IdCliente";
-                Parametro_Id_Cliente.SqlDbType = SqlDbType.Int;
-                Parametro_Id_Cliente.Direction = ParameterDirection.Output;
+                Parametro_Id_Cliente.SqlDbType = SqlDbType.VarChar;
+                Parametro_Id_Cliente.Value = Cliente.Id_Cliente;
                 SqlComando.Parameters.Add(Parametro_Id_Cliente);
 
                 //parametro nombre
@@ -135,7 +135,7 @@ namespace CapaDatos
                 //parametro id
                 SqlParameter Parametro_Id_Cliente = new SqlParameter();
                 Parametro_Id_Cliente.ParameterName = "@IdCliente";
-                Parametro_Id_Cliente.SqlDbType = SqlDbType.Int;
+                Parametro_Id_Cliente.SqlDbType = SqlDbType.VarChar;
                 Parametro_Id_Cliente.Value= Cliente.Id_Cliente;
                 SqlComando.Parameters.Add(Parametro_Id_Cliente);
 
@@ -209,7 +209,7 @@ namespace CapaDatos
                 //parametro id
                 SqlParameter Parametro_Id_Cliente = new SqlParameter();
                 Parametro_Id_Cliente.ParameterName = "@IdCliente";
-                Parametro_Id_Cliente.SqlDbType = SqlDbType.Int;
+                Parametro_Id_Cliente.SqlDbType = SqlDbType.VarChar;
                 Parametro_Id_Cliente.Value = Cliente.Id_Cliente;
                 SqlComando.Parameters.Add(Parametro_Id_Cliente);
 
@@ -260,7 +260,7 @@ namespace CapaDatos
         }
 
         //Buscar
-        public DataTable Buscar_Nombre(DCliente Cliente)
+        public DataTable Buscar_Cedula(DCliente Cliente)
         {
             DataTable DtResultado = new DataTable("Cliente");
             SqlConnection SqlConectar = new SqlConnection();

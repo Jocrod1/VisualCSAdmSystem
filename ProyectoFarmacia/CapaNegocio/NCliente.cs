@@ -11,9 +11,10 @@ namespace CapaNegocio
 {
     class NCliente
     {
-        public static string Insertar(string Nombre_Cliente, string Direccion_Cliente, string Telefono_Cliente)
+        public static string Insertar(string Id_Cliente, string Nombre_Cliente, string Direccion_Cliente, string Telefono_Cliente)
         {
             DCliente Objeto = new DCliente();
+            Objeto.Id_Cliente = Id_Cliente;
             Objeto.Nombre_Cliente = Nombre_Cliente;
             Objeto.Direccion_Cliente = Direccion_Cliente;
             Objeto.Telefono_Cliente = Telefono_Cliente;
@@ -52,7 +53,7 @@ namespace CapaNegocio
         {
             DCliente Objeto = new DCliente();
             Objeto.Texto_Buscar = TextoBuscar;
-            return Objeto.Buscar_Id(Objeto);
+            return Objeto.Buscar_Cedula(Objeto);
         }
 
     }
