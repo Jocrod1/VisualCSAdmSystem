@@ -111,15 +111,15 @@ namespace CapaPresentacion
         }
 
         //Método BuscarRazonSocial
-        private void BuscarRazonSocial()
+        private void BuscarRepresentanteLegal()
         {
-            this.dataListado.DataSource = NProveedor.Buscar_Cedula(this.txtBuscar.Text);
+            this.dataListado.DataSource = NProveedor.Buscar_Representante_Legal(this.txtBuscar.Text);
             this.OcultarColumnas();
             lblTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 
         ///BuscarNum_Documento
-        private void BuscarNum_Documento()
+        private void BuscarNombre()
         {
             this.dataListado.DataSource = NProveedor.Buscar_Nombre(this.txtBuscar.Text);
             this.OcultarColumnas();
@@ -143,13 +143,13 @@ namespace CapaPresentacion
             if (cbBuscar.Text.Equals("Razon Social"))
             {
 
-                this.BuscarRazonSocial();
+                this.BuscarRepresentanteLegal();
 
             }
-            else if (cbBuscar.Text.Equals("Documento"))
+            else if (cbBuscar.Text.Equals("Nombre"))
             {
 
-                this.BuscarNum_Documento();
+                this.BuscarNombre();
 
             }
 

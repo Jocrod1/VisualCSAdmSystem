@@ -305,7 +305,7 @@ namespace CapaDatos
         }
 
         //Buscar representante legal
-        public DataTable Buscar_RepresentanteLegal(DProveedor Proveedor)
+        public DataTable Buscar_Representante_Legal(DProveedor Proveedor)
         {
             DataTable DtResultado = new DataTable("Proveedor");
             SqlConnection SqlConectar = new SqlConnection();
@@ -337,8 +337,8 @@ namespace CapaDatos
 
         }
 
-        //buscar documento
-        public DataTable Buscar_Documento(DProveedor Proveedor)
+        //buscar nombre
+        public DataTable Buscar_Nombre(DProveedor Proveedor)
         {
             DataTable DtResultado = new DataTable("Proveedor");
             SqlConnection SqlConectar = new SqlConnection();

@@ -52,11 +52,11 @@ namespace CapaNegocio
         }
 
         //Metodo Buscar Representante
-        public static DataTable Buscar_Cedula(string TextoBuscar)
+        public static DataTable Buscar_Representante_Legal(string TextoBuscar)
         {
             DProveedor Objeto = new DProveedor();
             Objeto.Texto_Buscar = TextoBuscar;
-            return Objeto.Buscar_RepresentanteLegal(Objeto);
+            return Objeto.Buscar_Representante_Legal(Objeto);
         }
 
         //Metodo Buscar Documento
@@ -64,7 +64,7 @@ namespace CapaNegocio
         {
             DProveedor Objeto = new DProveedor();
             Objeto.Texto_Buscar = TextoBuscar;
-            return Objeto.Buscar_RepresentanteLegal(Objeto);
+            return Objeto.Buscar_Nombre(Objeto);
         }
     }
 }
