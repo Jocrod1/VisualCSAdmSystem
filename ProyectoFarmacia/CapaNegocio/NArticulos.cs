@@ -26,7 +26,7 @@ namespace CapaNegocio
         public static string Editar(int Id_Articulo, string Nombre_Articulo, string Descripcion_Articulo, byte[] Imagen_Articulo)
         {
             DArticulos Objeto = new DArticulos();
-            Objeto.Id_Articulo = Id_Articulo;
+            Objeto.IdArticulo = Id_Articulo;
             Objeto.Nombre_Articulo = Nombre_Articulo;
             Objeto.Descripcion_Articulo = Descripcion_Articulo;
             Objeto.Imagen_Articulo = Imagen_Articulo;
@@ -38,7 +38,7 @@ namespace CapaNegocio
         public static string Eliminar(int Id_Articulo)
         {
             DArticulos Objeto = new DArticulos();
-            Objeto.Id_Articulo = Id_Articulo;
+            Objeto.IdArticulo = Id_Articulo;
             return Objeto.Eliminar(Objeto);
         }
 

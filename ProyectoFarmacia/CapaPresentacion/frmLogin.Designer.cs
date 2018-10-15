@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            this.btnSigForm = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
@@ -43,15 +42,6 @@
             this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnSigForm
-            // 
-            this.btnSigForm.Location = new System.Drawing.Point(288, 338);
-            this.btnSigForm.Name = "btnSigForm";
-            this.btnSigForm.Size = new System.Drawing.Size(57, 23);
-            this.btnSigForm.TabIndex = 21;
-            this.btnSigForm.Text = "sig form";
-            this.btnSigForm.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -179,7 +169,6 @@
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(379, 427);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnSigForm);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnLimpiar);
@@ -202,7 +191,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnSigForm;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnLimpiar;

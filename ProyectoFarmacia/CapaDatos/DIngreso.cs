@@ -17,14 +17,36 @@ namespace CapaDatos
         private DateTime _Fecha;
         private decimal _Precio_Total;
         private string _Estado;
-
-        public int Id_Ingreso { get => _Id_Ingreso; set => _Id_Ingreso = value; }
-        public string Id_Trabajador { get => _Id_Trabajador; set => _Id_Trabajador = value; }
-        public string Id_Proveedor { get => _Id_Proveedor; set => _Id_Proveedor = value; }
-        public DateTime Fecha { get => _Fecha; set => _Fecha = value; }
-        public decimal Precio_Total { get => _Precio_Total; set => _Precio_Total = value; }
-        public string Estado { get => _Estado; set => _Estado = value; }
-
+        public int Id_Ingreso
+        {
+            get { return _Id_Ingreso; }
+            set { _Id_Ingreso = value; }
+        }
+        public string Id_Trabajador
+        {
+            get { return _Id_Trabajador; }
+            set { _Id_Trabajador = value; }
+        }
+        public int Id_Proveedor
+        {
+            get { return _Id_Proveedor; }
+            set { _Id_Proveedor = value; }
+        }
+        public DateTime Fecha
+        {
+            get { return _Fecha; }
+            set { _Fecha = value; }
+        }
+        public decimal Precio_Total
+        {
+            get { return _Precio_Total; }
+            set { _Precio_Total = value; }
+        }
+        public string Estado
+        {
+            get { return _Estado; }
+            set { _Estado = value; }
+        }
 
         //constructor vacio
         public DIngreso()
@@ -36,7 +58,7 @@ namespace CapaDatos
         {
             this.Id_Ingreso = IdIngreso;
             this.Id_Trabajador = IdTrabajador;
-            this.Id_Proveedor = IdProveedor;
+            this.Id_Proveedor = Id_Proveedor;
             this.Fecha = Fecha;
             this.Precio_Total = Precio_Total;
             this.Estado = Estado;

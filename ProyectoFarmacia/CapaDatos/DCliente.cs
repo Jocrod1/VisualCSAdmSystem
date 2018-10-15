@@ -17,11 +17,31 @@ namespace CapaDatos
         private string _Telefono_Cliente;
         private string _TextoBuscar;
 
-        public string Id_Cliente { get => _Id_Cliente; set => _Id_Cliente = value; }
-        public string Nombre_Cliente { get => _Nombre_Cliente; set => _Nombre_Cliente = value; }
-        public string Direccion_Cliente { get => _Direccion_Cliente; set => _Direccion_Cliente = value; }
-        public string Telefono_Cliente { get => _Telefono_Cliente; set => _Telefono_Cliente = value; }
-        public string Texto_Buscar { get => _TextoBuscar; set => _TextoBuscar = value; }
+        public string Id_Cliente
+        {
+            get { return _Id_Cliente; }
+            set { _Id_Cliente = value; }
+        }
+        public string Nombre_Cliente
+        {
+            get { return _Nombre_Cliente; }
+            set { _Nombre_Cliente = value; }
+        }
+        public string Direccion_Cliente
+        {
+            get { return _Direccion_Cliente; }
+            set { _Direccion_Cliente = value; }
+        }
+        public string Telefono_Cliente
+        {
+            get { return _Telefono_Cliente; }
+            set { _Telefono_Cliente = value; }
+        }
+        public string TextoBuscar
+        {
+            get { return _TextoBuscar; }
+            set { _TextoBuscar = value; }
+        }
 
         //constructor vacio
         public DCliente()
@@ -35,7 +55,7 @@ namespace CapaDatos
             this.Nombre_Cliente = NombreCliente;
             this.Direccion_Cliente = DireccionCliente;
             this.Telefono_Cliente = TelefonoCliente;
-            this.Texto_Buscar = TextoBuscar;
+            this.TextoBuscar = TextoBuscar;
         }
 
         //Metodos
@@ -278,7 +298,7 @@ namespace CapaDatos
                 Parametro_Texto_Buscar.ParameterName = "@TextoBuscar";
                 Parametro_Texto_Buscar.SqlDbType = SqlDbType.VarChar;
                 Parametro_Texto_Buscar.Size = 50;
-                Parametro_Texto_Buscar.Value = Cliente.Texto_Buscar;
+                Parametro_Texto_Buscar.Value = Cliente.TextoBuscar;
                 SqlComando.Parameters.Add(Parametro_Texto_Buscar);
 
                 SqlDataAdapter SqlData = new SqlDataAdapter(SqlComando);

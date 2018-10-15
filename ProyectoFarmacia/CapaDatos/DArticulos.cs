@@ -19,25 +19,30 @@ namespace CapaDatos
 
         private string _TextoBuscar;
 
-        public int Id_Articulo {
-            get => _IdArticulo;
-            set => _IdArticulo = value;
+        public int IdArticulo
+        {
+          get { return _IdArticulo; }
+          set { _IdArticulo = value; }
         }
-        public string Nombre_Articulo {
-            get => _Nombre_Articulo;
-            set => _Nombre_Articulo = value;
+        public string Nombre_Articulo
+        {
+            get { return _Nombre_Articulo; }
+            set { _Nombre_Articulo = value; }
         }
-        public string Descripcion_Articulo {
-            get => _Descripcion_Articulo;
-            set => _Descripcion_Articulo = value;
+        public string Descripcion_Articulo
+        {
+            get { return _Descripcion_Articulo; }
+            set { _Descripcion_Articulo = value; }
         }
-        public byte[] Imagen_Articulo {
-            get => _Imagen_Articulo;
-            set => _Imagen_Articulo = value;
+        public byte[] Imagen_Articulo
+        {
+            get { return _Imagen_Articulo; }
+            set { _Imagen_Articulo = value; }
         }
-        public string TextoBuscar{
-            get => _TextoBuscar;
-            set => _TextoBuscar = value;
+        public string TextoBuscar
+        {
+            get { return _TextoBuscar; }
+            set { _TextoBuscar = value; }
         }
 
         //constructor vacio
@@ -48,7 +53,7 @@ namespace CapaDatos
 
         public DArticulos(int idcategoria, string nombrearticulo, string descripcionarticulo, byte[] imagenarticulo)
         {
-            this.Id_Articulo = idcategoria;
+            this.IdArticulo = idcategoria;
             this.Nombre_Articulo = nombrearticulo;
             this.Descripcion_Articulo = descripcionarticulo;
             this.Imagen_Articulo = imagenarticulo;
@@ -150,7 +155,7 @@ namespace CapaDatos
                 SqlParameter Parametro_Id_Articulo = new SqlParameter();
                 Parametro_Id_Articulo.ParameterName = "@IdArticulo";
                 Parametro_Id_Articulo.SqlDbType = SqlDbType.Int;
-                Parametro_Id_Articulo.Value= Articulos.Id_Articulo;
+                Parametro_Id_Articulo.Value = Articulos.IdArticulo;
                 SqlComando.Parameters.Add(Parametro_Id_Articulo);
 
                 //parametro nombre
@@ -223,7 +228,7 @@ namespace CapaDatos
                 SqlParameter Parametro_Id_Articulo = new SqlParameter();
                 Parametro_Id_Articulo.ParameterName = "@IdArticulo";
                 Parametro_Id_Articulo.SqlDbType = SqlDbType.Int;
-                Parametro_Id_Articulo.Value = Articulos.Id_Articulo;
+                Parametro_Id_Articulo.Value = Articulos.IdArticulo;
                 SqlComando.Parameters.Add(Parametro_Id_Articulo);
 
                 //ejecuta y lo envia en comentario

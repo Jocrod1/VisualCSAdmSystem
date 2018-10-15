@@ -67,7 +67,7 @@ namespace CapaPresentacion
             this.txtDireccionFiscal.ReadOnly = !valor;
             this.txtDescripcion.ReadOnly = !valor;
             this.btnCargar.Enabled = valor;
-            this.btnLimpiarCampos.Enabled = valor;
+            this.btnLimpiar.Enabled = valor;
         }
 
         //Habilitar los botones
@@ -113,7 +113,7 @@ namespace CapaPresentacion
         //Método BuscarRazonSocial
         private void BuscarRazonSocial()
         {
-            this.dataListado.DataSource = NProveedor.BuscarRazonSocial(this.txtBuscar.Text);
+            this.dataListado.DataSource = NProveedor.Buscar_Cedula(this.txtBuscar.Text);
             this.OcultarColumnas();
             lblTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
@@ -121,7 +121,7 @@ namespace CapaPresentacion
         ///BuscarNum_Documento
         private void BuscarNum_Documento()
         {
-            this.dataListado.DataSource = NProveedor.BuscarNum_Documento(this.txtBuscar.Text);
+            this.dataListado.DataSource = NProveedor.Buscar_Nombre(this.txtBuscar.Text);
             this.OcultarColumnas();
             lblTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
@@ -176,7 +176,7 @@ namespace CapaPresentacion
 
                             if (Rpta.Equals("OK"))
                             {
-                                this.MensajeOK("Se Eliminó Correctamente el registro");
+                                this.MensajeOk("Se Eliminó Correctamente el registro");
                             }
                             else
                             {
@@ -240,7 +240,7 @@ namespace CapaPresentacion
                     {
                         //Vamos a insertar un Proveedor
                         Rpta = NProveedor.Insertar(this.txtRazonSocial.Text.Trim().ToUpper(),
-                        txtDocumento.Text, txtDireccionFiscal.Text);
+                        txtDocumento.Text, txtDireccionFiscal.Text, txtRepresentanteLegal.Text);
 
                     }
                     else
@@ -258,11 +258,11 @@ namespace CapaPresentacion
                     {
                         if (this.IsNuevo)
                         {
-                            this.MensajeOK("Se insertó de forma correcta el registro");
+                            this.MensajeOk("Se insertó de forma correcta el registro");
                         }
                         else
                         {
-                            this.MensajeOK("Se actualizó de forma correcta el registro");
+                            this.MensajeOk("Se actualizó de forma correcta el registro");
                         }
 
                     }

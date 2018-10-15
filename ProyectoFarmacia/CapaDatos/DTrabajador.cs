@@ -19,14 +19,43 @@ namespace CapaDatos
         private string _Password_Trabajador;
         private string _Texto_Buscar;
 
-        public string Id_Trabajador { get => _Id_Trabajador; set => _Id_Trabajador = value; }
-        public string Nombre_Trabajador { get => _Nombre_Trabajador; set => _Nombre_Trabajador = value; }
-        public string Direccion_Trabajador { get => _Direccion_Trabajador; set => _Direccion_Trabajador = value; }
-        public string Sexo_Trabajador { get => _Sexo_Trabajador; set => _Sexo_Trabajador = value; }
-        public int Acceso_Trabajador { get => _Acceso_Trabajador; set => _Acceso_Trabajador = value; }
-        public string Password_Trabajador { get => _Password_Trabajador; set => _Password_Trabajador = value; }
-        public string Texto_Buscar { get => _Texto_Buscar; set => _Texto_Buscar = value; }
 
+        public string Id_Trabajador
+        {
+            get { return _Id_Trabajador; }
+            set { _Id_Trabajador = value; }
+        }
+        public string Nombre_Trabajador
+        {
+            get { return _Nombre_Trabajador; }
+            set { _Nombre_Trabajador = value; }
+        }
+        public string Direccion_Trabajador
+        {
+            get { return _Direccion_Trabajador; }
+            set { _Direccion_Trabajador = value; }
+        }
+        public string Sexo_Trabajador
+        {
+            get { return _Sexo_Trabajador; }
+            set { _Sexo_Trabajador = value; }
+        }
+        public int Acceso_Trabajador
+        {
+            get { return _Acceso_Trabajador; }
+            set { _Acceso_Trabajador = value; }
+        }
+        public string Password_Trabajador
+        {
+            get { return _Password_Trabajador; }
+            set { _Password_Trabajador = value; }
+        }
+        public string Texto_Buscar
+        {
+            get { return _Texto_Buscar; }
+            set { _Texto_Buscar = value; }
+        }
+        
 
 
         //constructor vacio

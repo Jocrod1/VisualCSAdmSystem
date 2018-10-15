@@ -18,14 +18,37 @@ namespace CapaDatos
         private decimal _Precio_Venta;
         private decimal _Descuento;
 
-        public int Id_Detalle_Venta { get => _Id_Detalle_Venta; set => _Id_Detalle_Venta = value; }
-        public int Id_Venta { get => _Id_Venta; set => _Id_Venta = value; }
-        public int Id_Detalle_Ingreso { get => _Id_Detalle_Ingreso; set => _Id_Detalle_Ingreso = value; }
-        public int Cantidad { get => _Cantidad; set => _Cantidad = value; }
-        public decimal Precio_Venta { get => _Precio_Venta; set => _Precio_Venta = value; }
-        public decimal Descuento { get => _Descuento; set => _Descuento = value; }
 
-
+        public int Id_Detalle_Venta
+        {
+          get { return _Id_Detalle_Venta; }
+          set { _Id_Detalle_Venta = value; }
+        }
+        public int Id_Venta
+        {
+          get { return _Id_Venta; }
+          set { _Id_Venta = value; }
+        }
+        public int Id_Detalle_Ingreso
+        {
+          get { return _Id_Detalle_Ingreso; }
+          set { _Id_Detalle_Ingreso = value; }
+        }
+        public int Cantidad
+        {
+          get { return _Cantidad; }
+          set { _Cantidad = value; }
+        }
+        public decimal Precio_Venta
+        {
+          get { return _Precio_Venta; }
+          set { _Precio_Venta = value; }
+        }
+        public decimal Descuento
+        {
+          get { return _Descuento; }
+          set { _Descuento = value; }
+        }
         //constructor vacio
         public DDetalle_Venta()
         {
@@ -117,4 +140,4 @@ namespace CapaDatos
         }
     }
 }
-}
+

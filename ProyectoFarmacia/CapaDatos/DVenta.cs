@@ -19,13 +19,43 @@ namespace CapaDatos
         private decimal _Impuesto;
         private decimal _Total;
 
-        public int Id_Venta { get => _Id_Venta; set => _Id_Venta = value; }
-        public string Id_Cliente { get => _Id_Cliente; set => _Id_Cliente = value; }
-        public string Id_Trabajador { get => _Id_Trabajador; set => _Id_Trabajador = value; }
-        public DateTime Fecha { get => _Fecha; set => _Fecha = value; }
-        public decimal SubTotal { get => _SubTotal; set => _SubTotal = value; }
-        public decimal Impuesto { get => _Impuesto; set => _Impuesto = value; }
-        public decimal Total { get => _Total; set => _Total = value; }
+
+        public int Id_Venta
+        {
+            get { return _Id_Venta; }
+            set { _Id_Venta = value; }
+        }
+        public string Id_Cliente
+        {
+            get { return _Id_Cliente; }
+            set { _Id_Cliente = value; }
+        }
+        public string Id_Trabajador
+        {
+            get { return _Id_Trabajador; }
+            set { _Id_Trabajador = value; }
+        }
+        public DateTime Fecha
+        {
+            get { return _Fecha; }
+            set { _Fecha = value; }
+        }
+        public decimal SubTotal
+        {
+            get { return _SubTotal; }
+            set { _SubTotal = value; }
+        }
+        public decimal Impuesto
+        {
+            get { return _Impuesto; }
+            set { _Impuesto = value; }
+        }
+        public decimal Total
+        {
+            get { return _Total; }
+            set { _Total = value; }
+        }
+
 
 
         //constructor vacio

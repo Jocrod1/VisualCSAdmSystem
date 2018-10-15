@@ -21,15 +21,51 @@ namespace CapaDatos
         private DateTime _Fecha_Produccion;
         private DateTime _Fecha_Vencimiento;
 
-        public int Id_Detalle_Ingreso { get => _Id_Detalle_Ingreso; set => _Id_Detalle_Ingreso = value; }
-        public int Id_Ingreso { get => _Id_Ingreso; set => _Id_Ingreso = value; }
-        public int Id_Articulo { get => _Id_Articulo; set => _Id_Articulo = value; }
-        public decimal Precio_Compra { get => _Precio_Compra; set => _Precio_Compra = value; }
-        public decimal Precio_Venta { get => _Precio_Venta; set => _Precio_Venta = value; }
-        public int Stock_Inicial { get => _Stock_Inicial; set => _Stock_Inicial = value; }
-        public int Stock_Actual { get => _Stock_Actual; set => _Stock_Actual = value; }
-        public DateTime Fecha_Produccion { get => _Fecha_Produccion; set => _Fecha_Produccion = value; }
-        public DateTime Fecha_Vencimiento { get => _Fecha_Vencimiento; set => _Fecha_Vencimiento = value; }
+        public int Id_Detalle_Ingreso
+        {
+            get { return _Id_Detalle_Ingreso; }
+            set { _Id_Detalle_Ingreso = value; }
+        }
+        public int Id_Ingreso
+        {
+            get { return _Id_Ingreso; }
+            set { _Id_Ingreso = value; }
+        }
+        public int Id_Articulo
+        {
+            get { return _Id_Articulo; }
+            set { _Id_Articulo = value; }
+        }
+        public decimal Precio_Compra
+        {
+            get { return _Precio_Compra; }
+            set { _Precio_Compra = value; }
+        }
+        public decimal Precio_Venta
+        {
+            get { return _Precio_Venta; }
+            set { _Precio_Venta = value; }
+        }
+        public int Stock_Inicial
+        {
+            get { return _Stock_Inicial; }
+            set { _Stock_Inicial = value; }
+        }
+        public int Stock_Actual
+        {
+            get { return _Stock_Actual; }
+            set { _Stock_Actual = value; }
+        }
+        public DateTime Fecha_Produccion
+        {
+            get { return _Fecha_Produccion; }
+            set { _Fecha_Produccion = value; }
+        }
+        public DateTime Fecha_Vencimiento
+        {
+            get { return _Fecha_Vencimiento; }
+            set { _Fecha_Vencimiento = value; }
+        }
 
         //constructor vacio
         public DDetalle_Ingreso()

@@ -18,13 +18,37 @@ namespace CapaDatos
         private string _RepresentanteLegal_Proveedor;
         private string _Texto_Buscar;
 
-        public int Id_Proveedor { get => _Id_Proveedor; set => _Id_Proveedor = value; }
-        public string Nombre_Proveedor { get => _Nombre_Proveedor; set => _Nombre_Proveedor = value; }
-        public string DireccionFiscal_Proveedor { get => _DireccionFiscal_Proveedor; set => _DireccionFiscal_Proveedor = value; }
-        public string Documento_Proveedor { get => _Documento_Proveedor; set => _Documento_Proveedor = value; }
-        public string RepresentanteLegal_Proveedor { get => _RepresentanteLegal_Proveedor; set => _RepresentanteLegal_Proveedor = value; }
-        public string Texto_Buscar { get => _Texto_Buscar; set => _Texto_Buscar = value; }
 
+        public int Id_Proveedor
+        {
+            get { return _Id_Proveedor; }
+            set { _Id_Proveedor = value; }
+        }
+        public string Nombre_Proveedor
+        {
+            get { return _Nombre_Proveedor; }
+            set { _Nombre_Proveedor = value; }
+        }
+        public string DireccionFiscal_Proveedor
+        {
+            get { return _DireccionFiscal_Proveedor; }
+            set { _DireccionFiscal_Proveedor = value; }
+        }
+        public string Documento_Proveedor
+        {
+            get { return _Documento_Proveedor; }
+            set { _Documento_Proveedor = value; }
+        }
+        public string RepresentanteLegal_Proveedor
+        {
+            get { return _RepresentanteLegal_Proveedor; }
+            set { _RepresentanteLegal_Proveedor = value; }
+        }
+        public string Texto_Buscar
+        {
+            get { return _Texto_Buscar; }
+            set { _Texto_Buscar = value; }
+        }
 
         //constructor vacio
         public DProveedor()

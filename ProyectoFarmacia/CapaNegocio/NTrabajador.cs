@@ -12,7 +12,7 @@ namespace CapaNegocio
     public class NTrabajador
     {
         //metodo insertar
-        public static string Insertar(string Id_Trabajador, string Nombre_Trabajador, string Direccion_Trabajador, string Sexo_Trabajador, int Acceso_Trabajador, string Password_Trabajador, string Texto_Buscar)
+        public static string Insertar(string Id_Trabajador, string Nombre_Trabajador, string Direccion_Trabajador, string Sexo_Trabajador, int Acceso_Trabajador, string Password_Trabajador)
         {
             DTrabajador Objeto = new DTrabajador();
             Objeto.Id_Trabajador = Id_Trabajador;
@@ -21,13 +21,12 @@ namespace CapaNegocio
             Objeto.Sexo_Trabajador = Sexo_Trabajador;
             Objeto.Acceso_Trabajador = Acceso_Trabajador;
             Objeto.Password_Trabajador = Password_Trabajador;
-            Objeto.Texto_Buscar = Texto_Buscar;
             return Objeto.Insertar(Objeto);
 
         }
 
         //Metodo Editar
-        public static string Editar(string Id_Trabajador, string Nombre_Trabajador, string Direccion_Trabajador, string Sexo_Trabajador, int Acceso_Trabajador, string Password_Trabajador, string Texto_Buscar)
+        public static string Editar(string Id_Trabajador, string Nombre_Trabajador, string Direccion_Trabajador, string Sexo_Trabajador, int Acceso_Trabajador, string Password_Trabajador)
         {
             DTrabajador Objeto = new DTrabajador();
             Objeto.Id_Trabajador = Id_Trabajador;
@@ -36,7 +35,6 @@ namespace CapaNegocio
             Objeto.Sexo_Trabajador = Sexo_Trabajador;
             Objeto.Acceso_Trabajador = Acceso_Trabajador;
             Objeto.Password_Trabajador = Password_Trabajador;
-            Objeto.Texto_Buscar = Texto_Buscar;
             return Objeto.Editar(Objeto);
 
         }

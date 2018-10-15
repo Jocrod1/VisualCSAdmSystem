@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using CapaNegocio;
+
 namespace CapaPresentacion
 {
     public partial class frmCliente : Form
@@ -143,7 +145,7 @@ namespace CapaPresentacion
                         if (Convert.ToBoolean(row.Cells[0].Value))
                         {
                             Codigo = Convert.ToString(row.Cells[1].Value);
-                            Rpta = NCliente.Eliminar(Convert.ToInt32(Codigo));
+                            Rpta = NCliente.Eliminar(Codigo);
 
                             if (Rpta.Equals("OK"))
                             {
@@ -226,17 +228,17 @@ namespace CapaPresentacion
                 {
                     if (this.IsNuevo)
                     {
-                        rpta = NCliente.Insertar(this.txtNombre.Text.Trim().ToUpper(), 
-                           // txtNum_Documento.Text, 
-                           txtDireccion.Text, txtTelefono.Text,);
+                        rpta = NCliente.Insertar(this.txtIdcliente.Text, this.txtNombre.Text.Trim().ToUpper(),
+                            // txtNum_Documento.Text, 
+                           txtDireccion.Text, txtTelefono.Text);
 
                     }
                     else
                     {
-                        rpta = NCliente.Editar(Convert.ToInt32(this.txtIdcliente.Text),
+                        rpta = NCliente.Editar(this.txtIdcliente.Text,
                             this.txtNombre.Text.Trim().ToUpper(),
                             //txtNum_Documento.Text,
-                            txtDireccion.Text, txtTelefono.Text,);
+                            txtDireccion.Text, txtTelefono.Text);
                     }
 
                     if (rpta.Equals("OK"))

@@ -9,7 +9,7 @@ using CapaDatos;
 
 namespace CapaNegocio
 {
-    class NCliente
+    public class NCliente
     {
         public static string Insertar(string Id_Cliente, string Nombre_Cliente, string Direccion_Cliente, string Telefono_Cliente)
         {
@@ -52,7 +52,7 @@ namespace CapaNegocio
         public static DataTable Buscar(string TextoBuscar)
         {
             DCliente Objeto = new DCliente();
-            Objeto.Texto_Buscar = TextoBuscar;
+            Objeto.TextoBuscar = TextoBuscar;
             return Objeto.Buscar_Cedula(Objeto);
         }
 

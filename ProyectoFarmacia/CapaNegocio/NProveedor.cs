@@ -13,20 +13,19 @@ namespace CapaNegocio
     {
 
         //metodo insertar
-        public static string Insertar(string Nombre_Proveedor, string DireccionFiscal_Proveedor, string Documento_Proveedor, string RepresentanteLegal_Proveedor, string Texto_Buscar)
+        public static string Insertar(string Nombre_Proveedor, string DireccionFiscal_Proveedor, string Documento_Proveedor, string RepresentanteLegal_Proveedor)
         {
             DProveedor Objeto = new DProveedor();
             Objeto.Nombre_Proveedor = Nombre_Proveedor;
             Objeto.DireccionFiscal_Proveedor = DireccionFiscal_Proveedor;
             Objeto.Documento_Proveedor = Documento_Proveedor;
             Objeto.RepresentanteLegal_Proveedor = RepresentanteLegal_Proveedor;
-            Objeto.Texto_Buscar = Texto_Buscar;
             return Objeto.Insertar(Objeto);
 
         }
 
         //Metodo Editar
-        public static string Editar(int Id_Proveedor, string Nombre_Proveedor, string DireccionFiscal_Proveedor, string Documento_Proveedor, string RepresentanteLegal_Proveedor, string Texto_Buscar)
+        public static string Editar(int Id_Proveedor, string Nombre_Proveedor, string DireccionFiscal_Proveedor, string Documento_Proveedor, string RepresentanteLegal_Proveedor)
         {
             DProveedor Objeto = new DProveedor();
             Objeto.Id_Proveedor = Id_Proveedor;
@@ -34,7 +33,6 @@ namespace CapaNegocio
             Objeto.DireccionFiscal_Proveedor = DireccionFiscal_Proveedor;
             Objeto.Documento_Proveedor = Documento_Proveedor;
             Objeto.RepresentanteLegal_Proveedor = RepresentanteLegal_Proveedor;
-            Objeto.Texto_Buscar = Texto_Buscar;
             return Objeto.Editar(Objeto);
 
         }
