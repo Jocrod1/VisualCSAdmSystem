@@ -52,14 +52,15 @@ namespace CapaPresentacion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (cbBuscar.Text.Equals("Ci"))
+            if (cbBuscar.SelectedIndex == 0)
             {
                 this.BuscarCedula();
             }
-            else if (cbBuscar.Text.Equals("Nombre"))
+            else if (cbBuscar.SelectedIndex == 1)
             {
                 this.BuscarNombre();
             }
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -72,15 +73,15 @@ namespace CapaPresentacion
 
                 if (Opcion == DialogResult.OK)
                 {
-                    string Codigo;
+                    string ID;
                     string Rpta = "";
 
                     foreach (DataGridViewRow row in dataListado.Rows)
                     {
                         if (Convert.ToBoolean(row.Cells[0].Value))
                         {
-                            Codigo = Convert.ToString(row.Cells[1].Value);
-                            Rpta = NCliente.Eliminar(Convert.ToInt32(Codigo));
+                            ID = Convert.ToString(row.Cells[1].Value);
+                            Rpta = NCliente.Eliminar(ID);   // hay que cambiar Codigo por Idtrabajador... supongo 
 
                             if (Rpta.Equals("OK"))
                             {
@@ -195,6 +196,10 @@ namespace CapaPresentacion
 
 
 
+        private void cbBuscar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
 
 
 
@@ -210,10 +215,6 @@ namespace CapaPresentacion
             //frm.ShowDialog();
         }
 
-        private void cbBuscar_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void chkEliminar_CheckedChanged(object sender, EventArgs e)
         {
@@ -272,22 +273,23 @@ namespace CapaPresentacion
                     {
                         //Vamos a insertar un Trabajador 
 
+                        //parametros en NTrabajador
                         //Insertar(string Id_Trabajador, string Nombre_Trabajador, 
                         //string Direccion_Trabajador, string Sexo_Trabajador, 
                         //int Acceso_Trabajador, string Password_Trabajador, string Texto_Buscar)
-                        Rpta = NTrabajador.Insertar( this.txtIdtrabajador.Text.Trim().ToUpper() , this.txtNombre.Text.Trim().ToUpper(),
+
+                        Rpta = NTrabajador.Insertar(this.txtIdtrabajador.Text.Trim().ToUpper() , this.txtNombre.Text.Trim().ToUpper(),
                         txtDireccion.Text, cbSexo.Text,
-                        cbAcceso.Text, txtPassword.Text, txtBuscar.Text);
+                        cbAcceso.SelectedIndex, txtPassword.Text);
 
                     }
                     else
                     {
                         //Vamos a modificar un Trabajador
-                        Rpta = NTrabajador.Editar(Convert.ToInt32(this.txtIdtrabajador.Text), this.txtNombre.Text.Trim().ToUpper(),
-                        this.txtApellidos.Text.Trim().ToUpper(), cbSexo.Text,
-                        dtFecha_Nacimiento.Value,
-                        txtNum_Documento.Text, txtDireccion.Text,
-                        txtTelefono.Text, txtEmail.Text, cbAcceso.Text, txtUsuario.Text, txtPassword.Text);
+                        Rpta = NTrabajador.Editar(this.txtIdtrabajador.Text.Trim().ToUpper(), this.txtNombre.Text.Trim().ToUpper(),
+                        cbSexo.Text,
+                        txtDireccion.Text,
+                        cbAcceso.SelectedIndex, txtPassword.Text);
                     }
                     //Si la respuesta fue OK, fue porque se modifico 
                     //o inserto el Cliente
@@ -325,6 +327,30 @@ namespace CapaPresentacion
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            //Si no ha seleccionado un producto no puede modificar
+            if (!this.txtIdtrabajador.Text.Equals(""))
+            {
+                this.IsEditar = true;
+                this.Botones();
+            }
+            else
+            {
+                this.MensajeError("Debe de buscar un registro para Modificar");
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.IsNuevo = false;
+            this.IsEditar = false;
+            this.Botones();
+            this.Limpiar();
+            this.txtIdtrabajador.Text = string.Empty;
+        }
+
 
 
 

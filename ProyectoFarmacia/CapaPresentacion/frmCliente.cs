@@ -129,14 +129,15 @@ namespace CapaPresentacion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (cbBuscar.Text.Equals("Ci"))
+            if (cbBuscar.SelectedIndex == 0)
             {
                 this.BuscarCedula();
             }
-            else if (cbBuscar.Text.Equals("Nombre"))
+            else if (cbBuscar.SelectedIndex == 1)
             {
                 this.BuscarNombre();
             }
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -227,12 +228,12 @@ namespace CapaPresentacion
             {
                 string rpta = "";
                 if (this.txtNombre.Text == string.Empty 
-                    //|| this.txtNum_Documento.Text == string.Empty
+                    || this.txtIdcliente.Text == string.Empty
                     || this.txtDireccion.Text == string.Empty)
                 {
                     MensajeError("Falta ingresar algunos datos, serán remarcados");
                     errorIcono.SetError(txtNombre, "Ingrese un Valor");
-                    //errorIcono.SetError(txtNum_Documento, "Ingrese un Valor");
+                    errorIcono.SetError(txtIdcliente, "Ingrese un Valor");
                     errorIcono.SetError(txtDireccion, "Ingrese un Valor");
                 }
                 else
@@ -240,7 +241,6 @@ namespace CapaPresentacion
                     if (this.IsNuevo)
                     {
                         rpta = NCliente.Insertar(this.txtIdcliente.Text, this.txtNombre.Text.Trim().ToUpper(),
-                            // txtNum_Documento.Text, 
                            txtDireccion.Text, txtTelefono.Text);
 
                     }
@@ -248,7 +248,6 @@ namespace CapaPresentacion
                     {
                         rpta = NCliente.Editar(this.txtIdcliente.Text,
                             this.txtNombre.Text.Trim().ToUpper(),
-                            //txtNum_Documento.Text,
                             txtDireccion.Text, txtTelefono.Text);
                     }
 
@@ -317,6 +316,11 @@ namespace CapaPresentacion
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbBuscar_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
