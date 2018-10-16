@@ -116,7 +116,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(697, 88);
+            this.lblTotal.Location = new System.Drawing.Point(31, 346);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(35, 13);
             this.lblTotal.TabIndex = 38;
@@ -138,6 +138,7 @@
             this.dataListado.AllowUserToAddRows = false;
             this.dataListado.AllowUserToDeleteRows = false;
             this.dataListado.AllowUserToOrderColumns = true;
+            this.dataListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eliminar});
@@ -156,6 +157,7 @@
             this.Eliminar.HeaderText = "Eliminar";
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.ReadOnly = true;
+            this.Eliminar.Width = 49;
             // 
             // txtBuscar
             // 

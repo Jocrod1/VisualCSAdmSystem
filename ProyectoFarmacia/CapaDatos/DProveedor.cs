@@ -348,7 +348,7 @@ namespace CapaDatos
                 SqlConectar.ConnectionString = Conexion.CadenaConexion;
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "Buscar_Proveedor_Documento";
+                SqlComando.CommandText = "Buscar_Proveedor_Nombre";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametro buscar texto

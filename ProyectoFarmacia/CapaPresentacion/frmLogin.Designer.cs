@@ -76,6 +76,7 @@
             this.btnLimpiar.TabIndex = 17;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnIniciarSesion
             // 
@@ -95,8 +96,10 @@
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtPassword.Location = new System.Drawing.Point(167, 253);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(123, 20);
             this.txtPassword.TabIndex = 15;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtContrasena_KeyDown);
             // 
             // txtUsername
             // 
@@ -105,6 +108,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(123, 20);
             this.txtUsername.TabIndex = 14;
+            this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyDown);
             // 
             // label3
             // 
@@ -183,6 +187,7 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Farmacia Crystal Blue";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

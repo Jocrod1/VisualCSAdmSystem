@@ -85,7 +85,7 @@ namespace CapaPresentacion
 
                             if (Rpta.Equals("OK"))
                             {
-                                this.MensajeOk("Se Eliminó Correctamente el registro");
+                                this.MensajeOK("Se Eliminó Correctamente el registro");
                             }
                             else
                             {

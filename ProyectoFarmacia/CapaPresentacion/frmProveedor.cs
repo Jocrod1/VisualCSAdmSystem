@@ -96,9 +96,9 @@ namespace CapaPresentacion
         private void OcultarColumnas()
         {
             this.dataListado.Columns[0].Visible = false;
-            this.dataListado.Columns[1].Visible = false;
-            this.dataListado.Columns[6].Visible = false;
-            this.dataListado.Columns[8].Visible = false;
+            //this.dataListado.Columns[1].Visible = false;
+            //this.dataListado.Columns[6].Visible = false;
+            //this.dataListado.Columns[8].Visible = false;
         }
 
         //Método Mostrar
@@ -350,6 +350,8 @@ namespace CapaPresentacion
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
+
+                this.BuscarNombre();
 
         }
 
