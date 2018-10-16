@@ -101,13 +101,13 @@
             // 
             this.cbBuscar.FormattingEnabled = true;
             this.cbBuscar.Items.AddRange(new object[] {
-            "Documento",
+            "Ci",
             "Nombre"});
             this.cbBuscar.Location = new System.Drawing.Point(34, 51);
             this.cbBuscar.Name = "cbBuscar";
             this.cbBuscar.Size = new System.Drawing.Size(121, 21);
             this.cbBuscar.TabIndex = 40;
-            this.cbBuscar.Text = "Documento";
+            this.cbBuscar.Text = "Ci";
             // 
             // lblTotal
             // 
@@ -438,6 +438,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(804, 425);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

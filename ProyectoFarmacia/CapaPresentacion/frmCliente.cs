@@ -106,26 +106,37 @@ namespace CapaPresentacion
         }
 
 
-        ////Método BuscarNum_Documento
-        //private void BuscarNum_Documento()
-        //{
-        //    this.dataListado.DataSource = NCliente.BuscarNum_Documento(this.txtBuscar.Text);
-        //    this.OcultarColumnas();
-        //    lblTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
-        //}
+
+
+
+
+        private void BuscarNombre()
+        {
+            this.dataListado.DataSource = NTrabajador.Buscar_Nombre(this.txtBuscar.Text);
+            this.OcultarColumnas();
+            lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
+        }
+
+        private void BuscarCedula()
+        {
+            this.dataListado.DataSource = NTrabajador.Buscar_Cedula(this.txtBuscar.Text);
+            this.OcultarColumnas();
+            lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
+        }
+
+
+
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            //esto evaluara si las opciones son apellido o documento
-            //como no tenemos ninguna de las dos, lo dejare comentado aqui
-            //if (cbBuscar.Text.Equals("Apellidos"))
-            //{
-            //    this.BuscarApellidos();
-            //}
-            //else if (cbBuscar.Text.Equals("Documento"))
-            //{
-            //    this.BuscarNum_Documento();
-            //}
+            if (cbBuscar.Text.Equals("Ci"))
+            {
+                this.BuscarCedula();
+            }
+            else if (cbBuscar.Text.Equals("Nombre"))
+            {
+                this.BuscarNombre();
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
