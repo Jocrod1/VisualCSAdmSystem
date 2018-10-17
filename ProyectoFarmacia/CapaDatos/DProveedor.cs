@@ -16,6 +16,8 @@ namespace CapaDatos
         private string _DireccionFiscal_Proveedor;
         private string _Documento_Proveedor;
         private string _RepresentanteLegal_Proveedor;
+        private string _Correo_Proveedor;
+        private string _Telefono_Proveedor;
         private string _Texto_Buscar;
 
 
@@ -44,11 +46,17 @@ namespace CapaDatos
             get { return _RepresentanteLegal_Proveedor; }
             set { _RepresentanteLegal_Proveedor = value; }
         }
+
+        public string Correo_Proveedor { get => _Correo_Proveedor; set => _Correo_Proveedor = value; }
+        public string Telefono_Proveedor { get => _Telefono_Proveedor; set => _Telefono_Proveedor = value; }
+
         public string Texto_Buscar
         {
             get { return _Texto_Buscar; }
             set { _Texto_Buscar = value; }
         }
+
+
 
         //constructor vacio
         public DProveedor()
@@ -57,13 +65,15 @@ namespace CapaDatos
         }
 
 
-        public DProveedor(int IdProveedor, string NombreProveedor, string DireccionFiscalProveedor, string DocumentoProveedor, string RepresentanteLegalProveedor, string TextoBuscar)
+        public DProveedor(int IdProveedor, string NombreProveedor, string DireccionFiscalProveedor, string DocumentoProveedor, string RepresentanteLegalProveedor,string CorreoProveedor,string TelefonoProveedor, string TextoBuscar)
         {
             this.Id_Proveedor = IdProveedor;
             this.Nombre_Proveedor = NombreProveedor;
             this.DireccionFiscal_Proveedor = DireccionFiscalProveedor;
             this.Documento_Proveedor = DocumentoProveedor;
             this.RepresentanteLegal_Proveedor = RepresentanteLegalProveedor;
+            this.Correo_Proveedor = CorreoProveedor;
+            this.Telefono_Proveedor = TelefonoProveedor;
             this.Texto_Buscar = TextoBuscar;
         }
 
@@ -127,6 +137,22 @@ namespace CapaDatos
                 Parametro_RepresentanteLegal_Proveedor.Size = 150;
                 Parametro_RepresentanteLegal_Proveedor.Value = Proveedor.RepresentanteLegal_Proveedor;
                 SqlComando.Parameters.Add(Parametro_RepresentanteLegal_Proveedor);
+
+                //parametro correo
+                SqlParameter Parametro_Correo_Proveedor = new SqlParameter();
+                Parametro_Correo_Proveedor.ParameterName = "@CorreoProveedor";
+                Parametro_Correo_Proveedor.SqlDbType = SqlDbType.VarChar;
+                Parametro_Correo_Proveedor.Size = 50;
+                Parametro_Correo_Proveedor.Value = Proveedor.Correo_Proveedor;
+                SqlComando.Parameters.Add(Parametro_Correo_Proveedor);
+
+                //parametro telefono
+                SqlParameter Parametro_Telefono_Proveedor = new SqlParameter();
+                Parametro_Telefono_Proveedor.ParameterName = "@TelefonoProveedor";
+                Parametro_Telefono_Proveedor.SqlDbType = SqlDbType.VarChar;
+                Parametro_Telefono_Proveedor.Size = 20;
+                Parametro_Telefono_Proveedor.Value = Proveedor.Telefono_Proveedor;
+                SqlComando.Parameters.Add(Parametro_Telefono_Proveedor);
 
                 //ejecuta y lo envia en comentario
                 respuesta = SqlComando.ExecuteNonQuery() == 1 ? "OK" : "No se ingreso el Registro del Proveedor";
@@ -207,6 +233,22 @@ namespace CapaDatos
                 Parametro_RepresentanteLegal_Proveedor.Size = 150;
                 Parametro_RepresentanteLegal_Proveedor.Value = Proveedor.RepresentanteLegal_Proveedor;
                 SqlComando.Parameters.Add(Parametro_RepresentanteLegal_Proveedor);
+
+                //parametro correo
+                SqlParameter Parametro_Correo_Proveedor = new SqlParameter();
+                Parametro_Correo_Proveedor.ParameterName = "@CorreoProveedor";
+                Parametro_Correo_Proveedor.SqlDbType = SqlDbType.VarChar;
+                Parametro_Correo_Proveedor.Size = 50;
+                Parametro_Correo_Proveedor.Value = Proveedor.Correo_Proveedor;
+                SqlComando.Parameters.Add(Parametro_Correo_Proveedor);
+
+                //parametro telefono
+                SqlParameter Parametro_Telefono_Proveedor = new SqlParameter();
+                Parametro_Telefono_Proveedor.ParameterName = "@TelefonoProveedor";
+                Parametro_Telefono_Proveedor.SqlDbType = SqlDbType.VarChar;
+                Parametro_Telefono_Proveedor.Size = 20;
+                Parametro_Telefono_Proveedor.Value = Proveedor.Telefono_Proveedor;
+                SqlComando.Parameters.Add(Parametro_Telefono_Proveedor);
 
                 //ejecuta y lo envia en comentario
                 respuesta = SqlComando.ExecuteNonQuery() == 1 ? "OK" : "No se edito el registro de Proveedor";

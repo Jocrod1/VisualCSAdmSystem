@@ -13,19 +13,21 @@ namespace CapaNegocio
     {
 
         //metodo insertar
-        public static string Insertar(string Nombre_Proveedor, string DireccionFiscal_Proveedor, string Documento_Proveedor, string RepresentanteLegal_Proveedor)
+        public static string Insertar(string Nombre_Proveedor, string DireccionFiscal_Proveedor, string Documento_Proveedor, string RepresentanteLegal_Proveedor, string Correo_Proveedor, string Telefono_Proveedor)
         {
             DProveedor Objeto = new DProveedor();
             Objeto.Nombre_Proveedor = Nombre_Proveedor;
             Objeto.DireccionFiscal_Proveedor = DireccionFiscal_Proveedor;
             Objeto.Documento_Proveedor = Documento_Proveedor;
             Objeto.RepresentanteLegal_Proveedor = RepresentanteLegal_Proveedor;
+            Objeto.Correo_Proveedor = Correo_Proveedor;
+            Objeto.Telefono_Proveedor = Telefono_Proveedor;
             return Objeto.Insertar(Objeto);
 
         }
 
         //Metodo Editar
-        public static string Editar(int Id_Proveedor, string Nombre_Proveedor, string DireccionFiscal_Proveedor, string Documento_Proveedor, string RepresentanteLegal_Proveedor)
+        public static string Editar(int Id_Proveedor, string Nombre_Proveedor, string DireccionFiscal_Proveedor, string Documento_Proveedor, string RepresentanteLegal_Proveedor, string Correo_Proveedor, string Telefono_Proveedor)
         {
             DProveedor Objeto = new DProveedor();
             Objeto.Id_Proveedor = Id_Proveedor;
@@ -33,6 +35,8 @@ namespace CapaNegocio
             Objeto.DireccionFiscal_Proveedor = DireccionFiscal_Proveedor;
             Objeto.Documento_Proveedor = Documento_Proveedor;
             Objeto.RepresentanteLegal_Proveedor = RepresentanteLegal_Proveedor;
+            Objeto.Correo_Proveedor = Correo_Proveedor;
+            Objeto.Telefono_Proveedor = Telefono_Proveedor;
             return Objeto.Editar(Objeto);
 
         }

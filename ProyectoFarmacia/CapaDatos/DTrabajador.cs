@@ -17,6 +17,8 @@ namespace CapaDatos
         private string _Sexo_Trabajador;
         private int _Acceso_Trabajador;
         private string _Password_Trabajador;
+        private string _Correo_Trabajador;
+        private string _Telefono_Trabajador;
         private string _Texto_Buscar;
 
 
@@ -50,12 +52,18 @@ namespace CapaDatos
             get { return _Password_Trabajador; }
             set { _Password_Trabajador = value; }
         }
+
+        public string Correo_Trabajador { get => _Correo_Trabajador; set => _Correo_Trabajador = value; }
+        public string Telefono_Trabajador { get => _Telefono_Trabajador; set => _Telefono_Trabajador = value; }
+
         public string Texto_Buscar
         {
             get { return _Texto_Buscar; }
             set { _Texto_Buscar = value; }
         }
-        
+
+
+
 
 
         //constructor vacio
@@ -63,7 +71,7 @@ namespace CapaDatos
         {
         }
 
-        public DTrabajador(string IdTrabajador, string NombreTrabajador, string DireccionTrabajador, string SexoTrabajador, int AccesoTrabajador, string PasswordTrabajador, string TextoBuscar)
+        public DTrabajador(string IdTrabajador, string NombreTrabajador, string DireccionTrabajador, string SexoTrabajador, int AccesoTrabajador, string PasswordTrabajador,string CorreoTrabajador, string TelefonoTrabajador, string TextoBuscar)
         {
             this.Id_Trabajador = IdTrabajador;
             this.Nombre_Trabajador = NombreTrabajador;
@@ -71,6 +79,8 @@ namespace CapaDatos
             this.Sexo_Trabajador = SexoTrabajador;
             this.Acceso_Trabajador = AccesoTrabajador;
             this.Password_Trabajador = PasswordTrabajador;
+            this.Correo_Trabajador = CorreoTrabajador;
+            this.Telefono_Trabajador = TelefonoTrabajador;
             this.Texto_Buscar = TextoBuscar;
         }
 
@@ -142,6 +152,22 @@ namespace CapaDatos
                 Parametro_Password_Trabajador.Size = 50;
                 Parametro_Password_Trabajador.Value = Trabajador.Password_Trabajador;
                 SqlComando.Parameters.Add(Parametro_Password_Trabajador);
+
+                //parametro correo
+                SqlParameter Parametro_Correo_Proveedor = new SqlParameter();
+                Parametro_Correo_Proveedor.ParameterName = "@CorreoTrabajador";
+                Parametro_Correo_Proveedor.SqlDbType = SqlDbType.VarChar;
+                Parametro_Correo_Proveedor.Size = 50;
+                Parametro_Correo_Proveedor.Value = Trabajador.Correo_Trabajador;
+                SqlComando.Parameters.Add(Parametro_Correo_Proveedor);
+
+                //parametro telefono
+                SqlParameter Parametro_Telefono_Proveedor = new SqlParameter();
+                Parametro_Telefono_Proveedor.ParameterName = "@TelefonoTrabajador";
+                Parametro_Telefono_Proveedor.SqlDbType = SqlDbType.VarChar;
+                Parametro_Telefono_Proveedor.Size = 20;
+                Parametro_Telefono_Proveedor.Value = Trabajador.Telefono_Trabajador;
+                SqlComando.Parameters.Add(Parametro_Telefono_Proveedor);
 
                 //ejecuta y lo envia en comentario
                 respuesta = SqlComando.ExecuteNonQuery() == 1 ? "OK" : "No se ingreso el Registro del Trabajador";
@@ -230,6 +256,22 @@ namespace CapaDatos
                 Parametro_Password_Trabajador.Size = 50;
                 Parametro_Password_Trabajador.Value = Trabajador.Password_Trabajador;
                 SqlComando.Parameters.Add(Parametro_Password_Trabajador);
+
+                //parametro correo
+                SqlParameter Parametro_Correo_Proveedor = new SqlParameter();
+                Parametro_Correo_Proveedor.ParameterName = "@CorreoTrabajador";
+                Parametro_Correo_Proveedor.SqlDbType = SqlDbType.VarChar;
+                Parametro_Correo_Proveedor.Size = 50;
+                Parametro_Correo_Proveedor.Value = Trabajador.Correo_Trabajador;
+                SqlComando.Parameters.Add(Parametro_Correo_Proveedor);
+
+                //parametro telefono
+                SqlParameter Parametro_Telefono_Proveedor = new SqlParameter();
+                Parametro_Telefono_Proveedor.ParameterName = "@TelefonoTrabajador";
+                Parametro_Telefono_Proveedor.SqlDbType = SqlDbType.VarChar;
+                Parametro_Telefono_Proveedor.Size = 20;
+                Parametro_Telefono_Proveedor.Value = Trabajador.Telefono_Trabajador;
+                SqlComando.Parameters.Add(Parametro_Telefono_Proveedor);
 
                 //ejecuta y lo envia en comentario
                 respuesta = SqlComando.ExecuteNonQuery() == 1 ? "OK" : "No se edito el registro de trabajador";
