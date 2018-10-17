@@ -45,7 +45,7 @@ namespace CapaPresentacion
         //Limpiar todos los controles del formulario
         private void Limpiar()
         {
-            this.txtRazonSocial.Text = string.Empty;
+            this.txtNombre.Text = string.Empty;
             this.txtDescripcion.Text = string.Empty;
             this.txtIdproveedor.Text = string.Empty;
             this.txtDocumento.Text = string.Empty;
@@ -61,7 +61,7 @@ namespace CapaPresentacion
         private void Habilitar(bool valor)
         {
             this.txtIdproveedor.ReadOnly = !valor;
-            this.txtRazonSocial.ReadOnly = !valor;
+            this.txtNombre.ReadOnly = !valor;
             this.txtDocumento.ReadOnly = !valor;
             this.txtRepresentanteLegal.ReadOnly = !valor;
             this.txtDireccionFiscal.ReadOnly = !valor;
@@ -96,7 +96,7 @@ namespace CapaPresentacion
         private void OcultarColumnas()
         {
             this.dataListado.Columns[0].Visible = false;
-            //this.dataListado.Columns[1].Visible = false;
+            this.dataListado.Columns[1].Visible = false;
             //this.dataListado.Columns[6].Visible = false;
             //this.dataListado.Columns[8].Visible = false;
         }
@@ -110,7 +110,7 @@ namespace CapaPresentacion
             lblTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 
-        //Método BuscarRazonSocial
+        //Método BuscarRepresentanteLegal
         private void BuscarRepresentanteLegal()
         {
             this.dataListado.DataSource = NProveedor.Buscar_Representante_Legal(this.txtBuscar.Text);
@@ -215,7 +215,8 @@ namespace CapaPresentacion
             this.Botones();
             this.Limpiar();
             this.Habilitar(true);
-            this.txtRazonSocial.Focus();
+            this.txtIdproveedor.ReadOnly = true;
+            this.txtNombre.Focus();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -227,10 +228,10 @@ namespace CapaPresentacion
                 //La variable que almacena si se inserto 
                 //o se modifico la tabla
                 string Rpta = "";
-                if (this.txtRazonSocial.Text == string.Empty || this.txtDocumento.Text == string.Empty || txtDireccionFiscal.Text == string.Empty)
+                if (this.txtNombre.Text == string.Empty || this.txtDocumento.Text == string.Empty || txtDireccionFiscal.Text == string.Empty)
                 {
                     MensajeError("Falta ingresar algunos datos, serán remarcados");
-                    errorIcono.SetError(txtRazonSocial, "Ingrese un Valor");
+                    errorIcono.SetError(txtNombre, "Ingrese un Valor");
                     errorIcono.SetError(txtDocumento, "Ingrese un Valor");
                     errorIcono.SetError(txtDireccionFiscal, "Ingrese un Valor");
                 }
@@ -239,17 +240,16 @@ namespace CapaPresentacion
                     if (this.IsNuevo)
                     {
                         //Vamos a insertar un Proveedor
-                        Rpta = NProveedor.Insertar(this.txtRazonSocial.Text.Trim().ToUpper(),
-                        txtDocumento.Text, txtDireccionFiscal.Text, txtRepresentanteLegal.Text);
+                        Rpta = NProveedor.Insertar(this.txtNombre.Text.Trim().ToUpper(),txtDireccionFiscal.Text, 
+                                                    txtDocumento.Text,txtRepresentanteLegal.Text);
 
                     }
                     else
                     {
                         //Vamos a modificar un Proveedor
-                        Rpta = NProveedor.Editar(Convert.ToInt32(this.txtIdproveedor.Text),
-                            this.txtRazonSocial.Text.Trim().ToUpper(),
-                        cbBuscar.Text,
-                        txtDocumento.Text, txtDireccionFiscal.Text);
+                        Rpta = NProveedor.Editar(Convert.ToInt32(this.txtIdproveedor.Text), 
+                                                    this.txtNombre.Text.Trim().ToUpper(), txtDireccionFiscal.Text,
+                                                        txtDocumento.Text, txtRepresentanteLegal.Text);
                     }
                     //Si la respuesta fue OK, fue porque se modifico 
                     //o inserto el Proveedor
@@ -303,6 +303,7 @@ namespace CapaPresentacion
             {
                 this.IsEditar = true;
                 this.Botones();
+                this.txtIdproveedor.ReadOnly = true;
             }
             else
             {
@@ -333,10 +334,10 @@ namespace CapaPresentacion
         private void dataListado_DoubleClick(object sender, EventArgs e)
         {
             this.txtIdproveedor.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["idproveedor"].Value);
-            this.txtRazonSocial.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["razon_social"].Value);
-            this.cbBuscar.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["tipo_documento"].Value);
-            this.txtDocumento.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["num_documento"].Value);
-            this.txtDireccionFiscal.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["direccion"].Value);
+            this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["NombreProveedor"].Value);
+            this.txtDocumento.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Documento"].Value);
+            this.txtDireccionFiscal.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["DireccionFiscal"].Value);
+            this.txtRepresentanteLegal.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["RepresentanteLegal"].Value);
             this.tabControl1.SelectedIndex = 1;
         }
 
@@ -351,7 +352,18 @@ namespace CapaPresentacion
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
 
+            if (cbBuscar.Text.Equals("Representante Legal"))
+            {
+
+                this.BuscarRepresentanteLegal();
+
+            }
+            else if (cbBuscar.Text.Equals("Nombre"))
+            {
+
                 this.BuscarNombre();
+
+            }
 
         }
 

@@ -74,7 +74,7 @@ namespace CapaDatos
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "Insertar_Articulo";
+                SqlComando.CommandText = "Intertar_Articulo";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametros
@@ -88,7 +88,7 @@ namespace CapaDatos
 
                 //parametro nombre
                 SqlParameter Parametro_Nombre_Articulo = new SqlParameter();
-                Parametro_Nombre_Articulo.ParameterName= "@NombreArticulo";
+                Parametro_Nombre_Articulo.ParameterName = "@NombreArticulo";
                 Parametro_Nombre_Articulo.SqlDbType = SqlDbType.VarChar;
                 Parametro_Nombre_Articulo.Size = 50;
                 Parametro_Nombre_Articulo.Value = Articulos.Nombre_Articulo;
@@ -100,7 +100,7 @@ namespace CapaDatos
                 Parametro_Descripcion_Articulo.SqlDbType = SqlDbType.VarChar;
                 Parametro_Descripcion_Articulo.Size = 256;
                 Parametro_Descripcion_Articulo.Value = Articulos.Descripcion_Articulo;
-                SqlComando.Parameters.Add(Parametro_Nombre_Articulo);
+                SqlComando.Parameters.Add(Parametro_Descripcion_Articulo);
 
                 //parametro imagen
                 SqlParameter Parametro_Imagen_Articulo = new SqlParameter();
@@ -172,7 +172,7 @@ namespace CapaDatos
                 Parametro_Descripcion_Articulo.SqlDbType = SqlDbType.VarChar;
                 Parametro_Descripcion_Articulo.Size = 256;
                 Parametro_Descripcion_Articulo.Value = Articulos.Descripcion_Articulo;
-                SqlComando.Parameters.Add(Parametro_Nombre_Articulo);
+                SqlComando.Parameters.Add(Parametro_Descripcion_Articulo);
 
                 //parametro imagen
                 SqlParameter Parametro_Imagen_Articulo = new SqlParameter();

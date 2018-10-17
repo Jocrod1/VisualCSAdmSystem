@@ -54,16 +54,16 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.pxImagen = new System.Windows.Forms.PictureBox();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtIdproveedor = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.txtRazonSocial = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtIdproveedor = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
@@ -103,15 +103,15 @@
             // 
             // cbBuscar
             // 
+            this.cbBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBuscar.FormattingEnabled = true;
             this.cbBuscar.Items.AddRange(new object[] {
-            "Documento",
-            "Razon Social"});
+            "Nombre",
+            "Representante Legal"});
             this.cbBuscar.Location = new System.Drawing.Point(34, 52);
             this.cbBuscar.Name = "cbBuscar";
-            this.cbBuscar.Size = new System.Drawing.Size(121, 21);
+            this.cbBuscar.Size = new System.Drawing.Size(134, 21);
             this.cbBuscar.TabIndex = 39;
-            this.cbBuscar.Text = "Documento";
             // 
             // lblTotal
             // 
@@ -245,7 +245,7 @@
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtDescripcion);
-            this.groupBox1.Controls.Add(this.txtRazonSocial);
+            this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
@@ -260,11 +260,11 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Teal;
-            this.label8.Location = new System.Drawing.Point(71, 172);
+            this.label8.Location = new System.Drawing.Point(76, 172);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 23);
+            this.label8.Size = new System.Drawing.Size(92, 23);
             this.label8.TabIndex = 54;
-            this.label8.Text = "Documento";
+            this.label8.Text = "Documento:";
             // 
             // txtDocumento
             // 
@@ -279,11 +279,11 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Teal;
-            this.label7.Location = new System.Drawing.Point(21, 209);
+            this.label7.Location = new System.Drawing.Point(17, 209);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(143, 23);
+            this.label7.Size = new System.Drawing.Size(147, 23);
             this.label7.TabIndex = 50;
-            this.label7.Text = "Representante Legal";
+            this.label7.Text = "Representante Legal:";
             // 
             // txtRepresentanteLegal
             // 
@@ -378,17 +378,6 @@
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(102, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 23);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "Codigo:";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -399,14 +388,6 @@
             this.label1.Size = new System.Drawing.Size(142, 23);
             this.label1.TabIndex = 39;
             this.label1.Text = "Registrar Proveedor";
-            // 
-            // txtIdproveedor
-            // 
-            this.txtIdproveedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtIdproveedor.Location = new System.Drawing.Point(170, 49);
-            this.txtIdproveedor.Name = "txtIdproveedor";
-            this.txtIdproveedor.Size = new System.Drawing.Size(267, 20);
-            this.txtIdproveedor.TabIndex = 30;
             // 
             // btnCancelar
             // 
@@ -443,11 +424,11 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Teal;
-            this.label3.Location = new System.Drawing.Point(66, 92);
+            this.label3.Location = new System.Drawing.Point(89, 92);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 23);
+            this.label3.Size = new System.Drawing.Size(70, 23);
             this.label3.TabIndex = 32;
-            this.label3.Text = "Razon Social";
+            this.label3.Text = "Nombre:";
             // 
             // txtDescripcion
             // 
@@ -459,13 +440,13 @@
             this.txtDescripcion.Size = new System.Drawing.Size(267, 48);
             this.txtDescripcion.TabIndex = 35;
             // 
-            // txtRazonSocial
+            // txtNombre
             // 
-            this.txtRazonSocial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtRazonSocial.Location = new System.Drawing.Point(170, 92);
-            this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.Size = new System.Drawing.Size(267, 20);
-            this.txtRazonSocial.TabIndex = 33;
+            this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtNombre.Location = new System.Drawing.Point(170, 92);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(267, 20);
+            this.txtNombre.TabIndex = 33;
             // 
             // label4
             // 
@@ -481,6 +462,25 @@
             // errorIcono
             // 
             this.errorIcono.ContainerControl = this;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Teal;
+            this.label2.Location = new System.Drawing.Point(102, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 23);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Codigo:";
+            // 
+            // txtIdproveedor
+            // 
+            this.txtIdproveedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtIdproveedor.Location = new System.Drawing.Point(170, 49);
+            this.txtIdproveedor.Name = "txtIdproveedor";
+            this.txtIdproveedor.Size = new System.Drawing.Size(267, 20);
+            this.txtIdproveedor.TabIndex = 30;
             // 
             // frmProveedor
             // 
@@ -533,16 +533,16 @@
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.PictureBox pxImagen;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtIdproveedor;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.TextBox txtRazonSocial;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ErrorProvider errorIcono;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtIdproveedor;
 
     }
 }

@@ -168,7 +168,7 @@
   <data name="btnImprimir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAIlSURBVFhH7ZYtjgJBEIU5CtdAcAFugkARDEGRIDAIBAkJ
+        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAAIlSURBVFhH7ZYtjgJBEIU5CtdAcAFugkARDEGRIDAIBAkJ
         AoNAIBAki0CQsAKDIAgMggSDQGIQ1OabpHZ72WmoYn/UdlIZMvPe69fV1dVkMv/DmIHtdiveMErbYEzu
         GeBtykbUZrPxzC/gjdI22Gq1chkAb1M2ohavC5cB8EZpG2w2m8nlcjEHeJuyETWZTOR0OpnjZTr9OQOd
         TkeKxaJUKhVzgIdnXN8HrNlsymg0kvl8nkS73ZZarSaDwcAd8FqtlpANMjgcDgX9qCkA5/M5CR3j8Tgx
@@ -180,6 +180,9 @@
         XrTrWQ2Aoy5oKJ4BPnrePZODpXjCwgyLKvZb8d65/vF/noE3AjpUfw8IKMQAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="Eliminar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btnLimpiar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8

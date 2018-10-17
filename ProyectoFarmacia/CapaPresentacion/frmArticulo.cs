@@ -103,8 +103,8 @@ namespace CapaPresentacion
         {
             this.dataListado.Columns[0].Visible = false;
             this.dataListado.Columns[1].Visible = false;
-            this.dataListado.Columns[6].Visible = false;
-            this.dataListado.Columns[8].Visible = false;
+            //this.dataListado.Columns[6].Visible = false;
+            //this.dataListado.Columns[8].Visible = false;
         }
 
         //Método Mostrar
@@ -122,15 +122,6 @@ namespace CapaPresentacion
             this.OcultarColumnas();
             lblTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
         }    
-
-
-
-
-
-
-
-
-
 
         private void frmArticulo_Load(object sender, EventArgs e)
         {
@@ -202,6 +193,7 @@ namespace CapaPresentacion
             this.Botones();
             this.Limpiar();
             this.Habilitar(true);
+            this.txtIdarticulo.ReadOnly = true;
             this.txtNombreArticulo.Focus();
         }
 
@@ -210,10 +202,13 @@ namespace CapaPresentacion
             try
             {
                 string rpta = "";
-                if (this.txtNombreArticulo.Text == string.Empty  || this.txtIdarticulo.Text == string.Empty)
+                if (this.txtNombreArticulo.Text == string.Empty)
                 {
                     MensajeError("Hay campos vacios, porfavor verifique");
                     errorIcono.SetError(txtNombreArticulo, "Ingrese un Valor");
+                }
+                else if (this.txtIdarticulo.Text == string.Empty && this.IsEditar) {
+                    MensajeError("Hay campos vacios, porfavor verifique");
                     errorIcono.SetError(txtIdarticulo, "Ingrese un Valor");
                 }
                 else
@@ -226,8 +221,7 @@ namespace CapaPresentacion
 
                     if (this.IsNuevo)
                     {
-                        rpta = NArticulos.Insertar(this.txtNombreArticulo.Text.Trim().ToUpper(),
-                            this.txtDescripcion.Text.Trim(), imagen); //En caso de error donde pidan Idcategoria o Idpresentacion, aqui y....
+                        rpta = NArticulos.Insertar(this.txtNombreArticulo.Text.Trim().ToUpper(), this.txtDescripcion.Text.Trim(), imagen); //En caso de error donde pidan Idcategoria o Idpresentacion, aqui y....
 
                     }
                     else
@@ -331,6 +325,7 @@ namespace CapaPresentacion
                 this.IsEditar = true;
                 this.Botones();
                 this.Habilitar(true);
+                this.txtIdarticulo.ReadOnly = true;
             }
             else
             {
@@ -376,6 +371,22 @@ namespace CapaPresentacion
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataListado_DoubleClick_1(object sender, EventArgs e)
+        {
+            this.txtIdarticulo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["idarticulo"].Value);
+            this.txtNombreArticulo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["nombre"].Value);
+            this.txtDescripcion.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["descripcion"].Value);
+
+            byte[] imagenBuffer = (byte[])this.dataListado.CurrentRow.Cells["imagen"].Value;
+            System.IO.MemoryStream ms = new System.IO.MemoryStream(imagenBuffer);
+
+            this.pxImagen.Image = Image.FromStream(ms);
+            this.pxImagen.SizeMode = PictureBoxSizeMode.StretchImage;
+
+
+            this.tabControl1.SelectedIndex = 1;
         }
 
 

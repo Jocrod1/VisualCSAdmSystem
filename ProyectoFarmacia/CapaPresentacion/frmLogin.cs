@@ -35,9 +35,8 @@ namespace CapaPresentacion
 
                     frmPrincipal frm = new frmPrincipal();
                     frm.Idtrabajador = Datos.Rows[0][0].ToString();
-                    frm.Apellidos = Datos.Rows[0][1].ToString();
-                    frm.Nombre = Datos.Rows[0][2].ToString();
-                    frm.Acceso = Datos.Rows[0][3].ToString();
+                    frm.Nombre = Datos.Rows[0][1].ToString();
+                    frm.Acceso = int.Parse(Datos.Rows[0][4].ToString());
 
                     frm.Show();
                     this.Hide();

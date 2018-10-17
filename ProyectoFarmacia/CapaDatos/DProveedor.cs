@@ -91,7 +91,7 @@ namespace CapaDatos
 
                 //parametro id
                 SqlParameter Parametro_Id_Proveedor = new SqlParameter();
-                Parametro_Id_Proveedor.ParameterName = "@IdProveedor";
+                Parametro_Id_Proveedor.ParameterName = "@IntProveedor";
                 Parametro_Id_Proveedor.SqlDbType = SqlDbType.Int;
                 Parametro_Id_Proveedor.Direction = ParameterDirection.Output;
                 SqlComando.Parameters.Add(Parametro_Id_Proveedor);
@@ -106,7 +106,7 @@ namespace CapaDatos
 
                 //parametro direccionfiscal
                 SqlParameter Parametro_DireccionFiscal_Proveedor = new SqlParameter();
-                Parametro_DireccionFiscal_Proveedor.ParameterName = "@DireccionFiscalProveedor";
+                Parametro_DireccionFiscal_Proveedor.ParameterName = "@DireccionFiscal";
                 Parametro_DireccionFiscal_Proveedor.SqlDbType = SqlDbType.VarChar;
                 Parametro_DireccionFiscal_Proveedor.Size = 250;
                 Parametro_DireccionFiscal_Proveedor.Value = Proveedor.DireccionFiscal_Proveedor;
@@ -114,7 +114,7 @@ namespace CapaDatos
 
                 //parametro documento
                 SqlParameter Parametro_Documento_Proveedor = new SqlParameter();
-                Parametro_Documento_Proveedor.ParameterName = "@DocumentoProveedor";
+                Parametro_Documento_Proveedor.ParameterName = "@Documento";
                 Parametro_Documento_Proveedor.SqlDbType = SqlDbType.VarChar;
                 Parametro_Documento_Proveedor.Size = 50;
                 Parametro_Documento_Proveedor.Value = Proveedor.Documento_Proveedor;
@@ -122,7 +122,7 @@ namespace CapaDatos
 
                 //parametro representantelegal
                 SqlParameter Parametro_RepresentanteLegal_Proveedor = new SqlParameter();
-                Parametro_RepresentanteLegal_Proveedor.ParameterName = "@RepresentanteLegalProveedor";
+                Parametro_RepresentanteLegal_Proveedor.ParameterName = "@RepresentanteLegal";
                 Parametro_RepresentanteLegal_Proveedor.SqlDbType = SqlDbType.VarChar;
                 Parametro_RepresentanteLegal_Proveedor.Size = 150;
                 Parametro_RepresentanteLegal_Proveedor.Value = Proveedor.RepresentanteLegal_Proveedor;
@@ -186,7 +186,7 @@ namespace CapaDatos
 
                 //parametro direccionfiscal
                 SqlParameter Parametro_DireccionFiscal_Proveedor = new SqlParameter();
-                Parametro_DireccionFiscal_Proveedor.ParameterName = "@DireccionFiscalProveedor";
+                Parametro_DireccionFiscal_Proveedor.ParameterName = "@DireccionFiscal";
                 Parametro_DireccionFiscal_Proveedor.SqlDbType = SqlDbType.VarChar;
                 Parametro_DireccionFiscal_Proveedor.Size = 250;
                 Parametro_DireccionFiscal_Proveedor.Value = Proveedor.DireccionFiscal_Proveedor;
@@ -194,7 +194,7 @@ namespace CapaDatos
 
                 //parametro documento
                 SqlParameter Parametro_Documento_Proveedor = new SqlParameter();
-                Parametro_Documento_Proveedor.ParameterName = "@DocumentoProveedor";
+                Parametro_Documento_Proveedor.ParameterName = "@Documento";
                 Parametro_Documento_Proveedor.SqlDbType = SqlDbType.VarChar;
                 Parametro_Documento_Proveedor.Size = 50;
                 Parametro_Documento_Proveedor.Value = Proveedor.Documento_Proveedor;
@@ -202,7 +202,7 @@ namespace CapaDatos
 
                 //parametro representantelegal
                 SqlParameter Parametro_RepresentanteLegal_Proveedor = new SqlParameter();
-                Parametro_RepresentanteLegal_Proveedor.ParameterName = "@RepresentanteLegalProveedor";
+                Parametro_RepresentanteLegal_Proveedor.ParameterName = "@RepresentanteLegal";
                 Parametro_RepresentanteLegal_Proveedor.SqlDbType = SqlDbType.VarChar;
                 Parametro_RepresentanteLegal_Proveedor.Size = 150;
                 Parametro_RepresentanteLegal_Proveedor.Value = Proveedor.RepresentanteLegal_Proveedor;

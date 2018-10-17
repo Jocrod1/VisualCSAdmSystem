@@ -17,7 +17,7 @@ namespace CapaPresentacion
         public string Idtrabajador = "";
         public string Apellidos = "";
         public string Nombre = "";
-        public string Acceso = "";
+        public int Acceso;
 
         public frmPrincipal()
         {
@@ -157,9 +157,7 @@ namespace CapaPresentacion
 
         private void GestionUsuario()
         {
-            //COntrolar los accesos
-            if (Acceso == "Administrador")
-            {
+
                 this.MnuAlmacen.Enabled = true;
                 this.MnuCompras.Enabled = true;
                 this.MnuVentas.Enabled = true;
@@ -169,8 +167,7 @@ namespace CapaPresentacion
                 this.TsCompras.Enabled = true;
                 this.TsVentas.Enabled = true;
 
-            }
-            else if (Acceso == "Vendedor")
+           if (Acceso == 7)
             {
                 this.MnuAlmacen.Enabled = false;
                 this.MnuCompras.Enabled = false;
@@ -182,7 +179,7 @@ namespace CapaPresentacion
                 this.TsVentas.Enabled = true;
 
             }
-            else if (Acceso == "Almacenero")
+            else if (Acceso == 8)
             {
                 this.MnuAlmacen.Enabled = true;
                 this.MnuCompras.Enabled = true;
@@ -193,7 +190,7 @@ namespace CapaPresentacion
                 this.TsCompras.Enabled = true;
                 this.TsVentas.Enabled = false;
 
-            }
+            }/*
             else
             {
                 this.MnuAlmacen.Enabled = false;
@@ -205,7 +202,7 @@ namespace CapaPresentacion
                 this.TsCompras.Enabled = false;
                 this.TsVentas.Enabled = false;
 
-            }
+            }*/
         }
 
 
@@ -214,6 +211,11 @@ namespace CapaPresentacion
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             GestionUsuario();
+        }
+
+        private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
