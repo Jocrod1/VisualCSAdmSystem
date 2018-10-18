@@ -38,7 +38,7 @@ namespace CapaNegocio
         }
 
         //Metodo Eliminar
-        public static string Anular(int IdVenta)
+        public static string Eliminar(int IdVenta)
         {
             DVenta Objeto = new DVenta();
             Objeto.Id_Venta = IdVenta;

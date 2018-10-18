@@ -47,6 +47,8 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtImpuesto = new System.Windows.Forms.TextBox();
             this.btnBuscarProveedor = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.txtProveedor = new System.Windows.Forms.TextBox();
@@ -86,8 +88,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtIdtrabajador = new System.Windows.Forms.TextBox();
             this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label20 = new System.Windows.Forms.Label();
-            this.txtImpuesto = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
@@ -323,6 +323,26 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingresos Almacén";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.Teal;
+            this.label20.Location = new System.Drawing.Point(83, 92);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(74, 23);
+            this.label20.TabIndex = 84;
+            this.label20.Text = "Impuesto:";
+            // 
+            // txtImpuesto
+            // 
+            this.txtImpuesto.Enabled = false;
+            this.txtImpuesto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtImpuesto.Location = new System.Drawing.Point(163, 95);
+            this.txtImpuesto.Name = "txtImpuesto";
+            this.txtImpuesto.Size = new System.Drawing.Size(121, 20);
+            this.txtImpuesto.TabIndex = 85;
             // 
             // btnBuscarProveedor
             // 
@@ -743,32 +763,12 @@
             // 
             this.errorIcono.ContainerControl = this;
             // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.Teal;
-            this.label20.Location = new System.Drawing.Point(83, 92);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(74, 23);
-            this.label20.TabIndex = 84;
-            this.label20.Text = "Impuesto:";
-            // 
-            // txtImpuesto
-            // 
-            this.txtImpuesto.Enabled = false;
-            this.txtImpuesto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtImpuesto.Location = new System.Drawing.Point(163, 95);
-            this.txtImpuesto.Name = "txtImpuesto";
-            this.txtImpuesto.Size = new System.Drawing.Size(121, 20);
-            this.txtImpuesto.TabIndex = 85;
-            // 
             // frmIngreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
-            this.ClientSize = new System.Drawing.Size(811, 518);
+            this.ClientSize = new System.Drawing.Size(792, 511);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmIngreso";
