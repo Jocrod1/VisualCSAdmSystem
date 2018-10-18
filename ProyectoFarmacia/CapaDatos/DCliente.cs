@@ -293,7 +293,7 @@ namespace CapaDatos
                 SqlComando.CommandText = "Buscar_Cliente";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
-                //parametro buscar nombre
+                //parametro buscar cedula
                 SqlParameter Parametro_Texto_Buscar = new SqlParameter();
                 Parametro_Texto_Buscar.ParameterName = "@TextoBuscar";
                 Parametro_Texto_Buscar.SqlDbType = SqlDbType.VarChar;

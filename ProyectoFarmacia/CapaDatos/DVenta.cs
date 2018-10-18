@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Input;
 
 namespace CapaDatos
 {
@@ -451,6 +452,10 @@ namespace CapaDatos
             return respuesta;
 
         }
+
+
+
+
     }
 }
 

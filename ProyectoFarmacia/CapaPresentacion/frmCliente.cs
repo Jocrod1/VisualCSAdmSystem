@@ -106,14 +106,6 @@ namespace CapaPresentacion
         }
 
 
-
-        //private void BuscarNombre()
-        //{
-        //    this.dataListado.DataSource = NCliente.Buscar_Nombre(this.txtBuscar.Text);
-        //    this.OcultarColumnas();
-        //    lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
-        //}
-
         private void BuscarCedula()
         {
             this.dataListado.DataSource = NCliente.Buscar(this.txtBuscar.Text);

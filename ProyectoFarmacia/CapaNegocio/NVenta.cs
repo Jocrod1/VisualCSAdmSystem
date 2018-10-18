@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Data;
 using CapaDatos;
 
+
 namespace CapaNegocio
 {
     public class NVenta
@@ -70,6 +71,7 @@ namespace CapaNegocio
             DVenta Objeto = new DVenta();
             return Objeto.Mostrar_Articulo_Venta_Nombre(TextoBuscar);
         }
+
 
     }
 }
