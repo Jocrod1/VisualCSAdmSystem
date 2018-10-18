@@ -97,7 +97,7 @@ namespace CapaPresentacion
         private void Habilitar(bool valor)
         {
             this.txtIdingreso.ReadOnly = !valor;
-            this.txtIgv.ReadOnly = !valor;
+            this.txtImpuesto.ReadOnly = !valor;
             this.dtFecha.Enabled = valor;
             this.txtStock.ReadOnly = !valor;
             this.txtPrecioCompra.ReadOnly = !valor;

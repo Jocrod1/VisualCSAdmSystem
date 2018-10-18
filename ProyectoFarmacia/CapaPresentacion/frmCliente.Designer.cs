@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCliente));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.cbBuscar = new System.Windows.Forms.ComboBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.chkEliminar = new System.Windows.Forms.CheckBox();
             this.dataListado = new System.Windows.Forms.DataGridView();
@@ -80,7 +79,6 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.tabPage1.Controls.Add(this.cbBuscar);
             this.tabPage1.Controls.Add(this.lblTotal);
             this.tabPage1.Controls.Add(this.chkEliminar);
             this.tabPage1.Controls.Add(this.dataListado);
@@ -94,19 +92,6 @@
             this.tabPage1.Size = new System.Drawing.Size(772, 375);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
-            // 
-            // cbBuscar
-            // 
-            this.cbBuscar.FormattingEnabled = true;
-            this.cbBuscar.Items.AddRange(new object[] {
-            "Ci",
-            "Nombre"});
-            this.cbBuscar.Location = new System.Drawing.Point(34, 51);
-            this.cbBuscar.Name = "cbBuscar";
-            this.cbBuscar.Size = new System.Drawing.Size(121, 21);
-            this.cbBuscar.TabIndex = 40;
-            this.cbBuscar.Text = "Ci";
-            this.cbBuscar.SelectedIndexChanged += new System.EventHandler(this.cbBuscar_SelectedIndexChanged);
             // 
             // lblTotal
             // 
@@ -457,7 +442,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ErrorProvider errorIcono;
-        private System.Windows.Forms.ComboBox cbBuscar;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

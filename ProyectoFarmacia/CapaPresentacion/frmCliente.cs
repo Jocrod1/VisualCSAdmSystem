@@ -107,19 +107,16 @@ namespace CapaPresentacion
 
 
 
-
-
-
-        private void BuscarNombre()
-        {
-            this.dataListado.DataSource = NTrabajador.Buscar_Nombre(this.txtBuscar.Text);
-            this.OcultarColumnas();
-            lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
-        }
+        //private void BuscarNombre()
+        //{
+        //    this.dataListado.DataSource = NCliente.Buscar_Nombre(this.txtBuscar.Text);
+        //    this.OcultarColumnas();
+        //    lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
+        //}
 
         private void BuscarCedula()
         {
-            this.dataListado.DataSource = NTrabajador.Buscar_Cedula(this.txtBuscar.Text);
+            this.dataListado.DataSource = NCliente.Buscar(this.txtBuscar.Text);
             this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
@@ -129,15 +126,7 @@ namespace CapaPresentacion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (cbBuscar.SelectedIndex == 0)
-            {
                 this.BuscarCedula();
-            }
-            else if (cbBuscar.SelectedIndex == 1)
-            {
-                this.BuscarNombre();
-            }
-
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -320,10 +309,6 @@ namespace CapaPresentacion
 
         }
 
-        private void cbBuscar_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
 
 
