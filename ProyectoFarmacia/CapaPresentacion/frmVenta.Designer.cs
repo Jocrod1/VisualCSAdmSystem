@@ -64,18 +64,16 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnbuscarcliente = new System.Windows.Forms.Button();
+            this.txtcliente = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnbuscararticulo = new System.Windows.Forms.Button();
+            this.txtarticulo = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtstockactual = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.txtdescuento = new System.Windows.Forms.TextBox();
-            this.txtcliente = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.btnbuscarcliente = new System.Windows.Forms.Button();
-            this.btnbuscararticulo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoDetalle)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -178,6 +176,7 @@
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnEditar
             // 
@@ -263,7 +262,7 @@
             this.dataListadoDetalle.AllowUserToAddRows = false;
             this.dataListadoDetalle.AllowUserToDeleteRows = false;
             this.dataListadoDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataListadoDetalle.Location = new System.Drawing.Point(16, 107);
+            this.dataListadoDetalle.Location = new System.Drawing.Point(19, 92);
             this.dataListadoDetalle.Margin = new System.Windows.Forms.Padding(2);
             this.dataListadoDetalle.Name = "dataListadoDetalle";
             this.dataListadoDetalle.RowTemplate.Height = 24;
@@ -484,13 +483,30 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ventas";
             // 
+            // btnbuscarcliente
+            // 
+            this.btnbuscarcliente.Location = new System.Drawing.Point(247, 79);
+            this.btnbuscarcliente.Name = "btnbuscarcliente";
+            this.btnbuscarcliente.Size = new System.Drawing.Size(44, 23);
+            this.btnbuscarcliente.TabIndex = 79;
+            this.btnbuscarcliente.Text = ". . .";
+            this.btnbuscarcliente.UseVisualStyleBackColor = true;
+            this.btnbuscarcliente.Click += new System.EventHandler(this.btnbuscarcliente_Click);
+            // 
+            // txtcliente
+            // 
+            this.txtcliente.Enabled = false;
+            this.txtcliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtcliente.Location = new System.Drawing.Point(120, 80);
+            this.txtcliente.Name = "txtcliente";
+            this.txtcliente.Size = new System.Drawing.Size(121, 20);
+            this.txtcliente.TabIndex = 78;
+            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.AliceBlue;
             this.groupBox2.Controls.Add(this.btnbuscararticulo);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtarticulo);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.txtstockactual);
             this.groupBox2.Controls.Add(this.label15);
@@ -508,25 +524,24 @@
             this.groupBox2.TabIndex = 77;
             this.groupBox2.TabStop = false;
             // 
-            // label8
+            // btnbuscararticulo
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Teal;
-            this.label8.Location = new System.Drawing.Point(357, 69);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(141, 23);
-            this.label8.TabIndex = 84;
-            this.label8.Text = "Total del Producto: ";
+            this.btnbuscararticulo.Location = new System.Drawing.Point(270, 16);
+            this.btnbuscararticulo.Name = "btnbuscararticulo";
+            this.btnbuscararticulo.Size = new System.Drawing.Size(44, 23);
+            this.btnbuscararticulo.TabIndex = 80;
+            this.btnbuscararticulo.Text = ". . .";
+            this.btnbuscararticulo.UseVisualStyleBackColor = true;
+            this.btnbuscararticulo.Click += new System.EventHandler(this.btnbuscararticulo_Click);
             // 
-            // textBox1
+            // txtarticulo
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox1.Location = new System.Drawing.Point(504, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 20);
-            this.textBox1.TabIndex = 85;
+            this.txtarticulo.Enabled = false;
+            this.txtarticulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtarticulo.Location = new System.Drawing.Point(93, 19);
+            this.txtarticulo.Name = "txtarticulo";
+            this.txtarticulo.Size = new System.Drawing.Size(171, 20);
+            this.txtarticulo.TabIndex = 79;
             // 
             // label16
             // 
@@ -578,42 +593,6 @@
             this.txtdescuento.Name = "txtdescuento";
             this.txtdescuento.Size = new System.Drawing.Size(171, 20);
             this.txtdescuento.TabIndex = 79;
-            // 
-            // txtcliente
-            // 
-            this.txtcliente.Enabled = false;
-            this.txtcliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtcliente.Location = new System.Drawing.Point(120, 80);
-            this.txtcliente.Name = "txtcliente";
-            this.txtcliente.Size = new System.Drawing.Size(121, 20);
-            this.txtcliente.TabIndex = 78;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Enabled = false;
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox2.Location = new System.Drawing.Point(93, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(171, 20);
-            this.textBox2.TabIndex = 79;
-            // 
-            // btnbuscarcliente
-            // 
-            this.btnbuscarcliente.Location = new System.Drawing.Point(247, 79);
-            this.btnbuscarcliente.Name = "btnbuscarcliente";
-            this.btnbuscarcliente.Size = new System.Drawing.Size(44, 23);
-            this.btnbuscarcliente.TabIndex = 79;
-            this.btnbuscarcliente.Text = ". . .";
-            this.btnbuscarcliente.UseVisualStyleBackColor = true;
-            // 
-            // btnbuscararticulo
-            // 
-            this.btnbuscararticulo.Location = new System.Drawing.Point(270, 16);
-            this.btnbuscararticulo.Name = "btnbuscararticulo";
-            this.btnbuscararticulo.Size = new System.Drawing.Size(44, 23);
-            this.btnbuscararticulo.TabIndex = 80;
-            this.btnbuscararticulo.Text = ". . .";
-            this.btnbuscararticulo.UseVisualStyleBackColor = true;
             // 
             // frmVenta
             // 
@@ -681,11 +660,9 @@
         private System.Windows.Forms.TextBox txtdescuento;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtstockactual;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtcliente;
         private System.Windows.Forms.Button btnbuscarcliente;
         private System.Windows.Forms.Button btnbuscararticulo;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtarticulo;
     }
 }

@@ -35,11 +35,11 @@ namespace CapaPresentacion
             //this.txtidcliente.Text = IdCliente;
         }
 
-        public void SetArticulo(string IdDetalleVenta, decimal PrecioVenta,decimal Descuento, int StockActual)
+        public void SetArticulo(string Nombre, decimal PrecioVenta, int StockActual)
         {
-            //this.txtarticulo.Text = IdDetalleVenta;
+            this.txtarticulo.Text = Nombre;
             this.txtsubtotal.Text = Convert.ToString(PrecioVenta);
-            this.txtdescuento.Text= Convert.ToString(Descuento);
+            //this.txtdescuento.Text= Convert.ToString(Descuento);
             this.txtstockactual.Text = Convert.ToString(StockActual);
 
         }
@@ -59,5 +59,21 @@ namespace CapaPresentacion
 
         }
 
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnbuscarcliente_Click(object sender, EventArgs e)
+        {
+            frmVistaClienteVenta vista = new frmVistaClienteVenta();
+            vista.ShowDialog();
+        }
+
+        private void btnbuscararticulo_Click(object sender, EventArgs e)
+        {
+            frmVistaArticuloVenta vista = new frmVistaArticuloVenta();
+            vista.ShowDialog();
+        }
     }
 }

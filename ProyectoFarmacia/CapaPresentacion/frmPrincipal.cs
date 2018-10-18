@@ -217,5 +217,14 @@ namespace CapaPresentacion
         {
             Application.Exit();
         }
+
+        ////para captar el id del trabajador
+        //private void ventasToolStripMenuItem1_Click(object sender, EventArgs e)
+        //{
+        //    frmVenta frm = frmVenta.GetInstancia();
+        //    frm.MdiParent = this;
+        //    frm.Show();
+        //    frm.IdTrabajador = Convert.ToInt32(this.Idtrabajador);
+        //}
     }
 }

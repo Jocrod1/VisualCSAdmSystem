@@ -102,7 +102,7 @@
             this.salirDelSistemaToolStripMenuItem});
             this.MnuSistema.Image = ((System.Drawing.Image)(resources.GetObject("MnuSistema.Image")));
             this.MnuSistema.Name = "MnuSistema";
-            this.MnuSistema.Size = new System.Drawing.Size(114, 20);
+            this.MnuSistema.Size = new System.Drawing.Size(113, 20);
             this.MnuSistema.Text = "Sistema Ventas";
             // 
             // salirDelSistemaToolStripMenuItem
@@ -159,19 +159,19 @@
             this.clientesToolStripMenuItem});
             this.MnuVentas.Image = ((System.Drawing.Image)(resources.GetObject("MnuVentas.Image")));
             this.MnuVentas.Name = "MnuVentas";
-            this.MnuVentas.Size = new System.Drawing.Size(70, 20);
+            this.MnuVentas.Size = new System.Drawing.Size(69, 20);
             this.MnuVentas.Text = "Ventas";
             // 
             // ventasToolStripMenuItem1
             // 
             this.ventasToolStripMenuItem1.Name = "ventasToolStripMenuItem1";
-            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
+            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.ventasToolStripMenuItem1.Text = "Ventas";
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
@@ -188,7 +188,7 @@
             // trabajadoresToolStripMenuItem
             // 
             this.trabajadoresToolStripMenuItem.Name = "trabajadoresToolStripMenuItem";
-            this.trabajadoresToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.trabajadoresToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.trabajadoresToolStripMenuItem.Text = "Trabajadores";
             this.trabajadoresToolStripMenuItem.Click += new System.EventHandler(this.trabajadoresToolStripMenuItem_Click);
             // 
@@ -281,7 +281,7 @@
             this.statusBarToolStripMenuItem});
             this.MnuVer.Image = ((System.Drawing.Image)(resources.GetObject("MnuVer.Image")));
             this.MnuVer.Name = "MnuVer";
-            this.MnuVer.Size = new System.Drawing.Size(52, 20);
+            this.MnuVer.Size = new System.Drawing.Size(51, 20);
             this.MnuVer.Text = "Ver";
             // 
             // toolBarToolStripMenuItem
@@ -315,7 +315,7 @@
             this.arrangeIconsToolStripMenuItem});
             this.MnuVentanas.Image = ((System.Drawing.Image)(resources.GetObject("MnuVentanas.Image")));
             this.MnuVentanas.Name = "MnuVentanas";
-            this.MnuVentanas.Size = new System.Drawing.Size(83, 20);
+            this.MnuVentanas.Size = new System.Drawing.Size(82, 20);
             this.MnuVentanas.Text = "Ventanas";
             // 
             // newWindowToolStripMenuItem

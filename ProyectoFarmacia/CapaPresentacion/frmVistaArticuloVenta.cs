@@ -42,12 +42,17 @@ namespace CapaPresentacion
         {
             frmVenta form = frmVenta.GetInstancia();
             string parametro1;
-            int parametro2;
-            decimal parametro3, parametro4, parametro5;
+            decimal parametro2;
+            int parametro4;
 
-            parametro1 = Convert.ToString(this.dataListado.CurrentRow.Cells["IdCliente"].Value);
 
-            form.SetCliente(parametro1);
+            parametro1 = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
+            parametro2 = Convert.ToDecimal(this.dataListado.CurrentRow.Cells["PrecioVenta"].Value);
+            //parametro3 = Convert.ToDecimal(this.dataListado.CurrentRow.Cells["Descuento"].Value);
+            parametro4 = Convert.ToInt32(this.dataListado.CurrentRow.Cells["StockActual"].Value);
+
+            form.SetArticulo(parametro1, parametro2, parametro4);
+
             this.Hide();
         }
 
