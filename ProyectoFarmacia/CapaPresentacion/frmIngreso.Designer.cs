@@ -364,7 +364,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Teal;
-            this.label18.Location = new System.Drawing.Point(539, 69);
+            this.label18.Location = new System.Drawing.Point(551, 66);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(83, 23);
             this.label18.TabIndex = 81;
@@ -391,11 +391,11 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Teal;
-            this.label17.Location = new System.Drawing.Point(308, 44);
+            this.label17.Location = new System.Drawing.Point(324, 44);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(88, 23);
+            this.label17.Size = new System.Drawing.Size(72, 23);
             this.label17.TabIndex = 79;
-            this.label17.Text = "Stock Inicial";
+            this.label17.Text = "Cantidad:";
             // 
             // groupBox2
             // 
@@ -611,7 +611,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Teal;
-            this.label7.Location = new System.Drawing.Point(296, 70);
+            this.label7.Location = new System.Drawing.Point(301, 70);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(95, 23);
             this.label7.TabIndex = 63;
@@ -639,7 +639,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Teal;
-            this.label6.Location = new System.Drawing.Point(339, 92);
+            this.label6.Location = new System.Drawing.Point(345, 92);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 23);
             this.label6.TabIndex = 60;
@@ -650,7 +650,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Teal;
-            this.label8.Location = new System.Drawing.Point(539, 41);
+            this.label8.Location = new System.Drawing.Point(537, 38);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 23);
             this.label8.TabIndex = 54;
@@ -744,7 +744,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Teal;
-            this.label3.Location = new System.Drawing.Point(59, 66);
+            this.label3.Location = new System.Drawing.Point(59, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 23);
             this.label3.TabIndex = 32;

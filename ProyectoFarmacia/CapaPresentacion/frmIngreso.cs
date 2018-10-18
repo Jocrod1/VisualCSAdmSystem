@@ -225,15 +225,14 @@ namespace CapaPresentacion
 
         private void btnBuscarProveedor_Click(object sender, EventArgs e)
         {
-            //quitar comentario cuando se cree la vista Proveedor
-            //FrmVistaProveedor_Ingreso vista = new FrmVistaProveedor_Ingreso();
-            //vista.ShowDialog();
+            FrmVistaProveedor_Ingreso vista = new FrmVistaProveedor_Ingreso();
+            vista.ShowDialog();
         }
 
         private void btnBuscarArticulo_Click(object sender, EventArgs e)
         {
-            //FrmVistaArticulo_Ingreso vista = new FrmVistaArticulo_Ingreso();
-            //vista.ShowDialog();
+            FrmVistaArticulo_Ingreso vista = new FrmVistaArticulo_Ingreso();
+            vista.ShowDialog();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)

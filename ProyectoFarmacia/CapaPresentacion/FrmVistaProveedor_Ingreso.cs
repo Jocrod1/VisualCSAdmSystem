@@ -21,7 +21,7 @@ namespace CapaPresentacion
 
         private void FrmVistaProveedor_Ingreso_Load(object sender, EventArgs e)
         {
-            
+            this.Mostrar();
         }
 
 
@@ -52,11 +52,43 @@ namespace CapaPresentacion
             lblTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
 
+        //Metodo BuscarNombre()
         private void BuscarNombre()
         {
             this.dataListado.DataSource = NProveedor.Buscar_Nombre(this.txtBuscar.Text);
             this.OcultarColumnas();
             lblTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (cbBuscar.Text.Equals("Representante Legal"))
+            {
+
+                this.BuscarRepresentanteLegal();
+
+            }
+            else if (cbBuscar.Text.Equals("Nombre"))
+            {
+
+                this.BuscarNombre();
+
+            }
+        }
+
+        private void dataListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataListado_DoubleClick(object sender, EventArgs e)
+        {
+            frmIngreso form = frmIngreso.GetInstancia();
+            string par1, par2;
+            par1 = Convert.ToString(this.dataListado.CurrentRow.Cells["idarticulo"].Value);
+            par2 = Convert.ToString(this.dataListado.CurrentRow.Cells["nombre"].Value);
+            form.setArticulo(par1, par2);
+            this.Hide();
         }
 
 

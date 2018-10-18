@@ -114,26 +114,9 @@ namespace CapaPresentacion
             Application.Exit();
         }
 
-        private void articulosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmArticulo frm = frmArticulo.GetInstancia();  //este metodo se encarga de revisar si no existe la instancia, la crea, y si ya existe, la devuelve (return)
-            frm.MdiParent = this;
-            frm.Show();
-        }
 
-        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmProveedor frm = new frmProveedor();
-            frm.MdiParent = this;
-            frm.Show();
-        }
 
-        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmCliente frm = new frmCliente();
-            frm.MdiParent = this;
-            frm.Show();
-        }
+
 
         private void toolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -145,12 +128,6 @@ namespace CapaPresentacion
 
         }
 
-        private void trabajadoresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmTrabajador frm = new frmTrabajador();
-            frm.MdiParent = this;
-            frm.Show();
-        }
 
 
 
@@ -217,6 +194,44 @@ namespace CapaPresentacion
         {
             Application.Exit();
         }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCliente frm = new frmCliente();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void articulosToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            frmArticulo frm = frmArticulo.GetInstancia();  //este metodo se encarga de revisar si no existe la instancia, la crea, y si ya existe, la devuelve (return)
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProveedor frm = new frmProveedor();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void trabajadoresToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            frmTrabajador frm = new frmTrabajador();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void ingresoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmIngreso frm = frmIngreso.GetInstancia();
+            frm.MdiParent = this;
+            frm.Show();
+            frm.Idtrabajador = Convert.ToInt32(this.Idtrabajador);
+        }
+
+
 
         ////para captar el id del trabajador
         //private void ventasToolStripMenuItem1_Click(object sender, EventArgs e)

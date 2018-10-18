@@ -139,7 +139,7 @@ namespace CapaPresentacion
         private void btnBuscar_Click(object sender, EventArgs e)
         {
 
-            if (cbBuscar.Text.Equals("Razon Social"))
+            if (cbBuscar.Text.Equals("Representante Legal"))
             {
 
                 this.BuscarRepresentanteLegal();
@@ -240,7 +240,7 @@ namespace CapaPresentacion
                     {
                         //Vamos a insertar un Proveedor
                         Rpta = NProveedor.Insertar(this.txtNombre.Text.Trim().ToUpper(),txtDireccionFiscal.Text, 
-                                                    txtDocumento.Text,txtRepresentanteLegal.Text);
+                                                    txtDocumento.Text,txtRepresentanteLegal.Text, txtCorreo.Text , txtTelefono.Text);
 
                     }
                     else
@@ -248,7 +248,7 @@ namespace CapaPresentacion
                         //Vamos a modificar un Proveedor
                         Rpta = NProveedor.Editar(Convert.ToInt32(this.txtIdproveedor.Text), 
                                                     this.txtNombre.Text.Trim().ToUpper(), txtDireccionFiscal.Text,
-                                                        txtDocumento.Text, txtRepresentanteLegal.Text);
+                                                        txtDocumento.Text, txtRepresentanteLegal.Text, txtCorreo.Text, txtTelefono.Text);
                     }
                     //Si la respuesta fue OK, fue porque se modifico 
                     //o inserto el Proveedor
