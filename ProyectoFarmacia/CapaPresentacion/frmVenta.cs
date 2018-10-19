@@ -313,7 +313,7 @@ namespace CapaPresentacion
             try
             {
                 string rpta = "";
-                if (this.txtcliente.Text == string.Empty || this.txtidventa.Text == string.Empty || this.txtarticulo.Text==string.Empty || this.txtcantidad.Text==string.Empty || this.txtdescuento.Text == string.Empty)
+                if (this.txtcliente.Text == string.Empty || this.txtarticulo.Text==string.Empty || this.txtcantidad.Text==string.Empty || this.txtdescuento.Text == string.Empty)
                 {
                     MensajeError("Falta ingresar algunos datos");
                     errorIcono.SetError(txtcliente, "Ingrese un Valor");
@@ -367,11 +367,10 @@ namespace CapaPresentacion
             try
             {
 
-                if (this.txtcliente.Text == string.Empty || this.txtidventa.Text == string.Empty || this.txtarticulo.Text == string.Empty || this.txtcantidad.Text == string.Empty || this.txtdescuento.Text==string.Empty)
+                if (this.txtcliente.Text == string.Empty || this.txtarticulo.Text == string.Empty || this.txtcantidad.Text == string.Empty || this.txtdescuento.Text==string.Empty)
                 {
                     MensajeError("Falta ingresar algunos datos, serán remarcados");
                     errorIcono.SetError(txtcliente, "Ingrese un Valor");
-                    errorIcono.SetError(txtidventa, "Ingrese un Valor");
                     errorIcono.SetError(txtarticulo, "Ingrese un Valor");
                     errorIcono.SetError(txtcantidad, "Ingrese un Valor");
                     errorIcono.SetError(txtdescuento, "Ingrese un Valor");

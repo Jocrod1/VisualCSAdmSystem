@@ -63,8 +63,11 @@ namespace CapaPresentacion
             par2 = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
             form.setArticulo(par1, par2);
             this.Hide();
-        }    
+        }
 
+        private void dataListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
     }
 }

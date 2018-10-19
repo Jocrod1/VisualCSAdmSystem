@@ -53,19 +53,10 @@ namespace CapaPresentacion
             this.BuscarCedula();
         }
 
-        private void dataListado_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            frmVenta form = frmVenta.GetInstancia();
-            string parametro1;
-            parametro1 = Convert.ToString(this.dataListado.CurrentRow.Cells["IdCliente"].Value);
 
-            form.SetCliente(parametro1);
-            this.Hide();
-        }
-
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        private void dataListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.BuscarCedula();
+
         }
 
         private void dataListado_DoubleClick(object sender, EventArgs e)
@@ -77,7 +68,5 @@ namespace CapaPresentacion
             form.SetCliente(parametro1);
             this.Hide();
         }
-
-
     }
 }
