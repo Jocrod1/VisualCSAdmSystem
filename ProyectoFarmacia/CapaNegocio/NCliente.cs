@@ -56,5 +56,12 @@ namespace CapaNegocio
             return Objeto.Buscar_Cedula(Objeto);
         }
 
+        public static DataTable BuscarT(string TextoBuscar)
+        {
+            DCliente Objeto = new DCliente();
+            Objeto.TextoBuscar = TextoBuscar;
+            return Objeto.Buscar_CedulaT(Objeto);
+        }
+
     }
 }

@@ -75,7 +75,7 @@ namespace CapaDatos
                 //comandos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
-                SqlComando.CommandText = "Insertar_Cliente";
+                SqlComando.CommandText = "Intertar_Cliente";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametros
@@ -97,7 +97,7 @@ namespace CapaDatos
 
                 //parametro direccion
                 SqlParameter Parametro_Direccion_Cliente = new SqlParameter();
-                Parametro_Direccion_Cliente.ParameterName = "@DescripcionArticulo";
+                Parametro_Direccion_Cliente.ParameterName = "@DireccionCliente";
                 Parametro_Direccion_Cliente.SqlDbType = SqlDbType.VarChar;
                 Parametro_Direccion_Cliente.Size = 256;
                 Parametro_Direccion_Cliente.Value = Cliente.Direccion_Cliente;
@@ -291,6 +291,37 @@ namespace CapaDatos
                 SqlCommand SqlComando = new SqlCommand();
                 SqlComando.Connection = SqlConectar;
                 SqlComando.CommandText = "Buscar_Cliente";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+
+                //parametro buscar cedula
+                SqlParameter Parametro_Texto_Buscar = new SqlParameter();
+                Parametro_Texto_Buscar.ParameterName = "@TextoBuscar";
+                Parametro_Texto_Buscar.SqlDbType = SqlDbType.VarChar;
+                Parametro_Texto_Buscar.Size = 50;
+                Parametro_Texto_Buscar.Value = Cliente.TextoBuscar;
+                SqlComando.Parameters.Add(Parametro_Texto_Buscar);
+
+                SqlDataAdapter SqlData = new SqlDataAdapter(SqlComando);
+                SqlData.Fill(DtResultado);
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+
+        }
+        public DataTable Buscar_CedulaT(DCliente Cliente)
+        {
+            DataTable DtResultado = new DataTable("Cliente");
+            SqlConnection SqlConectar = new SqlConnection();
+
+            try
+            {
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.CommandText = "Buscar_ClienteT";
                 SqlComando.CommandType = CommandType.StoredProcedure;
 
                 //parametro buscar cedula

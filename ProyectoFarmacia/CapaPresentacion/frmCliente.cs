@@ -108,7 +108,7 @@ namespace CapaPresentacion
 
         private void BuscarCedula()
         {
-            this.dataListado.DataSource = NCliente.Buscar(this.txtBuscar.Text);
+            this.dataListado.DataSource = NCliente.BuscarT(this.txtBuscar.Text);
             this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
@@ -200,7 +200,6 @@ namespace CapaPresentacion
             this.Botones();
             this.Limpiar();
             this.Habilitar(true);
-            this.txtIdcliente.ReadOnly = true;
             this.txtNombre.Focus();
         }
 
@@ -274,7 +273,6 @@ namespace CapaPresentacion
                 this.IsEditar = true;
                 this.Botones();
                 this.Habilitar(true);
-                this.txtIdcliente.ReadOnly = true;
             }
             else
             {
@@ -303,6 +301,11 @@ namespace CapaPresentacion
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            this.BuscarCedula();
         }
 
 
