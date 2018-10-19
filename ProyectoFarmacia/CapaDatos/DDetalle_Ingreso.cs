@@ -122,7 +122,7 @@ namespace CapaDatos
                 SqlParameter Parametro_Id_Articulo = new SqlParameter();
                 Parametro_Id_Articulo.ParameterName = "@IdArticulo";
                 Parametro_Id_Articulo.SqlDbType = SqlDbType.Int;
-                Parametro_Id_Articulo.Value = Detalle_Ingreso.Id_Ingreso;
+                Parametro_Id_Articulo.Value = Detalle_Ingreso.Id_Articulo;
                 SqlComando.Parameters.Add(Parametro_Id_Articulo);
 
                 //parametro precio compra
