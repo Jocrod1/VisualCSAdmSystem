@@ -447,7 +447,7 @@ namespace CapaPresentacion
 
         private void btncomprobante_Click(object sender, EventArgs e)
         {
-            frmReporteFactura frm = new frmReporteFactura();
+            frmReporteComprobante frm = new frmReporteComprobante();
             frm.IdVenta = Convert.ToInt32(this.dataListado.CurrentRow.Cells["IdVenta"].Value);
 
             frm.ShowDialog();

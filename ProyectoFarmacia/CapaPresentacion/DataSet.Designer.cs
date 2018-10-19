@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace CapaPresentacion.Reportes {
+namespace CapaPresentacion {
     
     
     /// <summary>
@@ -908,7 +908,7 @@ namespace CapaPresentacion.Reportes {
         }
     }
 }
-namespace CapaPresentacion.Reportes.DataSetTableAdapters {
+namespace CapaPresentacion.DataSetTableAdapters {
     
     
     /// <summary>
