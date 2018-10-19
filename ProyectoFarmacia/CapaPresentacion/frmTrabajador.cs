@@ -285,6 +285,8 @@ namespace CapaPresentacion
             this.txtDireccion.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["direccion"].Value);
             this.cbAcceso.SelectedIndex = int.Parse(this.dataListado.CurrentRow.Cells["acceso"].Value.ToString());
             this.txtPassword.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["password"].Value);
+            this.txtCorreo.Text = this.dataListado.CurrentRow.Cells["Correo"].Value.ToString();
+            this.txtTelefono.Text = this.dataListado.CurrentRow.Cells["Telefono"].Value.ToString();
 
 
             this.tabControl1.SelectedIndex = 1;
@@ -325,7 +327,7 @@ namespace CapaPresentacion
 
                         Rpta = NTrabajador.Insertar(this.txtIdtrabajador.Text.Trim().ToUpper() , this.txtNombre.Text.Trim().ToUpper(),
                         txtDireccion.Text, cbSexo.Text,
-                        cbAcceso.SelectedIndex, txtPassword.Text, txtCorreo.Text, txtTelefono.Text);
+                        cbAcceso.SelectedIndex, txtPassword.Text, txtCorreo.Text.Trim().ToLower(), txtTelefono.Text);
 
                     }
                     else
@@ -334,7 +336,7 @@ namespace CapaPresentacion
                         Rpta = NTrabajador.Editar(this.txtIdtrabajador.Text.Trim().ToUpper(), this.txtNombre.Text.Trim().ToUpper(),
                         cbSexo.Text,
                         txtDireccion.Text,
-                        cbAcceso.SelectedIndex, txtPassword.Text, txtCorreo.Text, txtTelefono.Text);
+                        cbAcceso.SelectedIndex, txtPassword.Text, txtCorreo.Text.Trim().ToLower(), txtTelefono.Text);
                     }
                     //Si la respuesta fue OK, fue porque se modifico 
                     //o inserto el Cliente
@@ -424,7 +426,7 @@ namespace CapaPresentacion
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            if (!(char.IsLetter(e.KeyChar)) && ((e.KeyChar != (char)Keys.Back) || (e.KeyChar != (char)Keys.Space)))
             {
                 MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;

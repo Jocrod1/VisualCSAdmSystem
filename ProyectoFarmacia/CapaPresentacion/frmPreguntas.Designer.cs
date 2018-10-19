@@ -62,7 +62,6 @@
             this.txtCorreoPregunta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtCorreoPregunta.Location = new System.Drawing.Point(67, 242);
             this.txtCorreoPregunta.Name = "txtCorreoPregunta";
-            this.txtCorreoPregunta.PasswordChar = '*';
             this.txtCorreoPregunta.Size = new System.Drawing.Size(440, 20);
             this.txtCorreoPregunta.TabIndex = 24;
             // 
@@ -152,7 +151,6 @@
             this.txtTelefonoPregunta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTelefonoPregunta.Location = new System.Drawing.Point(67, 310);
             this.txtTelefonoPregunta.Name = "txtTelefonoPregunta";
-            this.txtTelefonoPregunta.PasswordChar = '*';
             this.txtTelefonoPregunta.Size = new System.Drawing.Size(440, 20);
             this.txtTelefonoPregunta.TabIndex = 30;
             this.txtTelefonoPregunta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefonoPregunta_KeyPress);

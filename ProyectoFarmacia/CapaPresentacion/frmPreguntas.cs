@@ -73,17 +73,39 @@ namespace CapaPresentacion
 
 
             //validar el formato del correo
-              if (!(email_bien_escrito(txtCorreoPregunta.Text)))
+            if (!(email_bien_escrito(txtCorreoPregunta.Text)))
             {
                 MessageBox.Show("ERROR,ingrese un correo valido");
                 errorIcono.SetError(txtCorreoPregunta, "Ingrese un Valor");
 
-            }else
+            }
+            else
             {
+                DataTable Datos = CapaNegocio.NTrabajador.Buscar_Cedula(this.txtIdPregunta.Text);
+                //Evaluar si existe el Usuario
+                if (Datos.Rows.Count == 0)
+                {
 
-                //validar si las preguntas coinciden
+                    MessageBox.Show("Ingrese un ID correcto", "Sistema de Ventas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    string Correo = Datos.Rows[0][6].ToString();
+                    string telefono = Datos.Rows[0][7].ToString();
+                    string Password = Datos.Rows[0][5].ToString();
 
-                //abrir el otro form
+                    if (Correo == txtCorreoPregunta.Text && telefono == txtTelefonoPregunta.Text)
+                    {
+                        MessageBox.Show("Su Clave es:" + Password, "Sistema de Ventas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Las respuestas son erroneas" + Correo + " " + telefono, "Sistema de Ventas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    //validar si las preguntas coinciden
+
+                    //abrir el otro form
+                }
             }
         }
 
