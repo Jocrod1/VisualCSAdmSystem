@@ -70,16 +70,7 @@ namespace CapaPresentacion
         private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
         {
         }
-
-        private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
-        }
-
-        private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
-        }
+    
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -114,6 +105,13 @@ namespace CapaPresentacion
             Application.Exit();
         }
 
+        private DialogResult resp;
+
+        private void Salir()
+        {
+            
+
+        }
 
 
 
@@ -135,51 +133,36 @@ namespace CapaPresentacion
         private void GestionUsuario()
         {
 
-                this.MnuAlmacen.Enabled = true;
-                this.MnuCompras.Enabled = true;
-                this.MnuVentas.Enabled = true;
-                this.MnuMantenimiento.Enabled = true;
-                this.MnuConsultas.Enabled = true;
-                this.MnuHerramientas.Enabled = true;
-                this.TsCompras.Enabled = true;
-                this.TsVentas.Enabled = true;
 
-           if (Acceso == 7)
-            {
-                this.MnuAlmacen.Enabled = false;
-                this.MnuCompras.Enabled = false;
-                this.MnuVentas.Enabled = true;
-                this.MnuMantenimiento.Enabled = false;
                 this.MnuConsultas.Enabled = true;
-                this.MnuHerramientas.Enabled = true;
-                this.TsCompras.Enabled = false;
-                this.TsVentas.Enabled = true;
+                this.MnuProcesos.Enabled = true;
+                this.MnuRegistros.Enabled = true;
+
+           if (Acceso == 0)   //Este tipo de acceso es Administrador
+            {
+
+                this.MnuConsultas.Enabled = true;
+                this.MnuProcesos.Enabled = true;
+                this.MnuRegistros.Enabled = true;
 
             }
-            else if (Acceso == 8)
+            else if (Acceso == 1)  //Este tipo de acceso es Trabajador
             {
-                this.MnuAlmacen.Enabled = true;
-                this.MnuCompras.Enabled = true;
-                this.MnuVentas.Enabled = false;
-                this.MnuMantenimiento.Enabled = false;
-                this.MnuConsultas.Enabled = true;
-                this.MnuHerramientas.Enabled = true;
-                this.TsCompras.Enabled = true;
-                this.TsVentas.Enabled = false;
 
-            }/*
+                this.MnuConsultas.Enabled = true;
+                this.MnuProcesos.Enabled = true;
+                this.trabajadoresToolStripMenuItem.Enabled = false;
+                this.MnuRegistros.Enabled = true;
+
+            }
             else
             {
-                this.MnuAlmacen.Enabled = false;
-                this.MnuCompras.Enabled = false;
-                this.MnuVentas.Enabled = false;
-                this.MnuMantenimiento.Enabled = false;
-                this.MnuConsultas.Enabled = false;
-                this.MnuHerramientas.Enabled = false;
-                this.TsCompras.Enabled = false;
-                this.TsVentas.Enabled = false;
 
-            }*/
+                this.MnuConsultas.Enabled = false;
+                this.MnuProcesos.Enabled = false;
+                this.MnuRegistros.Enabled = false;
+
+            }
         }
 
 
@@ -233,13 +216,13 @@ namespace CapaPresentacion
 
 
 
-        ////para captar el id del trabajador
-        //private void ventasToolStripMenuItem1_Click(object sender, EventArgs e)
-        //{
-        //    frmVenta frm = frmVenta.GetInstancia();
-        //    frm.MdiParent = this;
-        //    frm.Show();
-        //    frm.IdTrabajador = Convert.ToInt32(this.Idtrabajador);
-        //}
+
+        private void ventaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVenta frm = frmVenta.GetInstancia();
+            frm.MdiParent = this;
+            frm.Show();
+            frm.IdTrabajador = Convert.ToInt32(this.Idtrabajador);
+        }
     }
 }

@@ -278,7 +278,9 @@ namespace CapaPresentacion
                         //string Direccion_Trabajador, string Sexo_Trabajador, 
                         //int Acceso_Trabajador, string Password_Trabajador, string Texto_Buscar)
 
-                        Rpta = NTrabajador.Insertar(this.txtIdtrabajador.Text.Trim().ToUpper() , this.txtNombre.Text.Trim().ToUpper(), txtDireccion.Text, cbSexo.Text, cbAcceso.SelectedIndex, txtPassword.Text);
+                        Rpta = NTrabajador.Insertar(this.txtIdtrabajador.Text.Trim().ToUpper() , this.txtNombre.Text.Trim().ToUpper(),
+                        txtDireccion.Text, cbSexo.Text,
+                        cbAcceso.SelectedIndex, txtPassword.Text, txtCorreo.Text, txtTelefono.Text);
 
                     }
                     else
@@ -287,7 +289,7 @@ namespace CapaPresentacion
                         Rpta = NTrabajador.Editar(this.txtIdtrabajador.Text.Trim().ToUpper(), this.txtNombre.Text.Trim().ToUpper(),
                         cbSexo.Text,
                         txtDireccion.Text,
-                        cbAcceso.SelectedIndex, txtPassword.Text);
+                        cbAcceso.SelectedIndex, txtPassword.Text, txtCorreo.Text, txtTelefono.Text);
                     }
                     //Si la respuesta fue OK, fue porque se modifico 
                     //o inserto el Cliente
