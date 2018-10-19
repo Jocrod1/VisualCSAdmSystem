@@ -202,14 +202,15 @@ namespace CapaPresentacion
             try
             {
                 string rpta = "";
-                if (this.txtNombreArticulo.Text == string.Empty)
+                if (this.txtIdarticulo.Text == string.Empty && this.IsEditar)
+                {
+                    MensajeError("Hay campos vacios, porfavor verifique");
+                    errorIcono.SetError(txtIdarticulo, "Ingrese un Valor");
+                }
+                else if (this.txtNombreArticulo.Text == string.Empty)
                 {
                     MensajeError("Hay campos vacios, porfavor verifique");
                     errorIcono.SetError(txtNombreArticulo, "Ingrese un Valor");
-                }
-                else if (this.txtIdarticulo.Text == string.Empty && this.IsEditar) {
-                    MensajeError("Hay campos vacios, porfavor verifique");
-                    errorIcono.SetError(txtIdarticulo, "Ingrese un Valor");
                 }
                 else
                 {

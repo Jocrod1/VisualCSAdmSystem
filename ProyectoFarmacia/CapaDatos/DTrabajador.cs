@@ -52,10 +52,16 @@ namespace CapaDatos
             get { return _Password_Trabajador; }
             set { _Password_Trabajador = value; }
         }
-
-        public string Correo_Trabajador { get => _Correo_Trabajador; set => _Correo_Trabajador = value; }
-        public string Telefono_Trabajador { get => _Telefono_Trabajador; set => _Telefono_Trabajador = value; }
-
+        public string Correo_Trabajador
+        {
+            get { return _Correo_Trabajador; }
+            set { _Correo_Trabajador = value; }
+        }
+        public string Telefono_Trabajador
+        {
+            get { return _Telefono_Trabajador; }
+            set { _Telefono_Trabajador = value; }
+        }
         public string Texto_Buscar
         {
             get { return _Texto_Buscar; }

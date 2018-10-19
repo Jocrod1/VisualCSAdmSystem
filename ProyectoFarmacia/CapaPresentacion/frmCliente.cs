@@ -94,7 +94,7 @@ namespace CapaPresentacion
         private void OcultarColumnas()
         {
             this.dataListado.Columns[0].Visible = false;
-            this.dataListado.Columns[1].Visible = false;
+            //this.dataListado.Columns[1].Visible = false;
         }
 
         //Método Mostrar
@@ -200,6 +200,7 @@ namespace CapaPresentacion
             this.Botones();
             this.Limpiar();
             this.Habilitar(true);
+            this.txtIdcliente.ReadOnly = true;
             this.txtNombre.Focus();
         }
 
@@ -208,14 +209,16 @@ namespace CapaPresentacion
             try
             {
                 string rpta = "";
-                if (this.txtNombre.Text == string.Empty 
-                    || this.txtIdcliente.Text == string.Empty
-                    || this.txtDireccion.Text == string.Empty)
+                if (this.txtIdcliente.Text == string.Empty && this.IsEditar)
                 {
                     MensajeError("Falta ingresar algunos datos, serán remarcados");
-                    errorIcono.SetError(txtNombre, "Ingrese un Valor");
                     errorIcono.SetError(txtIdcliente, "Ingrese un Valor");
-                    errorIcono.SetError(txtDireccion, "Ingrese un Valor");
+                }
+                else if (txtNombre.Text == string.Empty || txtDireccion.Text == string.Empty) {
+                    if(txtNombre.Text == string.Empty)
+                        errorIcono.SetError(txtNombre, "Ingrese un Valor");
+                    if(txtDireccion.Text == string.Empty)
+                        errorIcono.SetError(txtDireccion, "Ingrese un Valor");
                 }
                 else
                 {
@@ -271,6 +274,7 @@ namespace CapaPresentacion
                 this.IsEditar = true;
                 this.Botones();
                 this.Habilitar(true);
+                this.txtIdcliente.ReadOnly = true;
             }
             else
             {
