@@ -211,7 +211,10 @@
       <DependentUpon>frmReporteComprobante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteArticulo.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteCliente.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteComprobante.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteIngreso.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteTrabajador.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
