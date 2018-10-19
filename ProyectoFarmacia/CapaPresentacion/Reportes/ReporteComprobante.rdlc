@@ -332,7 +332,6 @@
       </Textbox>
       <Line Name="Line1">
         <Top>26.91059cm</Top>
-        <Left>0cm</Left>
         <Height>0cm</Height>
         <Width>21.25578cm</Width>
         <ZIndex>10</ZIndex>
@@ -344,7 +343,6 @@
       </Line>
       <Line Name="Line2">
         <Top>4.26375cm</Top>
-        <Left>0cm</Left>
         <Height>0cm</Height>
         <Width>21.25578cm</Width>
         <ZIndex>11</ZIndex>
@@ -358,7 +356,6 @@
       <Rectangle Name="Rectangle1">
         <KeepTogether>true</KeepTogether>
         <Top>3.88397cm</Top>
-        <Left>0cm</Left>
         <Height>0.34449cm</Height>
         <Width>21.25578cm</Width>
         <ZIndex>12</ZIndex>
@@ -372,7 +369,6 @@
       <Rectangle Name="Rectangle2">
         <KeepTogether>true</KeepTogether>
         <Top>26.91059cm</Top>
-        <Left>0cm</Left>
         <Height>0.34449cm</Height>
         <Width>21.25578cm</Width>
         <ZIndex>13</ZIndex>
@@ -383,68 +379,6 @@
           <BackgroundColor>Aqua</BackgroundColor>
         </Style>
       </Rectangle>
-      <Textbox Name="Total_Parcial2">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=sum(Fields!Total_Parcial.Value)-sum(Fields!Total_Parcial.Value)*Fields!Impuesto.Value/100</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Total_Parcial</rd:DefaultName>
-        <Top>12.31522cm</Top>
-        <Left>17.02521cm</Left>
-        <Height>0.6cm</Height>
-        <Width>3.24545cm</Width>
-        <ZIndex>14</ZIndex>
-        <Style>
-          <Border>
-            <Color>LightGrey</Color>
-            <Style>Solid</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Total_Parcial3">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=sum(Fields!Total_Parcial.Value)*Fields!Impuesto.Value/100</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Total_Parcial</rd:DefaultName>
-        <Top>13.32064cm</Top>
-        <Left>17.02521cm</Left>
-        <Height>0.6cm</Height>
-        <Width>3.24545cm</Width>
-        <ZIndex>15</ZIndex>
-        <Style>
-          <Border>
-            <Color>LightGrey</Color>
-            <Style>Solid</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Textbox Name="Total_Parcial4">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -460,90 +394,16 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Total_Parcial</rd:DefaultName>
-        <Top>14.3087cm</Top>
-        <Left>17.03403cm</Left>
+        <Top>11.95391cm</Top>
+        <Left>17.12731cm</Left>
         <Height>0.6cm</Height>
         <Width>3.24545cm</Width>
-        <ZIndex>16</ZIndex>
+        <ZIndex>14</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
             <Style>Solid</Style>
           </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox4">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>SubTotal: </Value>
-                <Style>
-                  <FontFamily>Bahnschrift</FontFamily>
-                  <FontSize>12pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Right</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>12.31522cm</Top>
-        <Left>14.04014cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.84396cm</Width>
-        <ZIndex>17</ZIndex>
-        <Style>
-          <Border>
-            <Color>LightGrey</Color>
-            <Style>Solid</Style>
-          </Border>
-          <BackgroundColor>Aqua</BackgroundColor>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox6">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Impuesto: </Value>
-                <Style>
-                  <FontFamily>Bahnschrift</FontFamily>
-                  <FontSize>12pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Right</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>13.32064cm</Top>
-        <Left>14.04014cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.84396cm</Width>
-        <ZIndex>18</ZIndex>
-        <Style>
-          <Border>
-            <Color>LightGrey</Color>
-            <Style>Solid</Style>
-          </Border>
-          <BackgroundColor>Aqua</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -570,11 +430,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>14.3087cm</Top>
-        <Left>14.04014cm</Left>
+        <Top>11.95391cm</Top>
+        <Left>14.13342cm</Left>
         <Height>0.6cm</Height>
         <Width>2.8175cm</Width>
-        <ZIndex>19</ZIndex>
+        <ZIndex>15</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -1043,7 +903,7 @@
         <Left>0.87785cm</Left>
         <Height>1.2cm</Height>
         <Width>19.40163cm</Width>
-        <ZIndex>20</ZIndex>
+        <ZIndex>16</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1069,7 +929,7 @@
         <Left>3.55424cm</Left>
         <Height>0.6cm</Height>
         <Width>1.84714cm</Width>
-        <ZIndex>21</ZIndex>
+        <ZIndex>17</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -1100,7 +960,7 @@
         <Left>5.53368cm</Left>
         <Height>0.6cm</Height>
         <Width>4.123cm</Width>
-        <ZIndex>22</ZIndex>
+        <ZIndex>18</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -1131,7 +991,7 @@
         <Left>3.55424cm</Left>
         <Height>0.6cm</Height>
         <Width>14.48006cm</Width>
-        <ZIndex>23</ZIndex>
+        <ZIndex>19</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -1162,7 +1022,7 @@
         <Left>3.5493cm</Left>
         <Height>0.6cm</Height>
         <Width>6.10737cm</Width>
-        <ZIndex>24</ZIndex>
+        <ZIndex>20</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -1193,7 +1053,7 @@
         <Left>2.81739cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>25</ZIndex>
+        <ZIndex>21</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -1224,7 +1084,7 @@
         <Left>17.37799cm</Left>
         <Height>0.6cm</Height>
         <Width>2.89267cm</Width>
-        <ZIndex>26</ZIndex>
+        <ZIndex>22</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
