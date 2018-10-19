@@ -46,11 +46,12 @@ namespace CapaPresentacion
         private void Limpiar()
         {
             this.txtNombre.Text = string.Empty;
-            this.txtDescripcion.Text = string.Empty;
             this.txtIdproveedor.Text = string.Empty;
             this.txtDocumento.Text = string.Empty;
             this.txtRepresentanteLegal.Text = string.Empty;
             this.txtDireccionFiscal.Text = string.Empty;
+            this.txtCorreo.Text = string.Empty;
+            this.txtTelefono.Text = string.Empty;
 
             this.pxImagen.Image = global::CapaPresentacion.Properties.Resources.file;
 
@@ -65,9 +66,8 @@ namespace CapaPresentacion
             this.txtDocumento.ReadOnly = !valor;
             this.txtRepresentanteLegal.ReadOnly = !valor;
             this.txtDireccionFiscal.ReadOnly = !valor;
-            this.txtDescripcion.ReadOnly = !valor;
-            this.btnCargar.Enabled = valor;
-            this.btnLimpiar.Enabled = valor;
+            this.txtCorreo.ReadOnly = !valor;
+            this.txtTelefono.ReadOnly = !valor;
         }
 
         //Habilitar los botones
@@ -337,6 +337,8 @@ namespace CapaPresentacion
             this.txtDocumento.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Documento"].Value);
             this.txtDireccionFiscal.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["DireccionFiscal"].Value);
             this.txtRepresentanteLegal.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["RepresentanteLegal"].Value);
+            this.txtCorreo.Text = this.dataListado.CurrentRow.Cells["Correo"].Value.ToString();
+            this.txtTelefono.Text = this.dataListado.CurrentRow.Cells["Telefono"].Value.ToString();
             this.tabControl1.SelectedIndex = 1;
         }
 
@@ -357,11 +359,14 @@ namespace CapaPresentacion
                 this.BuscarRepresentanteLegal();
 
             }
-            else if (cbBuscar.Text.Equals("Nombre"))
+            else if (cbBuscar.Text.Equals("Nombre Proveedor"))
             {
 
                 this.BuscarNombre();
 
+            }
+            else {
+                txtBuscar.Text = string.Empty;
             }
 
         }
