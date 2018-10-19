@@ -25,6 +25,11 @@ namespace CapaPresentacion
             this.dataListado.Columns[0].Visible = false;
             this.dataListado.Columns[1].Visible = false;
         }
+        private void Mostrar() {
+            this.dataListado.DataSource = NIngreso.MostrarDIngreso();
+            this.OcultarColumnas();
+            lblTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
+        }
 
         private void BuscarNombre()
         {
@@ -58,7 +63,25 @@ namespace CapaPresentacion
 
         private void frmVistaArticuloVenta_Load(object sender, EventArgs e)
         {
+            Mostrar();
+        }
 
+        private void dataListado_DoubleClick(object sender, EventArgs e)
+        {
+            frmVenta form = frmVenta.GetInstancia();
+            string parametro1;
+            decimal parametro2;
+            int parametro4;
+
+
+            parametro1 = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
+            parametro2 = Convert.ToDecimal(this.dataListado.CurrentRow.Cells["PrecioVenta"].Value);
+            //parametro3 = Convert.ToDecimal(this.dataListado.CurrentRow.Cells["Descuento"].Value);
+            parametro4 = Convert.ToInt32(this.dataListado.CurrentRow.Cells["StockActual"].Value);
+
+            form.SetArticulo(parametro1, parametro2, parametro4);
+
+            this.Hide();
         }
     }
 }

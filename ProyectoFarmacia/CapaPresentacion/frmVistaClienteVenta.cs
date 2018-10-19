@@ -43,7 +43,7 @@ namespace CapaPresentacion
 
         private void BuscarCedula()
         {
-            this.dataListado.DataSource = NCliente.Buscar(this.txtBuscar.Text);
+            this.dataListado.DataSource = NCliente.BuscarT(this.txtBuscar.Text);
             this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
@@ -54,6 +54,21 @@ namespace CapaPresentacion
         }
 
         private void dataListado_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            frmVenta form = frmVenta.GetInstancia();
+            string parametro1;
+            parametro1 = Convert.ToString(this.dataListado.CurrentRow.Cells["IdCliente"].Value);
+
+            form.SetCliente(parametro1);
+            this.Hide();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            this.BuscarCedula();
+        }
+
+        private void dataListado_DoubleClick(object sender, EventArgs e)
         {
             frmVenta form = frmVenta.GetInstancia();
             string parametro1;

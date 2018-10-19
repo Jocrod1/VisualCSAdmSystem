@@ -586,7 +586,6 @@
             // 
             // txtdescuento
             // 
-            this.txtdescuento.Enabled = false;
             this.txtdescuento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtdescuento.Location = new System.Drawing.Point(470, 71);
             this.txtdescuento.Name = "txtdescuento";
@@ -664,6 +663,7 @@
             this.txtimpuesto.Name = "txtimpuesto";
             this.txtimpuesto.Size = new System.Drawing.Size(171, 20);
             this.txtimpuesto.TabIndex = 79;
+            this.txtimpuesto.Text = "12";
             this.txtimpuesto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtimpuesto_KeyPress);
             // 
             // frmVenta

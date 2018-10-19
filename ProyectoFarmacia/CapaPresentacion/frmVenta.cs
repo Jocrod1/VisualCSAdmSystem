@@ -32,7 +32,7 @@ namespace CapaPresentacion
 
         public void SetCliente(string IdCliente)
         {
-            //this.txtidcliente.Text = IdCliente;
+            this.txtcliente.Text = IdCliente;
         }
 
         public void SetArticulo(string Articulo, decimal PrecioVenta, int StockActual)

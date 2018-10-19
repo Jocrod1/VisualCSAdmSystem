@@ -179,6 +179,30 @@ namespace CapaDatos
             return respuesta;
 
         }
+
+        public DataTable Mostrar()
+        {
+            DataTable DtResultado = new DataTable("DetalleIngreso");
+            SqlConnection SqlConectar = new SqlConnection();
+
+            try
+            {
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.CommandText = "MostrarDingreso";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter SqlData = new SqlDataAdapter(SqlComando);
+                SqlData.Fill(DtResultado);
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+
+        }
     }
 }
 

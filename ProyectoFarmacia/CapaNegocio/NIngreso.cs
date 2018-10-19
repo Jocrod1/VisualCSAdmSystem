@@ -67,6 +67,10 @@ namespace CapaNegocio
             return Objeto.Mostrar_Detalle_Fecha(TextoBuscar);
         }
 
+        public static DataTable MostrarDIngreso()
+        {
+            return new DDetalle_Ingreso().Mostrar();
+        }
 
     }
 }
