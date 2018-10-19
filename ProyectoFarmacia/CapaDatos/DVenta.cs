@@ -147,7 +147,7 @@ namespace CapaDatos
 
                 //parametro total
                 SqlParameter Parametro_Total_Venta = new SqlParameter();
-                Parametro_Total_Venta.ParameterName = "@PrecioTotal";
+                Parametro_Total_Venta.ParameterName = "@Total";
                 Parametro_Total_Venta.SqlDbType = SqlDbType.Money;
                 Parametro_Total_Venta.Value = Venta.Total;
                 SqlComando.Parameters.Add(Parametro_Total_Venta);
@@ -157,7 +157,7 @@ namespace CapaDatos
 
                 if (respuesta.Equals("OK"))
                 {
-                    this.Id_Venta = Convert.ToInt32(SqlComando.Parameters["IdVenta"].Value);
+                    this.Id_Venta = Convert.ToInt32(SqlComando.Parameters["@IdVenta"].Value);
 
                     foreach (DDetalle_Venta det in Detalle)
                     {
@@ -173,7 +173,7 @@ namespace CapaDatos
                         else
                         {
                             //se actualiza el stock
-                            respuesta = Disminuir_Stock(det.Id_Detalle_Ingreso, det.Cantidad);
+                            //respuesta = Disminuir_Stock(det.Id_Detalle_Ingreso, det.Cantidad);
 
                             if(!respuesta.Equals("OK"))
                             {

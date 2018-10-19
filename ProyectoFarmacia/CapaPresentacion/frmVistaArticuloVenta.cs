@@ -45,7 +45,7 @@ namespace CapaPresentacion
 
         private void frmVistaArticuloVenta_Load(object sender, EventArgs e)
         {
-
+            this.Mostrar();
         }
 
         private void dataListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -56,17 +56,23 @@ namespace CapaPresentacion
         private void dataListado_DoubleClick(object sender, EventArgs e)
         {
             frmVenta form = frmVenta.GetInstancia();
-            string parametro1;
-            decimal parametro2;
-            int parametro4;
+            int IdIngreso;
+            string Nombre;
+            decimal PrecioCompra,PrecioVenta;
+            DateTime FechaProduccion, FechaVencimiento;
+            int StockActual, StockInicial;
 
 
-            parametro1 = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
-            parametro2 = Convert.ToDecimal(this.dataListado.CurrentRow.Cells["PrecioVenta"].Value);
-            //parametro3 = Convert.ToDecimal(this.dataListado.CurrentRow.Cells["Descuento"].Value);
-            parametro4 = Convert.ToInt32(this.dataListado.CurrentRow.Cells["StockActual"].Value);
+            IdIngreso = int.Parse(dataListado.CurrentRow.Cells["IdIngreso"].Value.ToString());
+            Nombre = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
+            PrecioCompra = decimal.Parse(dataListado.CurrentRow.Cells["PrecioCompra"].Value.ToString());
+            PrecioVenta = Convert.ToDecimal(this.dataListado.CurrentRow.Cells["PrecioVenta"].Value);
+            FechaProduccion = Convert.ToDateTime(dataListado.CurrentRow.Cells["FechaProduccion"].Value.ToString());
+            FechaVencimiento = Convert.ToDateTime(dataListado.CurrentRow.Cells["FechaVencimiento"].Value.ToString());
+            StockActual = Convert.ToInt32(this.dataListado.CurrentRow.Cells["StockActual"].Value);
+            StockInicial = Convert.ToInt32(this.dataListado.CurrentRow.Cells["StockInicial"].Value);
 
-            form.SetArticulo(parametro1, parametro2, parametro4);
+            form.SetArticulo(IdIngreso, Nombre, PrecioCompra, PrecioVenta, FechaProduccion, FechaVencimiento, StockActual, StockInicial);
 
             this.Hide();
         }

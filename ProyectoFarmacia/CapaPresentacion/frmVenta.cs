@@ -35,12 +35,25 @@ namespace CapaPresentacion
             this.txtcliente.Text = IdCliente;
         }
 
-        public void SetArticulo(string Articulo, decimal PrecioVenta, int StockActual)
+        DataRow SelectedArt;
+
+        public void SetArticulo(int IdIngreso,string Nombre, decimal PrecioCompra, decimal PrecioVenta, DateTime FechaProduccion, DateTime FechaVencimiento,int StockActual, int StockInicial)
         {
-            this.txtarticulo.Text = Articulo;
+            this.txtarticulo.Text = Nombre;
             this.txtsubtotal.Text = Convert.ToString(PrecioVenta);
             //this.txtdescuento.Text= Convert.ToString(Descuento);
             this.txtstockactual.Text = Convert.ToString(StockActual);
+
+            SelectedArt = this.DtDetalle.NewRow();
+
+            SelectedArt["IdIngreso"] = IdIngreso;
+            SelectedArt["Nombre"] = Nombre;
+            SelectedArt["PrecioCompra"] = PrecioCompra;
+            SelectedArt["PrecioVenta"] = PrecioVenta;
+            SelectedArt["fecha_produccion"] = FechaProduccion;
+            SelectedArt["fecha_vencimiento"] = FechaProduccion;
+            SelectedArt["StockActual"] = StockActual;
+            SelectedArt["StockInicial"] = StockInicial;
 
         }
 
@@ -161,14 +174,14 @@ namespace CapaPresentacion
         private void crearTabla()
         {
             this.DtDetalle = new DataTable("Detalle");
-            this.DtDetalle.Columns.Add("IdDetalleIngreso", System.Type.GetType("System.Int32"));
-            this.DtDetalle.Columns.Add("Articulo", System.Type.GetType("System.String"));
-            this.DtDetalle.Columns.Add("Cantidad", System.Type.GetType("System.Int32"));
+            this.DtDetalle.Columns.Add("IdIngreso", System.Type.GetType("System.Int32"));
+            this.DtDetalle.Columns.Add("Nombre", System.Type.GetType("System.String"));
+            this.DtDetalle.Columns.Add("PrecioCompra", System.Type.GetType("System.Decimal"));
             this.DtDetalle.Columns.Add("PrecioVenta", System.Type.GetType("System.Decimal"));
-            this.DtDetalle.Columns.Add("SubTotal", System.Type.GetType("System.Decimal"));
-            this.DtDetalle.Columns.Add("Descuento", System.Type.GetType("System.Decimal"));
-            this.DtDetalle.Columns.Add("Impuesto", System.Type.GetType("System.Decimal"));
-            this.DtDetalle.Columns.Add("Total", System.Type.GetType("System.Decimal"));
+            this.DtDetalle.Columns.Add("fecha_produccion", System.Type.GetType("System.DateTime"));
+            this.DtDetalle.Columns.Add("fecha_vencimiento", System.Type.GetType("System.DateTime"));
+            this.DtDetalle.Columns.Add("StockActual", System.Type.GetType("System.Int32"));
+            this.DtDetalle.Columns.Add("StockInicial", System.Type.GetType("System.Int32"));
 
 
             //Relacionar nuestro DataGRidView con nuestro DataTable
@@ -313,20 +326,17 @@ namespace CapaPresentacion
             try
             {
                 string rpta = "";
-                if (this.txtcliente.Text == string.Empty || this.txtarticulo.Text==string.Empty || this.txtcantidad.Text==string.Empty || this.txtdescuento.Text == string.Empty)
+                if (this.txtcliente.Text == string.Empty)
                 {
                     MensajeError("Falta ingresar algunos datos");
                     errorIcono.SetError(txtcliente, "Ingrese un Valor");
-                    errorIcono.SetError(txtarticulo, "Ingrese un Valor");
-                    errorIcono.SetError(txtcantidad, "Ingrese un Valor");
-                    errorIcono.SetError(txtdescuento, "Ingrese un Valor");
                 }
                 else
                 {
                     if (this.IsNuevo)
                     {
 
-                        rpta = NVenta.Insertar(txtcliente.Text,IdTrabajador.ToString(), dtFecha.Value, Convert.ToDecimal(txtsubtotal), Convert.ToDecimal(txtimpuesto), Convert.ToDecimal(txttotal), DtDetalle);
+                        rpta = NVenta.Insertar(txtcliente.Text,IdTrabajador.ToString(), dtFecha.Value,subtotal,0, TotalPagado, DtDetalle);
 
                     }
 
@@ -360,20 +370,17 @@ namespace CapaPresentacion
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
-
+        decimal subtotal;
         private void btnAgregar_Click(object sender, EventArgs e)
         {
 
             try
             {
 
-                if (this.txtcliente.Text == string.Empty || this.txtarticulo.Text == string.Empty || this.txtcantidad.Text == string.Empty || this.txtdescuento.Text==string.Empty)
+                if (this.txtcliente.Text == string.Empty)
                 {
                     MensajeError("Falta ingresar algunos datos, serán remarcados");
                     errorIcono.SetError(txtcliente, "Ingrese un Valor");
-                    errorIcono.SetError(txtarticulo, "Ingrese un Valor");
-                    errorIcono.SetError(txtcantidad, "Ingrese un Valor");
-                    errorIcono.SetError(txtdescuento, "Ingrese un Valor");
                 }
                 else
                 {
@@ -391,7 +398,6 @@ namespace CapaPresentacion
 
                         //PENDIENTE PERRO CALIENTE CON ESTO 
                         //aqui convierto el porcentaje y lo multiplico por el precio y lo vuelvo el total pagado
-                        decimal subtotal;
 
                         subtotal = (Convert.ToInt32(txtcantidad.Text) *Convert.ToDecimal(this.txtsubtotal.Text)) - Convert.ToDecimal(this.txtdescuento.Text);
                         TotalPagado = TotalPagado + subtotal;
@@ -399,16 +405,17 @@ namespace CapaPresentacion
 
                         //Agregar ese detalle al datalistadoDetalle
                         DataRow row = this.DtDetalle.NewRow();
-
-
-                        row["IdDetalleVenta"] = Convert.ToInt32(this.txtidventa.Text);
-                        row["articulo"] = this.txtarticulo.Text;
-                        row["Cantidad"] = Convert.ToInt32(this.txtcantidad.Text);
-                        row["SubTotal"] = Convert.ToDecimal(subtotal);
+                        /*
+                        row["IdIngreso"] = 0;
+                        row["Nombre"] = this.txtarticulo.Text;
+                        row["PrecioCompra"] = Convert.ToDecimal(this.txtcantidad.Text);
+                        row["PrecioCompra"] = Convert.ToDecimal(this.txtcantidad.Text);
+                        row["Precio"] = TotalPagado;
                         //row["SubTotal"] = Convert.ToDecimal(this.txtsubtotal.Text);
                         row["Descuento"] = Convert.ToDecimal(this.txtdescuento.Text);
-
-                        this.DtDetalle.Rows.Add(row);
+                        */
+                        this.DtDetalle.Rows.Add(SelectedArt);
+                        SelectedArt = DtDetalle.NewRow();
                         this.limpiarDetalle();
 
                     }

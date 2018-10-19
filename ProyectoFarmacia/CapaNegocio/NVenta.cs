@@ -27,10 +27,10 @@ namespace CapaNegocio
             foreach (DataRow row in DtDetalles.Rows)
             {
                 DDetalle_Venta Detalle = new DDetalle_Venta();
-                Detalle.Id_Detalle_Ingreso = Convert.ToInt32(row["IdDetalleIngreso"].ToString());
-                Detalle.Cantidad = Convert.ToInt32(row["Cantidad"].ToString());
-                Detalle.Precio_Venta = Convert.ToDecimal(row["Precio_Venta"].ToString());
-                Detalle.Descuento = Convert.ToDecimal(row["Stock_Inicial"].ToString());
+                Detalle.Id_Detalle_Ingreso = 0;
+                Detalle.Cantidad = 2;
+                Detalle.Precio_Venta = 2;
+                Detalle.Descuento = 2;
                 Detalles.Add(Detalle);
 
             }
