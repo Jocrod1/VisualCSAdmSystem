@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 using CapaNegocio;
 
@@ -62,6 +63,41 @@ namespace CapaPresentacion
             }
 
         }
+
+
+
+
+
+
+
+
+
+        private Boolean email_bien_escrito(String email)
+        {
+            String expresion;
+            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(email, expresion))
+            {
+                if (Regex.Replace(email, expresion, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+
+
+
+
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -129,6 +165,8 @@ namespace CapaPresentacion
             this.txtNombre.Text = string.Empty;
             this.txtDireccion.Text = string.Empty;
             this.txtPassword.Text = string.Empty;
+            this.txtCorreo.Text = string.Empty;
+            this.txtTelefono.Text = string.Empty;
 
         }
         //Habilita los controles de los formularios
@@ -267,6 +305,13 @@ namespace CapaPresentacion
                     errorIcono.SetError(txtNombre, "Ingrese un Valor");
                     errorIcono.SetError(txtPassword, "Ingrese un Valor");
                 }
+
+                else if (!(email_bien_escrito(txtCorreo.Text)))
+                {
+                    MensajeError("ERROR,ingrese un correo valido");
+                    errorIcono.SetError(txtCorreo, "Ingrese un Valor");
+
+                }
                 else
                 {
                     if (this.IsNuevo)
@@ -367,8 +412,34 @@ namespace CapaPresentacion
 
         }
 
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
 
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
 
-
+        private void txtIdtrabajador_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
     }
 }

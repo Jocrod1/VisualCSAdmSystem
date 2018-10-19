@@ -70,10 +70,10 @@ namespace CapaPresentacion
         //Habilitar los controles del formulario
         private void Habilitar(bool valor)
         {
-            this.txtIdarticulo.ReadOnly = !valor;
-            this.txtNombreArticulo.ReadOnly = !valor;
-            this.txtDescripcion.ReadOnly = !valor;
-            this.txtIdarticulo.ReadOnly = !valor;
+            this.txtIdarticulo.Enabled = valor;
+            this.txtNombreArticulo.Enabled = valor;
+            this.txtDescripcion.Enabled = valor;
+            this.txtIdarticulo.Enabled = valor;
             this.btnCargar.Enabled = valor;
         }
 
@@ -194,18 +194,21 @@ namespace CapaPresentacion
             this.Botones();
             this.Limpiar();
             this.Habilitar(true);
-            this.txtIdarticulo.ReadOnly = true;
+            this.txtIdarticulo.Enabled = false;
             this.txtNombreArticulo.Focus();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
 
-          
-
+ 
             try
             {
                 string rpta = "";
+
+
+
+
                 if (this.txtIdarticulo.Text == string.Empty && this.IsEditar)
                 {
                     MensajeError("Hay campos vacios, porfavor verifique");
@@ -216,6 +219,7 @@ namespace CapaPresentacion
                     MensajeError("Hay campos vacios, porfavor verifique");
                     errorIcono.SetError(txtNombreArticulo, "Ingrese un Valor");
                 }
+
                 else
                 {
                     System.IO.MemoryStream ms = new System.IO.MemoryStream();
@@ -267,6 +271,8 @@ namespace CapaPresentacion
             }
 
 
+                
+
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -283,20 +289,10 @@ namespace CapaPresentacion
 
 
 
-        public void ValidarSoloLetras(string input)
-        {
-            bool EsSoloLetras;
-            EsSoloLetras = Regex.IsMatch(input, @"^[a-zA-Z]+$");
-
-            if (!(EsSoloLetras))
-            {
-                MessageBox.Show("ERROR! Solo puede escribir letras");
 
 
-            }
 
-
-        }
+       
 
 
 
@@ -415,9 +411,5 @@ namespace CapaPresentacion
             this.tabControl1.SelectedIndex = 1;
         }
 
-        private void txtNombreArticulo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -54,8 +54,28 @@ namespace CapaPresentacion
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Salir();
         }
+
+
+
+
+
+        private void Salir()
+        {
+            DialogResult result = MessageBox.Show("¿Seguro desea salir?", "Confirmación de salida", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                //aqui evitar cierre del form
+            }
+            else
+            {
+                this.Close();
+            }
+
+        }
+
+
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
@@ -81,6 +101,15 @@ namespace CapaPresentacion
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            frmPreguntas formPreg = new frmPreguntas();
+            formPreg.Show();
+            this.Hide();
+
 
         }
     }

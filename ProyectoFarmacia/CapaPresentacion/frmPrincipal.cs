@@ -102,14 +102,21 @@ namespace CapaPresentacion
 
         private void salirDelSistemaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Salir();
         }
-
-        private DialogResult resp;
+        
 
         private void Salir()
         {
-            
+            DialogResult result = MessageBox.Show("¿Seguro desea salir?", "Confirmación de salida", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                //aqui evitar cierre del form
+            }
+            else
+            {
+                this.Close();
+            }
 
         }
 

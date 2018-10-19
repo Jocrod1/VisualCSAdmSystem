@@ -96,6 +96,7 @@
             this.txtcantidad.Name = "txtcantidad";
             this.txtcantidad.Size = new System.Drawing.Size(60, 20);
             this.txtcantidad.TabIndex = 76;
+            this.txtcantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcantidad_KeyPress);
             // 
             // label4
             // 
@@ -136,6 +137,7 @@
             this.txtsubtotal.Name = "txtsubtotal";
             this.txtsubtotal.Size = new System.Drawing.Size(171, 20);
             this.txtsubtotal.TabIndex = 64;
+            this.txtsubtotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsubtotal_KeyPress);
             // 
             // dtFecha
             // 
@@ -270,6 +272,8 @@
             this.txtidventa.Name = "txtidventa";
             this.txtidventa.Size = new System.Drawing.Size(121, 20);
             this.txtidventa.TabIndex = 30;
+            this.txtidventa.TextChanged += new System.EventHandler(this.txtidventa_TextChanged);
+            this.txtidventa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtidventa_KeyPress);
             // 
             // tabControl1
             // 
@@ -498,6 +502,7 @@
             this.txtcliente.Name = "txtcliente";
             this.txtcliente.Size = new System.Drawing.Size(121, 20);
             this.txtcliente.TabIndex = 78;
+            this.txtcliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcliente_KeyPress);
             // 
             // groupBox2
             // 
@@ -566,6 +571,7 @@
             this.txttotal.Name = "txttotal";
             this.txttotal.Size = new System.Drawing.Size(171, 20);
             this.txttotal.TabIndex = 87;
+            this.txttotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttotal_KeyPress);
             // 
             // label8
             // 
@@ -586,6 +592,7 @@
             this.txtdescuento.Name = "txtdescuento";
             this.txtdescuento.Size = new System.Drawing.Size(171, 20);
             this.txtdescuento.TabIndex = 85;
+            this.txtdescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdescuento_KeyPress);
             // 
             // btnbuscararticulo
             // 
@@ -625,6 +632,7 @@
             this.txtstockactual.Name = "txtstockactual";
             this.txtstockactual.Size = new System.Drawing.Size(71, 20);
             this.txtstockactual.TabIndex = 82;
+            this.txtstockactual.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtstockactual_KeyPress);
             // 
             // label15
             // 
@@ -656,6 +664,7 @@
             this.txtimpuesto.Name = "txtimpuesto";
             this.txtimpuesto.Size = new System.Drawing.Size(171, 20);
             this.txtimpuesto.TabIndex = 79;
+            this.txtimpuesto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtimpuesto_KeyPress);
             // 
             // frmVenta
             // 

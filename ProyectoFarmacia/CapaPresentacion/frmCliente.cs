@@ -62,10 +62,10 @@ namespace CapaPresentacion
         //Habilitar los controles del formulario
         private void Habilitar(bool valor)
         {
-            this.txtNombre.ReadOnly = !valor;
-            this.txtDireccion.ReadOnly = !valor;
-            this.txtTelefono.ReadOnly = !valor;
-            this.txtIdcliente.ReadOnly = !valor;
+            this.txtNombre.Enabled = valor;
+            this.txtDireccion.Enabled = valor;
+            this.txtTelefono.Enabled = valor;
+            this.txtIdcliente.Enabled = valor;
         }
 
         //Habilitar los botones
@@ -308,10 +308,34 @@ namespace CapaPresentacion
             this.BuscarCedula();
         }
 
+        private void txtIdcliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
 
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
 
-
-
-
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
     }
 }
