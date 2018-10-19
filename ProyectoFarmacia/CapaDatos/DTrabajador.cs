@@ -435,5 +435,38 @@ namespace CapaDatos
             return DtResultado;
 
         }
+
+        public DataTable BuscarCedula(DTrabajador Trabajador)
+        {
+            DataTable DtResultado = new DataTable("Trabajador");
+            SqlConnection SqlConectar = new SqlConnection();
+
+            try
+            {
+                SqlConectar.ConnectionString = Conexion.CadenaConexion;
+                SqlCommand SqlComando = new SqlCommand();
+                SqlComando.Connection = SqlConectar;
+                SqlComando.CommandText = "Buscar_Trabajador_CedulaT";
+                SqlComando.CommandType = CommandType.StoredProcedure;
+
+                //parametro buscar nombre
+                SqlParameter Parametro_Texto_Buscar = new SqlParameter();
+                Parametro_Texto_Buscar.ParameterName = "@TextoBuscar";
+                Parametro_Texto_Buscar.SqlDbType = SqlDbType.VarChar;
+                Parametro_Texto_Buscar.Size = 50;
+                Parametro_Texto_Buscar.Value = Trabajador.Texto_Buscar;
+                SqlComando.Parameters.Add(Parametro_Texto_Buscar);
+
+                SqlDataAdapter SqlData = new SqlDataAdapter(SqlComando);
+                SqlData.Fill(DtResultado);
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+
+        }
+
     }
 }

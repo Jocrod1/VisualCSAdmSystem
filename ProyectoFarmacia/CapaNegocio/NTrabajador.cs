@@ -64,6 +64,12 @@ namespace CapaNegocio
             Objeto.Texto_Buscar = TextoBuscar;
             return Objeto.Buscar_Id(Objeto);
         }
+        public static DataTable Buscar_CedulaT(string TextoBuscar)
+        {
+            DTrabajador Objeto = new DTrabajador();
+            Objeto.Texto_Buscar = TextoBuscar;
+            return Objeto.BuscarCedula(Objeto);
+        }
 
         //Metodo Buscar Nombre
         public static DataTable Buscar_Nombre(string TextoBuscar)
