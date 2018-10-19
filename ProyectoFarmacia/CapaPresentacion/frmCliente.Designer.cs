@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCliente));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.chkEliminar = new System.Windows.Forms.CheckBox();
             this.dataListado = new System.Windows.Forms.DataGridView();
@@ -57,7 +58,6 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
@@ -94,6 +94,15 @@
             this.tabPage1.Size = new System.Drawing.Size(772, 375);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(157, 55);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(75, 13);
+            this.label5.TabIndex = 39;
+            this.label5.Text = "Buscar por ID:";
             // 
             // lblTotal
             // 
@@ -254,6 +263,7 @@
             // 
             this.txtTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTelefono.Location = new System.Drawing.Point(158, 180);
+            this.txtTelefono.MaxLength = 20;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(267, 20);
             this.txtTelefono.TabIndex = 55;
@@ -365,6 +375,7 @@
             // 
             this.txtDireccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtDireccion.Location = new System.Drawing.Point(158, 228);
+            this.txtDireccion.MaxLength = 150;
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -375,6 +386,7 @@
             // 
             this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtNombre.Location = new System.Drawing.Point(158, 137);
+            this.txtNombre.MaxLength = 40;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(267, 20);
             this.txtNombre.TabIndex = 33;
@@ -394,15 +406,6 @@
             // errorIcono
             // 
             this.errorIcono.ContainerControl = this;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(157, 55);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 13);
-            this.label5.TabIndex = 39;
-            this.label5.Text = "Buscar por ID:";
             // 
             // frmCliente
             // 

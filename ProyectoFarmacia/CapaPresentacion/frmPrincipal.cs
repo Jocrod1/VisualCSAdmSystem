@@ -24,6 +24,46 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
+
+        private class Usuario {
+            int NivelAcceso;
+
+            public int Nivel_Acceso
+            {
+                get { return NivelAcceso; }
+                set { NivelAcceso = value; }
+            }
+        }
+
+
+        private class Administrador : Usuario {
+
+
+             public Administrador()
+            {
+                Nivel_Acceso = 0;
+            }
+
+        }
+
+
+        private class Trabajador : Usuario
+        {
+
+
+            public Trabajador()
+            {
+                Nivel_Acceso = 1;
+            }
+
+        }
+
+
+
+        Trabajador trab = new Trabajador();
+        Administrador admi = new Administrador();
+
+
         private void ShowNewForm(object sender, EventArgs e)
         {
             Form childForm = new Form();
@@ -140,23 +180,24 @@ namespace CapaPresentacion
         private void GestionUsuario()
         {
 
-
-                this.MnuConsultas.Enabled = true;
                 this.MnuProcesos.Enabled = true;
                 this.MnuRegistros.Enabled = true;
 
-           if (Acceso == 0)   //Este tipo de acceso es Administrador
+                int NivelAcceso_Trabajador;
+                int NivelAcceso_Administrador;
+                NivelAcceso_Trabajador = trab.Nivel_Acceso;
+                NivelAcceso_Administrador = admi.Nivel_Acceso;
+
+                if (NivelAcceso_Administrador == 0)   //Este tipo de acceso es Administrador
             {
 
-                this.MnuConsultas.Enabled = true;
                 this.MnuProcesos.Enabled = true;
                 this.MnuRegistros.Enabled = true;
 
             }
-            else if (Acceso == 1)  //Este tipo de acceso es Trabajador
+                else if (NivelAcceso_Trabajador == 1)  //Este tipo de acceso es Trabajador
             {
 
-                this.MnuConsultas.Enabled = true;
                 this.MnuProcesos.Enabled = true;
                 this.trabajadoresToolStripMenuItem.Enabled = false;
                 this.MnuRegistros.Enabled = true;
@@ -165,7 +206,6 @@ namespace CapaPresentacion
             else
             {
 
-                this.MnuConsultas.Enabled = false;
                 this.MnuProcesos.Enabled = false;
                 this.MnuRegistros.Enabled = false;
 
@@ -231,6 +271,13 @@ namespace CapaPresentacion
             frm.MdiParent = this;
             frm.Show();
             frm.IdTrabajador = Convert.ToInt32(this.Idtrabajador);
+        }
+
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Acercade acerca = new Acercade();
+            acerca.MdiParent = this;
+            acerca.Show();
         }
     }
 }

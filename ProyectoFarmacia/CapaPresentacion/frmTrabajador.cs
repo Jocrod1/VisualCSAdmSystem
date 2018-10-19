@@ -117,7 +117,7 @@ namespace CapaPresentacion
                         if (Convert.ToBoolean(row.Cells[0].Value))
                         {
                             ID = Convert.ToString(row.Cells[1].Value);
-                            Rpta = NCliente.Eliminar(ID);   // hay que cambiar Codigo por Idtrabajador... supongo 
+                            Rpta = NTrabajador.Eliminar(ID);   // hay que cambiar Codigo por Idtrabajador... supongo 
 
                             if (Rpta.Equals("OK"))
                             {
@@ -334,9 +334,8 @@ namespace CapaPresentacion
                     {
                         //Vamos a modificar un Trabajador
                         Rpta = NTrabajador.Editar(this.txtIdtrabajador.Text.Trim().ToUpper(), this.txtNombre.Text.Trim().ToUpper(),
-                        cbSexo.Text,
-                        txtDireccion.Text,
-                        cbAcceso.SelectedIndex, txtPassword.Text, txtCorreo.Text.Trim().ToLower(), txtTelefono.Text);
+                        txtDireccion.Text, 
+                        cbSexo.Text, cbAcceso.SelectedIndex, txtPassword.Text, txtCorreo.Text.Trim().ToLower(), txtTelefono.Text);
                     }
                     //Si la respuesta fue OK, fue porque se modifico 
                     //o inserto el Cliente
@@ -442,6 +441,11 @@ namespace CapaPresentacion
                 e.Handled = true;
                 return;
             }
+        }
+
+        private void cbAcceso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

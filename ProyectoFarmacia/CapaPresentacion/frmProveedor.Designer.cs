@@ -97,7 +97,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(772, 452);
+            this.tabPage1.Size = new System.Drawing.Size(772, 395);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             // 
@@ -271,6 +271,7 @@
             // 
             this.txtTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTelefono.Location = new System.Drawing.Point(170, 283);
+            this.txtTelefono.MaxLength = 20;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(263, 20);
             this.txtTelefono.TabIndex = 59;

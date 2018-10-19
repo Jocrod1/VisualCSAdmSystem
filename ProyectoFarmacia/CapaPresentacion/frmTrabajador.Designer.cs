@@ -316,11 +316,12 @@
             this.cbAcceso.FormattingEnabled = true;
             this.cbAcceso.Items.AddRange(new object[] {
             "Administrador",
-            "Vendedor"});
+            "Trabajador"});
             this.cbAcceso.Location = new System.Drawing.Point(157, 134);
             this.cbAcceso.Name = "cbAcceso";
             this.cbAcceso.Size = new System.Drawing.Size(121, 21);
             this.cbAcceso.TabIndex = 54;
+            this.cbAcceso.SelectedIndexChanged += new System.EventHandler(this.cbAcceso_SelectedIndexChanged);
             // 
             // cbSexo
             // 
