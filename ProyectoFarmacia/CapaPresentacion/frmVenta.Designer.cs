@@ -66,6 +66,12 @@
             this.btnbuscarcliente = new System.Windows.Forms.Button();
             this.txtcliente = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnQuitar = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.txttotal = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtdescuento = new System.Windows.Forms.TextBox();
             this.btnbuscararticulo = new System.Windows.Forms.Button();
             this.txtarticulo = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -73,12 +79,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.txtimpuesto = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtdescuento = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txttotal = new System.Windows.Forms.TextBox();
-            this.btnQuitar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoDetalle)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -315,6 +315,7 @@
             this.btncomprobante.Text = "Comprobante";
             this.btncomprobante.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btncomprobante.UseVisualStyleBackColor = false;
+            this.btncomprobante.Click += new System.EventHandler(this.btncomprobante_Click);
             // 
             // label9
             // 
@@ -526,6 +527,66 @@
             this.groupBox2.TabIndex = 77;
             this.groupBox2.TabStop = false;
             // 
+            // btnQuitar
+            // 
+            this.btnQuitar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnQuitar.BackgroundImage")));
+            this.btnQuitar.Location = new System.Drawing.Point(644, 58);
+            this.btnQuitar.Name = "btnQuitar";
+            this.btnQuitar.Size = new System.Drawing.Size(34, 33);
+            this.btnQuitar.TabIndex = 89;
+            this.btnQuitar.UseVisualStyleBackColor = true;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Teal;
+            this.label11.Location = new System.Drawing.Point(38, 70);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(53, 23);
+            this.label11.TabIndex = 86;
+            this.label11.Text = "Total: ";
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAgregar.BackgroundImage")));
+            this.btnAgregar.Location = new System.Drawing.Point(644, 19);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(34, 33);
+            this.btnAgregar.TabIndex = 88;
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // txttotal
+            // 
+            this.txttotal.Enabled = false;
+            this.txttotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txttotal.Location = new System.Drawing.Point(93, 70);
+            this.txttotal.Name = "txttotal";
+            this.txttotal.Size = new System.Drawing.Size(171, 20);
+            this.txttotal.TabIndex = 87;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Teal;
+            this.label8.Location = new System.Drawing.Point(379, 69);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(85, 23);
+            this.label8.TabIndex = 84;
+            this.label8.Text = "Descuento:";
+            // 
+            // txtdescuento
+            // 
+            this.txtdescuento.Enabled = false;
+            this.txtdescuento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtdescuento.Location = new System.Drawing.Point(470, 71);
+            this.txtdescuento.Name = "txtdescuento";
+            this.txtdescuento.Size = new System.Drawing.Size(171, 20);
+            this.txtdescuento.TabIndex = 85;
+            // 
             // btnbuscararticulo
             // 
             this.btnbuscararticulo.Location = new System.Drawing.Point(270, 16);
@@ -595,66 +656,6 @@
             this.txtimpuesto.Name = "txtimpuesto";
             this.txtimpuesto.Size = new System.Drawing.Size(171, 20);
             this.txtimpuesto.TabIndex = 79;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Teal;
-            this.label8.Location = new System.Drawing.Point(379, 69);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 23);
-            this.label8.TabIndex = 84;
-            this.label8.Text = "Descuento:";
-            // 
-            // txtdescuento
-            // 
-            this.txtdescuento.Enabled = false;
-            this.txtdescuento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtdescuento.Location = new System.Drawing.Point(470, 71);
-            this.txtdescuento.Name = "txtdescuento";
-            this.txtdescuento.Size = new System.Drawing.Size(171, 20);
-            this.txtdescuento.TabIndex = 85;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Teal;
-            this.label11.Location = new System.Drawing.Point(38, 70);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 23);
-            this.label11.TabIndex = 86;
-            this.label11.Text = "Total: ";
-            // 
-            // txttotal
-            // 
-            this.txttotal.Enabled = false;
-            this.txttotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txttotal.Location = new System.Drawing.Point(93, 70);
-            this.txttotal.Name = "txttotal";
-            this.txttotal.Size = new System.Drawing.Size(171, 20);
-            this.txttotal.TabIndex = 87;
-            // 
-            // btnQuitar
-            // 
-            this.btnQuitar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnQuitar.BackgroundImage")));
-            this.btnQuitar.Location = new System.Drawing.Point(644, 58);
-            this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(34, 33);
-            this.btnQuitar.TabIndex = 89;
-            this.btnQuitar.UseVisualStyleBackColor = true;
-            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAgregar.BackgroundImage")));
-            this.btnAgregar.Location = new System.Drawing.Point(644, 19);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(34, 33);
-            this.btnAgregar.TabIndex = 88;
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // frmVenta
             // 
