@@ -17,7 +17,19 @@ namespace CapaDatos
         private string _Documento_Proveedor;
         private string _RepresentanteLegal_Proveedor;
         private string _Correo_Proveedor;
+
+        public string Correo_Proveedor
+        {
+            get { return _Correo_Proveedor; }
+            set { _Correo_Proveedor = value; }
+        }
         private string _Telefono_Proveedor;
+
+        public string Telefono_Proveedor
+        {
+            get { return _Telefono_Proveedor; }
+            set { _Telefono_Proveedor = value; }
+        }
         private string _Texto_Buscar;
 
 
@@ -47,8 +59,7 @@ namespace CapaDatos
             set { _RepresentanteLegal_Proveedor = value; }
         }
 
-        public string Correo_Proveedor { get => _Correo_Proveedor; set => _Correo_Proveedor = value; }
-        public string Telefono_Proveedor { get => _Telefono_Proveedor; set => _Telefono_Proveedor = value; }
+
 
         public string Texto_Buscar
         {
