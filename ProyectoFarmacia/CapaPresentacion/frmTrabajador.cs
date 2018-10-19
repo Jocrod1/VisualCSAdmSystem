@@ -138,7 +138,8 @@ namespace CapaPresentacion
             this.txtNombre.ReadOnly = !Valor;
             this.txtDireccion.ReadOnly = !Valor;
             this.cbSexo.Enabled = Valor;
-            this.txtDireccion.ReadOnly = !Valor;
+            this.txtTelefono.ReadOnly = !Valor;
+            this.txtCorreo.ReadOnly = !Valor;
             this.cbAcceso.Enabled = Valor;
             this.txtPassword.ReadOnly = !Valor;
         }
@@ -165,7 +166,6 @@ namespace CapaPresentacion
         private void OcultarColumnas()
         {
             this.dataListado.Columns[0].Visible = false;
-            this.dataListado.Columns[1].Visible = false;
         }
         private void Mostrar()
         {
@@ -188,7 +188,7 @@ namespace CapaPresentacion
 
         private void BuscarCedula()
         {
-            this.dataListado.DataSource = NTrabajador.Buscar_Cedula(this.txtBuscar.Text);
+            this.dataListado.DataSource = NTrabajador.Buscar_CedulaT(this.txtBuscar.Text);
             this.OcultarColumnas();
             lblTotal.Text = "Total Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
@@ -245,7 +245,7 @@ namespace CapaPresentacion
             this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["nombre"].Value);
             this.cbSexo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["sexo"].Value);
             this.txtDireccion.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["direccion"].Value);
-            this.cbAcceso.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["acceso"].Value);
+            this.cbAcceso.SelectedIndex = int.Parse(this.dataListado.CurrentRow.Cells["acceso"].Value.ToString());
             this.txtPassword.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["password"].Value);
 
 
@@ -349,6 +349,22 @@ namespace CapaPresentacion
             this.Botones();
             this.Limpiar();
             this.txtIdtrabajador.Text = string.Empty;
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (cbBuscar.SelectedIndex == 0)
+            {
+                this.BuscarCedula();
+            }
+            else if (cbBuscar.SelectedIndex == 1)
+            {
+                this.BuscarNombre();
+            }
+            else {
+                txtBuscar.Text = string.Empty;
+            }
+
         }
 
 

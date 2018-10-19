@@ -130,7 +130,7 @@ namespace CapaDatos
 
                 //parametro direccion
                 SqlParameter Parametro_Direccion_Trabajador = new SqlParameter();
-                Parametro_Direccion_Trabajador.ParameterName = "@DescripcionTrabajador";
+                Parametro_Direccion_Trabajador.ParameterName = "@DireccionTrabajador";
                 Parametro_Direccion_Trabajador.SqlDbType = SqlDbType.VarChar;
                 Parametro_Direccion_Trabajador.Size = 256;
                 Parametro_Direccion_Trabajador.Value = Trabajador.Direccion_Trabajador;
@@ -234,7 +234,7 @@ namespace CapaDatos
 
                 //parametro direccion
                 SqlParameter Parametro_Direccion_Trabajador = new SqlParameter();
-                Parametro_Direccion_Trabajador.ParameterName = "@DescripcionTrabajador";
+                Parametro_Direccion_Trabajador.ParameterName = "@DireccionTrabajador";
                 Parametro_Direccion_Trabajador.SqlDbType = SqlDbType.VarChar;
                 Parametro_Direccion_Trabajador.Size = 256;
                 Parametro_Direccion_Trabajador.Value = Trabajador.Direccion_Trabajador;

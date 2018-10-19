@@ -43,6 +43,10 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbAcceso = new System.Windows.Forms.ComboBox();
             this.cbSexo = new System.Windows.Forms.ComboBox();
@@ -62,10 +66,6 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
@@ -119,7 +119,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(697, 88);
+            this.lblTotal.Location = new System.Drawing.Point(31, 346);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(35, 13);
             this.lblTotal.TabIndex = 38;
@@ -163,10 +163,11 @@
             // txtBuscar
             // 
             this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtBuscar.Location = new System.Drawing.Point(238, 52);
+            this.txtBuscar.Location = new System.Drawing.Point(161, 51);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(188, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(232, 20);
             this.txtBuscar.TabIndex = 35;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // btnEliminar
             // 
@@ -257,6 +258,44 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Trabajadores";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Teal;
+            this.label8.Location = new System.Drawing.Point(62, 208);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(74, 23);
+            this.label8.TabIndex = 58;
+            this.label8.Text = "Telefono:";
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtTelefono.Location = new System.Drawing.Point(157, 215);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(267, 20);
+            this.txtTelefono.TabIndex = 59;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Teal;
+            this.label9.Location = new System.Drawing.Point(81, 185);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(63, 23);
+            this.label9.TabIndex = 56;
+            this.label9.Text = "Correo:";
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtCorreo.Location = new System.Drawing.Point(157, 189);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(267, 20);
+            this.txtCorreo.TabIndex = 57;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
@@ -273,8 +312,7 @@
             this.cbAcceso.FormattingEnabled = true;
             this.cbAcceso.Items.AddRange(new object[] {
             "Administrador",
-            "Vendedor",
-            "Almacenero"});
+            "Vendedor"});
             this.cbAcceso.Location = new System.Drawing.Point(157, 134);
             this.cbAcceso.Name = "cbAcceso";
             this.cbAcceso.Size = new System.Drawing.Size(121, 21);
@@ -285,8 +323,8 @@
             this.cbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSexo.FormattingEnabled = true;
             this.cbSexo.Items.AddRange(new object[] {
-            "M",
-            "F"});
+            "Masculino",
+            "Femenino"});
             this.cbSexo.Location = new System.Drawing.Point(158, 162);
             this.cbSexo.Name = "cbSexo";
             this.cbSexo.Size = new System.Drawing.Size(121, 21);
@@ -466,44 +504,6 @@
             // errorIcono
             // 
             this.errorIcono.ContainerControl = this;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Teal;
-            this.label8.Location = new System.Drawing.Point(62, 208);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(74, 23);
-            this.label8.TabIndex = 58;
-            this.label8.Text = "Telefono:";
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtTelefono.Location = new System.Drawing.Point(157, 215);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(267, 20);
-            this.txtTelefono.TabIndex = 59;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Teal;
-            this.label9.Location = new System.Drawing.Point(81, 185);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(63, 23);
-            this.label9.TabIndex = 56;
-            this.label9.Text = "Correo:";
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCorreo.Location = new System.Drawing.Point(157, 189);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(267, 20);
-            this.txtCorreo.TabIndex = 57;
             // 
             // frmTrabajador
             // 
