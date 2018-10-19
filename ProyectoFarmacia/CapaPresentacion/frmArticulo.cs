@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 using CapaNegocio;
 
@@ -34,8 +35,8 @@ namespace CapaPresentacion
 
         public frmArticulo()
         {
-            InitializeComponent(); 
-            
+            InitializeComponent();
+
         }
 
 
@@ -60,7 +61,7 @@ namespace CapaPresentacion
             this.txtNombreArticulo.Text = string.Empty;
             this.txtDescripcion.Text = string.Empty;
             this.txtIdarticulo.Text = string.Empty;
-            
+
             this.pxImagen.Image = global::CapaPresentacion.Properties.Resources.file;
 
 
@@ -70,9 +71,9 @@ namespace CapaPresentacion
         private void Habilitar(bool valor)
         {
             this.txtIdarticulo.ReadOnly = !valor;
-            this.txtNombreArticulo.ReadOnly = !valor;
-            this.txtDescripcion.ReadOnly = !valor;
-            this.txtIdarticulo.ReadOnly = !valor;
+            this.txtNombreArticulo.Enabled = !valor;
+            this.txtDescripcion.Enabled = !valor;
+            this.txtIdarticulo.Enabled = !valor;
             this.btnCargar.Enabled = valor;
         }
 
@@ -121,7 +122,7 @@ namespace CapaPresentacion
             this.dataListado.DataSource = NArticulos.Buscar(this.txtNombreBuscar.Text);
             this.OcultarColumnas();
             lblTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
-        }    
+        }
 
         private void frmArticulo_Load(object sender, EventArgs e)
         {
@@ -199,6 +200,9 @@ namespace CapaPresentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+
+          
+
             try
             {
                 string rpta = "";
@@ -267,6 +271,7 @@ namespace CapaPresentacion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+
             this.BuscarNombre();
         }
 
@@ -276,6 +281,27 @@ namespace CapaPresentacion
             frm.ShowDialog();
         }
 
+
+
+        public void ValidarSoloLetras(string input)
+        {
+            bool EsSoloLetras;
+            EsSoloLetras = Regex.IsMatch(input, @"^[a-zA-Z]+$");
+
+            if (!(EsSoloLetras))
+            {
+                MessageBox.Show("ERROR! Solo puede escribir letras");
+
+
+            }
+
+
+        }
+
+
+
+
+
         private void frmArticulo_FormClosing(object sender, FormClosingEventArgs e)
         {
             _Instancia = null;
@@ -283,6 +309,7 @@ namespace CapaPresentacion
 
         private void txtNombreBuscar_TextChanged(object sender, EventArgs e)
         {
+           // ValidarSoloLetras(txtNombreBuscar.Text); probar la validacion en vivo cuando ya no hayan errores de compilacion
             this.BuscarNombre();
         }
 
@@ -388,6 +415,9 @@ namespace CapaPresentacion
             this.tabControl1.SelectedIndex = 1;
         }
 
+        private void txtNombreArticulo_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

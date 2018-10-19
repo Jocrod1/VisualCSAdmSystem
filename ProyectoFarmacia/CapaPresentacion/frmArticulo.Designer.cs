@@ -397,6 +397,7 @@
             this.txtNombreArticulo.Name = "txtNombreArticulo";
             this.txtNombreArticulo.Size = new System.Drawing.Size(267, 20);
             this.txtNombreArticulo.TabIndex = 33;
+            this.txtNombreArticulo.TextChanged += new System.EventHandler(this.txtNombreArticulo_TextChanged);
             // 
             // label4
             // 
