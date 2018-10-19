@@ -272,10 +272,8 @@ namespace CapaPresentacion
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            //quitar comentarios cuando ya exista el frmReporteArticulos
-            //FrmReporteArticulos frm = new FrmReporteArticulos();
-            //frm.Texto = txtBuscar.Text;
-            //frm.ShowDialog();
+            frmReporteArticulo frm = new frmReporteArticulo();
+            frm.ShowDialog();
         }
 
         private void frmArticulo_FormClosing(object sender, FormClosingEventArgs e)
