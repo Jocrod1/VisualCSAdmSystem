@@ -19,7 +19,7 @@ namespace ProyectoFarmacia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmTrabajador());
+            Application.Run(new frmLogin());
         }
     }
 }

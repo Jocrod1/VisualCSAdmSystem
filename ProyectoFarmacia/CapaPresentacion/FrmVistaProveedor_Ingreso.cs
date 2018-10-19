@@ -85,9 +85,9 @@ namespace CapaPresentacion
         {
             frmIngreso form = frmIngreso.GetInstancia();
             string par1, par2;
-            par1 = Convert.ToString(this.dataListado.CurrentRow.Cells["idarticulo"].Value);
-            par2 = Convert.ToString(this.dataListado.CurrentRow.Cells["nombre"].Value);
-            form.setArticulo(par1, par2);
+            par1 = Convert.ToString(this.dataListado.CurrentRow.Cells["IdProveedor"].Value);
+            par2 = Convert.ToString(this.dataListado.CurrentRow.Cells["NombreProveedor"].Value);
+            form.setProveedor(par1, par2);
             this.Hide();
         }
 

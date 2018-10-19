@@ -25,7 +25,7 @@ namespace CapaNegocio
             foreach (DataRow row in DtDetalles.Rows)
             {
                 DDetalle_Ingreso Detalle = new DDetalle_Ingreso();
-                Detalle.Id_Articulo = Convert.ToInt32(row["Id_Articulo"].ToString());
+                Detalle.Id_Articulo = Convert.ToInt32(row["IdArticulo"].ToString());
                 Detalle.Precio_Compra = Convert.ToDecimal(row["Precio_Compra"].ToString());
                 Detalle.Precio_Venta = Convert.ToDecimal(row["Precio_Venta"].ToString());
                 Detalle.Stock_Inicial = Convert.ToInt32(row["Stock_Inicial"].ToString());

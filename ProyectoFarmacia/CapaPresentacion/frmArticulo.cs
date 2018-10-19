@@ -71,9 +71,9 @@ namespace CapaPresentacion
         private void Habilitar(bool valor)
         {
             this.txtIdarticulo.ReadOnly = !valor;
-            this.txtNombreArticulo.Enabled = !valor;
-            this.txtDescripcion.Enabled = !valor;
-            this.txtIdarticulo.Enabled = !valor;
+            this.txtNombreArticulo.ReadOnly = !valor;
+            this.txtDescripcion.ReadOnly = !valor;
+            this.txtIdarticulo.ReadOnly = !valor;
             this.btnCargar.Enabled = valor;
         }
 

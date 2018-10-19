@@ -210,8 +210,9 @@ namespace CapaPresentacion
         {
             frmIngreso frm = frmIngreso.GetInstancia();
             frm.MdiParent = this;
+            frm.NombreTrabajador = this.Nombre;
+            frm.Idtrabajador = this.Idtrabajador;
             frm.Show();
-            frm.Idtrabajador = Convert.ToInt32(this.Idtrabajador);
         }
 
 

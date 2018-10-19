@@ -21,7 +21,7 @@ namespace CapaPresentacion
 
         private void FrmVistaArticulo_Ingreso_Load(object sender, EventArgs e)
         {
-
+            this.Mostrar();
         }
 
         
@@ -59,8 +59,8 @@ namespace CapaPresentacion
         {
             frmIngreso form = frmIngreso.GetInstancia();
             string par1, par2;
-            par1 = Convert.ToString(this.dataListado.CurrentRow.Cells["idarticulo"].Value);
-            par2 = Convert.ToString(this.dataListado.CurrentRow.Cells["nombre"].Value);
+            par1 = Convert.ToString(this.dataListado.CurrentRow.Cells["IdArticulo"].Value);
+            par2 = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
             form.setArticulo(par1, par2);
             this.Hide();
         }    

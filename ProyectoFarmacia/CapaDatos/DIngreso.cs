@@ -140,7 +140,7 @@ namespace CapaDatos
 
                 if (respuesta.Equals("OK"))
                 {
-                    this.Id_Ingreso = Convert.ToInt32(SqlComando.Parameters["IdIngreso"].Value);
+                    this.Id_Ingreso = Convert.ToInt32(SqlComando.Parameters["@IdIngreso"].Value);
 
                     foreach (DDetalle_Ingreso det in Detalle)
                     {

@@ -15,8 +15,8 @@ namespace CapaPresentacion
     public partial class frmIngreso : Form
     {
 
-
-        public int Idtrabajador;
+        public string NombreTrabajador;
+        public string Idtrabajador;
         private bool IsNuevo;
         private DataTable dtDetalle;
         private decimal totalPagado = 0; 
@@ -53,8 +53,8 @@ namespace CapaPresentacion
         {
             InitializeComponent();
 
-            this.txtIdproveedor.Visible = false;
-            this.txtIdarticulo.Visible = false;
+            this.txtIdproveedor.ReadOnly = true;
+            this.txtIdarticulo.ReadOnly = true;
             this.txtProveedor.ReadOnly = true;
             this.txtArticulo.ReadOnly = true;
         }
@@ -78,7 +78,6 @@ namespace CapaPresentacion
         {
             this.txtIdingreso.Text = string.Empty;
             this.txtIdproveedor.Text = string.Empty;
-            this.txtIdtrabajador.Text = string.Empty;
             this.txtImpuesto.Text = string.Empty;
             this.lblTotal_Pagado.Text = "0,0";
             this.crearTabla();
@@ -96,7 +95,6 @@ namespace CapaPresentacion
         //habilitar controles
         private void Habilitar(bool valor)
         {
-            this.txtIdingreso.ReadOnly = !valor;
             this.txtImpuesto.ReadOnly = !valor;
             this.dtFecha.Enabled = valor;
             this.txtStock.ReadOnly = !valor;
@@ -202,6 +200,8 @@ namespace CapaPresentacion
             this.Habilitar(false);
             this.Botones();
             this.crearTabla();
+            this.txtIdtrabajador.Text = Idtrabajador;
+            this.TxtNombreTrab.Text = NombreTrabajador;
 
         }
 
@@ -332,7 +332,7 @@ namespace CapaPresentacion
                     {
 
                         rpta = NIngreso.Insertar(txtIdtrabajador.Text, Convert.ToInt32(this.txtIdproveedor.Text),
-                            dtFecha.Value, Convert.ToDecimal(txtPreciototal), "EMITIDO", dtDetalle);
+                            dtFecha.Value, totalPagado, "EMITIDO", dtDetalle);
 
                     }
 
@@ -419,6 +419,7 @@ namespace CapaPresentacion
                         row["subtotal"] = subTotal;
                         this.dtDetalle.Rows.Add(row);
                         this.limpiarDetalle();
+                        this.txtPreciototal.Text = totalPagado.ToString();
 
                     }
 
