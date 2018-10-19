@@ -391,8 +391,9 @@ namespace CapaPresentacion
 
                         //PENDIENTE PERRO CALIENTE CON ESTO 
                         //aqui convierto el porcentaje y lo multiplico por el precio y lo vuelvo el total pagado
+                        decimal subtotal;
 
-                        decimal subtotal = (Convert.ToDecimal(txtcantidad.Text) *Convert.ToDecimal(this.txtsubtotal)) - Convert.ToDecimal(this.txtdescuento);
+                        subtotal = (Convert.ToInt32(txtcantidad.Text) *Convert.ToDecimal(this.txtsubtotal.Text)) - Convert.ToDecimal(this.txtdescuento.Text);
                         TotalPagado = TotalPagado + subtotal;
                         this.label4.Text = TotalPagado.ToString("#0.00#");
 
@@ -403,7 +404,7 @@ namespace CapaPresentacion
                         row["IdDetalleVenta"] = Convert.ToInt32(this.txtidventa.Text);
                         row["articulo"] = this.txtarticulo.Text;
                         row["Cantidad"] = Convert.ToInt32(this.txtcantidad.Text);
-                        row["SubTotal"] = subtotal;
+                        row["SubTotal"] = Convert.ToDecimal(subtotal);
                         //row["SubTotal"] = Convert.ToDecimal(this.txtsubtotal.Text);
                         row["Descuento"] = Convert.ToDecimal(this.txtdescuento.Text);
 
